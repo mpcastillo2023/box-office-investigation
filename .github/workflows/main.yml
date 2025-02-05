@@ -67,7 +67,7 @@ jobs:
           
       - name: Upload Linux Artifacts
         if: matrix.platform == 'ubuntu-latest'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: tauri-linux
           path: |
@@ -76,7 +76,7 @@ jobs:
             src-tauri/target/release/bundle/appimage/*.AppImage
       - name: Upload Windows Artifacts
         if: matrix.platform == 'windows-latest'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: tauri-windows
           path: |
@@ -85,7 +85,7 @@ jobs:
 
       - name: Upload macOS Artifacts (x86_64)
         if: matrix.platform == 'macos-latest' && matrix.args == '--target x86_64-apple-darwin'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: tauri-macos-x86_64
           path: |
@@ -94,7 +94,7 @@ jobs:
 
       - name: Upload macOS Artifacts (ARM/M1)
         if: matrix.platform == 'macos-latest' && matrix.args == '--target aarch64-apple-darwin'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: tauri-macos-arm
           path: |
