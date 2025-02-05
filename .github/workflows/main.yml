@@ -111,6 +111,8 @@ jobs:
 
       - name: Setup Java
         uses: actions/setup-java@v4
+        with:
+          distribution: "zulu"
 
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
