@@ -97,58 +97,58 @@ jobs:
   #         path: |
   #           src-tauri/target/aarch64-apple-darwin/release/bundle/macos/*.app
   #           src-tauri/target/aarch64-apple-darwin/release/bundle/dmg/*.dmg
-  publish-android:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
+  # publish-android:
+  #   runs-on: ubuntu-latest
+  #   permissions:
+  #     contents: write
+  #   steps:
+  #     - uses: actions/checkout@v4
 
-      - name: setup node
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
+  #     - name: setup node
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: lts/*
 
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: "zulu"
-          java-version: "17"
+  #     - name: Setup Java
+  #       uses: actions/setup-java@v4
+  #       with:
+  #         distribution: "zulu"
+  #         java-version: "17"
 
-      - name: install Rust stable
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: aarch64-linux-android,armv7-linux-androideabi,i686-linux-android,x86_64-linux-android
+  #     - name: install Rust stable
+  #       uses: dtolnay/rust-toolchain@stable
+  #       with:
+  #         targets: aarch64-linux-android,armv7-linux-androideabi,i686-linux-android,x86_64-linux-android
 
-      - name: install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
+  #     - name: install dependencies
+  #       run: |
+  #         sudo apt-get update
+  #         sudo apt-get install -y libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
 
-      - name: install frontend dependencies
-        run: npm install
+  #     - name: install frontend dependencies
+  #       run: npm install
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+  #     - name: Setup Android SDK
+  #       uses: android-actions/setup-android@v3
 
-      - name: Install NDK
-        run: sdkmanager "ndk;27.0.11902837"
+  #     - name: Install NDK
+  #       run: sdkmanager "ndk;27.0.11902837"
 
-      - name: Init tauri android
-        run: npm run tauri android init
+  #     - name: Init tauri android
+  #       run: npm run tauri android init
 
-      - name: Build app bundle
-        run: npm run tauri android build
-        env:
-          NDK_HOME: ${{ env.ANDROID_HOME }}/ndk/27.0.11902837
+  #     - name: Build app bundle
+  #       run: npm run tauri android build
+  #       env:
+  #         NDK_HOME: ${{ env.ANDROID_HOME }}/ndk/27.0.11902837
 
-      - name: Upload Android Artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: tauri-android
-          path: |
-            src-tauri/gen/android/app/build/outputs/apk/universal/release/*.apk
-            src-tauri/gen/android/app/build/outputs/bundle/universalRelease/*.aab
+  #     - name: Upload Android Artifacts
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: tauri-android
+  #         path: |
+  #           src-tauri/gen/android/app/build/outputs/apk/universal/release/*.apk
+  #           src-tauri/gen/android/app/build/outputs/bundle/universalRelease/*.aab
   publish-ios:
     runs-on: macos-latest
     permissions:
@@ -181,7 +181,11 @@ jobs:
         run: brew install cocoapods
 
       - name: Init tauri ios
+        env:
+          DEVELOPMENT_TEAM: "1234567890"
         run: npm run tauri ios init
 
       - name: Build app bundle
-        run: npm run tauri ios build
+        env:
+          DEVELOPMENT_TEAM: "1234567890"
+        run: npm run tauri ios build -- --no-codesign
