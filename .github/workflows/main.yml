@@ -153,6 +153,8 @@ jobs:
     runs-on: macos-latest
     permissions:
       contents: write
+    env:
+      APPLE_DEVELOPMENT_TEAM: "1234567890"
     steps:
       - uses: actions/checkout@v4
 
