@@ -135,6 +135,6 @@ jobs:
         run: sdkmanager "ndk;27.0.11902837"
 
       - name: Build app bundle
-        run: npm tauri android build -v
+        run: npm tauri android build
         env:
           NDK_HOME: ${{ env.ANDROID_HOME }}/ndk/27.0.11902837
