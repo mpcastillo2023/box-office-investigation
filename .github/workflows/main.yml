@@ -134,6 +134,9 @@ jobs:
       - name: Install NDK
         run: sdkmanager "ndk;27.0.11902837"
 
+      - name: Init tauri android
+        run: npm run tauri android init
+
       - name: Build app bundle
         run: npm run tauri android build
         env:
@@ -176,6 +179,9 @@ jobs:
 
       - name: Install cocoapods
         run: brew install cocoapods
+
+      - name: Init tauri ios
+        run: npm run tauri ios init
 
       - name: Build app bundle
         run: npm run tauri ios build
