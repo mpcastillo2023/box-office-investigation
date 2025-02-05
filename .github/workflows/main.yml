@@ -188,4 +188,4 @@ jobs:
       - name: Build app bundle
         env:
           DEVELOPMENT_TEAM: "1234567890"
-        run: npm run tauri ios build -- --no-codesign
+        run: npm run tauri ios build
