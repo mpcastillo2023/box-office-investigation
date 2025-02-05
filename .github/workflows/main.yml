@@ -155,6 +155,7 @@ jobs:
       contents: write
     env:
       APPLE_DEVELOPMENT_TEAM: "1234567890"
+      BUNDLE_IDENTIFIER: "com.atm.app"
     steps:
       - uses: actions/checkout@v4
 
@@ -208,6 +209,4 @@ jobs:
           EOF
 
       - name: Build app bundle
-        env:
-          DEVELOPMENT_TEAM: "1234567890"
         run: npm run tauri ios build
