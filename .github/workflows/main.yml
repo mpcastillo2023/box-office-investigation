@@ -210,4 +210,4 @@ jobs:
           EOF
 
       - name: Build app bundle
-        run: npm run tauri ios dev
+        run: npm run tauri ios dev 'iPhone 15' --open
