@@ -1,21 +1,53 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
-import { invoke } from "@tauri-apps/api/core";
 import "./App.css";
+import useNetworkStatus from "./hooks/useNetworkStatus";
+import { addData, deleteStore, getStoreData, initDB, Stores } from "./offlineDb/db";
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
+  const { isOnline } = useNetworkStatus();
+  const [isDbOn, setIsDbOn] = useState(false);
+  const [hasDataToSync, setHasDataToSync] = useState(false);
+
+  useEffect(() => {
+    const turnOnDb = async () => {
+      const dbIsOn = await initDB();
+      setIsDbOn(dbIsOn);
+    };
+    turnOnDb();
+  }, [isOnline]);
+
+  useEffect(() => {
+    const fetchMessages = async () => {
+      const messages = await getStoreData<{ message: string }>(Stores.Messages);
+      console.log("request message sent: ", messages);
+      deleteStore(Stores.Messages);
+      setHasDataToSync(false);
+    };
+    if (isOnline && isDbOn && hasDataToSync) {
+      fetchMessages();
+    }
+  }, [isOnline]);
 
   async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke("greet", { name }));
+    if (isOnline) {
+      console.log("request message sent: ", name);
+    } else {
+      try {
+        await addData(Stores.Messages, { name });
+        setHasDataToSync(true);
+      } catch (err: unknown) {
+        console.log(err, "there has been an error");
+      }
+    }
   }
 
   return (
     <main className="container">
       <h1>Welcome to Tauri + React</h1>
-
+      {isOnline ? "Has connection" : "Offline"}
       <div className="row">
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo vite" alt="Vite logo" />
@@ -31,14 +63,14 @@ function App() {
 
       <form
         className="row"
-        onSubmit={(e) => {
+        onSubmit={e => {
           e.preventDefault();
           greet();
         }}
       >
         <input
           id="greet-input"
-          onChange={(e) => setName(e.currentTarget.value)}
+          onChange={e => setName(e.currentTarget.value)}
           placeholder="Enter a name..."
         />
         <button type="submit">Greet</button>
