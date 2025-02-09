@@ -1,0 +1,196 @@
+.productsContainer{
+    width: 33%;
+
+    .calendarContainer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #DADADA;
+            border: 1px solid #DADADA;
+            border-radius: 13px;
+            padding: 7px;
+            font-size: 14px;
+
+            .calendarIcon {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+            
+                    svg {
+                        position: relative;
+                        width: 20px;
+                    }
+                }
+
+            .daysContainer {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                
+                    .day {
+                        border-right: 1px solid;
+                        padding-right: 10px;
+                        }
+            }
+        }
+}
+
+
+.products{
+    margin-top: 5px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+
+    .productsTitle {
+            display: flex;
+            justify-content: center;
+            background-color: #C8882D;
+            border-radius: 13px;
+            color: white;
+            padding: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            gap: 5px;
+            svg {
+               
+                width: 20px;
+            }
+    }
+
+    .selected {
+        background-color: #19B03E;
+        color: white;
+    }
+
+    .productsSelectContainer{
+
+        border: 1px solid #DADADA;
+        border-radius: 13px;
+        background-color: white;
+
+
+        .productsCards{
+            display: flex;
+            padding: 10px;
+            justify-content: space-around;
+        }
+
+        .productsSubTitle {
+            display: flex;
+            justify-content: flex-start;
+            background-color: #C8882D;
+            border-top-left-radius: 13px;
+            border-top-right-radius: 13px;
+            color: white;
+            padding: 5px 10px;
+            font-size: 14px;
+            gap: 5px;
+            align-items: center;
+
+                svg {
+                    width: 20px;
+                }   
+            }
+
+    }
+
+         .card {
+            border: 1px solid #DADADA;
+            padding: 5px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+            margin: 5px;
+            font-size: 14px;
+            text-align: center;
+            min-width: 6rem;
+            display: flex;
+            min-height: 3rem;
+            justify-content: center;
+            align-items: center;
+    
+             &:hover {
+                 cursor: pointer;
+             }
+         }
+
+    .aforosSelectContainer {
+        border: 1px solid #DADADA;
+        border-radius: 13px;
+        background-color: white;
+
+        .aforosSubTitle {
+            display: flex;
+            justify-content: flex-start;
+            background-color: #844A79;
+            border-top-left-radius: 13px;
+            border-top-right-radius: 13px;
+            color: white;
+            padding: 5px 10px;
+            font-size: 14px;
+            gap: 5px;
+            align-items: center;
+            
+            svg {
+                width: 20px;
+            }
+        }
+
+        .aforoCards{
+            display: flex;
+            padding: 10px;
+            justify-content: space-around;
+        }
+    }
+
+    .sessionsSelectContainer {
+        border: 1px solid #DADADA;
+        border-radius: 13px;
+        background-color: white;
+
+        .sessionsSubTitle {
+            display: flex;
+            justify-content: flex-start;
+            background-color: #844A79;
+            border-top-left-radius: 13px;
+            border-top-right-radius: 13px;
+            color: white;
+            padding: 5px 10px;
+            font-size: 14px;
+            gap: 5px;
+            align-items: center;
+            
+            svg {
+                width: 20px;
+            }
+        }
+
+        .sessionsCards {
+            display: flex;
+            padding: 10px;
+            justify-content: space-around;
+
+            .sessionCardText {
+                display: flex;
+                gap: 10px;
+                padding-right: 20px;
+                svg {
+                    width: 25px;
+                    position: relative;
+                    top: 10px;
+                }
+
+                .sessionCardDispobility {
+                    display: flex;
+                    gap: 5px;
+
+                    svg {
+                        width: 15px;
+                        position: relative;
+                        top: 1px;
+                    }
+                }
+            }
+        }
+    }
+}
+
