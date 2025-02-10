@@ -1,0 +1,180 @@
+.ticketsContainer{
+    width: 40%;
+    .sellerContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+
+        .seller{
+            background-color: #DADADA;
+            border: 1px solid #DADADA;
+            border-radius: 13px;
+            padding: 6px;
+            font-size: 14px;
+            display: flex;
+            gap: 5px;
+
+            input {
+                width: 100%;
+                height: 20px;
+                border-radius: 13px;
+                border: none;
+            }
+
+            .sellerName{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                svg {
+                    position: relative;
+                    width: 20px;
+                }
+            }    
+        }
+    }
+
+    .aforostitle {
+        display: flex;
+        justify-content: center;
+        background-color: #1D7A66;
+        border-radius: 13px;
+        color: white;
+        padding: 5px;
+        font-size: 16px;
+        font-weight: 600;
+        gap: 5px;
+        margin-top: 5px;
+
+        svg {
+            position: relative;
+            width: 20px;
+        }
+    }
+
+    .aforosSelectContainer {
+        border: 1px solid #DADADA;
+        border-radius: 13px;
+        background-color: white;
+        margin-top: 5px;
+        min-height: 30rem;
+
+        .aforosSubTitle {
+            display: flex;
+            justify-content: center;
+            background-color: #1D7A66;
+            border-top-left-radius: 13px;
+            border-top-right-radius: 13px;
+            color: white;
+            padding: 5px 10px;
+            font-size: 14px;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .aforosCards {
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+        }
+    }
+
+    .promotionsContainer {
+        border: 1px solid #DADADA;
+        border-radius: 13px;
+        background-color: white;
+        margin-top: 5px;
+
+        .promotionsTitle {
+            display: flex;
+            justify-content: center;
+            background-color: #C65026;
+            border-top-left-radius: 13px;
+            border-top-right-radius: 13px;
+            color: white;
+            padding: 5px 10px;
+            font-size: 14px;
+            gap: 5px;
+            align-items: center;
+
+            svg {
+                position: relative;
+                width: 20px;
+            }
+        }
+
+        .promotionsCards {
+            display: flex;
+            padding: 10px;
+            justify-content: center;
+
+            .card {
+                border: 1px solid #DADADA;
+                padding: 5px 15px;
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+                margin: 5px;
+                font-size: 14px;
+                text-align: center;
+                min-width: 6rem;
+                display: flex;
+                min-height: 3rem;
+                justify-content: center;
+                align-items: center;
+                    
+                    &:hover {
+                        cursor: pointer;
+                    }
+            }
+
+            .selected {
+                background-color: #19B03E;
+                 color: white;
+            }
+        }
+    }
+
+    .promotionCodeContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        margin-top: 5px;
+
+        .promotionCode {
+            background-color: #DADADA;
+            border: 1px solid #DADADA;
+            border-radius: 13px;
+            padding: 6px;
+            font-size: 14px;
+            display: flex;
+            gap: 5px;
+            width: 100%;
+
+            svg {
+                position: relative;
+                width: 30px;
+            }
+
+            input {
+                width: 100%;
+                height: 20px;
+                border-radius: 13px;
+                border: none;
+            }
+
+            .promotionCodeName{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                svg {
+                    position: relative;
+                    width: 20px;
+                }
+            }    
+        }
+    }
+
+
+}

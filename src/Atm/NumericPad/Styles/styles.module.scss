@@ -1,0 +1,138 @@
+.numeralPadContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25rem;
+    justify-content: space-between;
+    width: 25%;
+    border-radius: 13px;
+    border: 1px solid #DADADA;
+    background-color: white;
+}
+
+.resumen {
+    border-radius: 13px;
+    width: 100%;
+}
+
+.totalHeader {
+    display: flex;
+    font-size: 14px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    background: #DADADA;
+    padding: 5px 10px;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+
+    .totalInfo {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    svg {
+        position: relative;
+        width: 20px;
+        top: 3px;
+        fill: black;
+    }
+}
+
+.deleteBtn {
+    background: none;
+    border: none;
+    
+    svg {
+        position: relative;
+        width: 20px;
+        top: 3px;
+        stroke: red;
+        fill: none;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+}
+
+.reservaEnCurso {
+    margin-top: 10px;
+    background-color: white;
+    padding: 1px 5px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 14px;
+
+    .itemInfo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+    }
+   
+}
+
+.pago {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.totales {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background: #DADADA;
+    margin-bottom: 10px;
+    font-size: 14px;
+
+    .totalesInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    padding: 5px;
+}
+
+.teclado button {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 13px;
+    background: #DADADA;
+    cursor: pointer;
+}
+
+.teclado .del {
+    background: #ff4d4d;
+    color: white;
+}
+
+.paymentOptions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.paymentButton{
+    flex: 1;
+    padding: 15px 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    background: #0182FF;
+    border-radius: 13px;
+    margin: 1px ;
+}
+

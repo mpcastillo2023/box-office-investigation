@@ -1,0 +1,57 @@
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #DADADA;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 99%;
+
+    .footerOptions {
+        display: flex;
+        gap: 10px;
+
+        .opction {
+            background-color: #0182FF;
+            cursor: pointer;
+            border: 1px solid #DADADA;
+            border-radius: 13px;
+            padding: 10px 15px;
+            font-size: 14px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            svg {
+                position: relative;
+                width: 20px;
+            }
+
+        }
+    }   
+
+    .clockContainer {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        svg {
+            position: relative;
+            width: 20px;
+        }
+    }
+
+    .clorianInfo {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        img {
+            position: relative;
+            width: 80px;
+        }
+    }
+}
