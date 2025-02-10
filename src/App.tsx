@@ -6,7 +6,6 @@ import Footer from "./Footer/Footer";
 import "../src/globalCSS/global.scss";
 
 function App() {
-  const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
   const { isOnline } = useNetworkStatus();
   const [isDbOn, setIsDbOn] = useState(false);
@@ -64,7 +63,6 @@ function App() {
           />
           <button type="submit">Greet</button>
         </form>
-        <p>{greetMsg}</p>
       </main>
       <Taquilla />
       <Footer />
