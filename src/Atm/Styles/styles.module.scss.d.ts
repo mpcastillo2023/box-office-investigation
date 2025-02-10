@@ -1,1 +1,1 @@
-export declare const taquillaContainer: string;
+export declare const atmContainer: string;
