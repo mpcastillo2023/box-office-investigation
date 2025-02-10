@@ -8,6 +8,7 @@
     margin: 8px 0;
     gap: 30px;
     justify-content: space-around;
+    border-radius: 13px;
 
     .info {
         display: flex;
@@ -52,7 +53,7 @@
 }
 
 .selected {
-   border-bottom: 2px solid #1D7A66;
+   border-bottom: 2px solid #1E8EAB;
 }
 
 

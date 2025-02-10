@@ -15,7 +15,7 @@ const Card: React.FC<CardProps> = ({ name, price }) => {
   };
 
   return (
-    <div className={`${styles.card} ${quantity > 1 ? styles.selected : ""}`}>
+    <div className={`${styles.card} ${quantity > 0 ? styles.selected : ""}`}>
       <div className={styles.info}>
         <span className={styles.name}>{name}</span>
         <span className={styles.price}>{price.toFixed(2)} €</span>
