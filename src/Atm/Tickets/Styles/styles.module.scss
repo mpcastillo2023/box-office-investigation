@@ -1,10 +1,22 @@
 .ticketsContainer{
     width: 40%;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .sellerContainer {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 5px;
+
+        @media (max-width: 768px) {
+            margin-top: 5px;
+        }
 
         .seller{
             background-color: #DADADA;
@@ -36,6 +48,12 @@
     }
 
     .aforostitle {
+
+        @media (max-width: 768px) {
+            width: 100%;
+            
+        }
+
         display: flex;
         justify-content: center;
         background-color: #1D7A66;
@@ -60,6 +78,10 @@
         margin-top: 5px;
         min-height: 30rem;
 
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+
         .aforosSubTitle {
             display: flex;
             justify-content: center;
@@ -77,6 +99,10 @@
             display: flex;
             padding: 10px;
             justify-content: space-between;
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+            }
         }
     }
 
@@ -85,6 +111,10 @@
         border-radius: 13px;
         background-color: white;
         margin-top: 5px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
 
         .promotionsTitle {
             display: flex;

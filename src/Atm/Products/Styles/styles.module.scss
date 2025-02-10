@@ -1,6 +1,13 @@
 .productsContainer{
     width: 33%;
 
+    @media (max-width: 768px) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
     .calendarContainer {
             display: flex;
             align-items: center;
@@ -10,6 +17,8 @@
             border-radius: 13px;
             padding: 7px;
             font-size: 14px;
+
+          
 
             .calendarIcon {
                     display: flex;
