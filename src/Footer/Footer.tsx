@@ -5,12 +5,16 @@ import Clock from "./Clock/Clock";
 import ClockIcon from "./../assets/icons/clock.svg";
 import ClorianLogo from "../assets/images/clorian-logotipo.png";
 
-export default function Footer() {
+type SidebarProps = {
+  toggleSidebar: () => void;
+};
+
+export default function Footer({ toggleSidebar }: SidebarProps) {
   return (
     <>
       <div className={styles.footerContainer}>
         <div className={styles.footerOptions}>
-          <div className={styles.opction}>
+          <div onClick={toggleSidebar} className={styles.opction}>
             <Bars4Icon />
             Menu
           </div>

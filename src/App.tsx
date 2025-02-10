@@ -1,15 +1,27 @@
 import { useEffect, useState } from "react";
 import useNetworkStatus from "./hooks/useNetworkStatus";
-import { addData, deleteStore, getStoreData, initDB, Stores } from "./offlineDb/db";
-import Taquilla from "./Atm/Atm";
+import {
+  addData,
+  deleteStore,
+  getStoreData,
+  initDB,
+  Stores,
+} from "./offlineDb/db";
+import Atm from "./Atm/Atm";
 import Footer from "./Footer/Footer";
 import "../src/globalCSS/global.scss";
+import SidebarMenu from "./Atm/SidebarMenu/SidebarMenu";
 
 function App() {
   const [name, setName] = useState("");
   const { isOnline } = useNetworkStatus();
   const [isDbOn, setIsDbOn] = useState(false);
   const [hasDataToSync, setHasDataToSync] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prevState) => !prevState);
+  };
 
   useEffect(() => {
     const turnOnDb = async () => {
@@ -51,21 +63,24 @@ function App() {
 
         <form
           className="row"
-          onSubmit={e => {
+          onSubmit={(e) => {
             e.preventDefault();
             greet();
           }}
         >
           <input
             id="greet-input"
-            onChange={e => setName(e.currentTarget.value)}
+            onChange={(e) => setName(e.currentTarget.value)}
             placeholder="Enter a name..."
           />
           <button type="submit">Greet</button>
         </form>
       </main>
-      <Taquilla />
-      <Footer />
+      <div id="sidebarMenu">
+        <SidebarMenu isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      </div>
+      <Atm />
+      <Footer toggleSidebar={toggleSidebar} />
     </>
   );
 }
