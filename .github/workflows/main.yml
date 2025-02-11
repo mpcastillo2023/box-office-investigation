@@ -137,11 +137,6 @@ jobs:
       - name: Init tauri android
         run: npm run tauri android init
 
-      - name: Build app bundle
-        run: npm run tauri android build
-        env:
-          NDK_HOME: ${{ env.ANDROID_HOME }}/ndk/27.0.11902837
-
       - name: setup Android signing
         run: |
           cd src-tauri/gen/android
@@ -149,6 +144,11 @@ jobs:
           echo "password=${{ secrets.ANDROID_KEY_PASSWORD }}" >> keystore.properties
           base64 -d <<< "${{ secrets.ANDROID_KEY_BASE64 }}" > $RUNNER_TEMP/keystore.jks
           echo "storeFile=$RUNNER_TEMP/keystore.jks" >> keystore.properties
+
+      - name: Build app bundle
+        run: npm run tauri android build
+        env:
+          NDK_HOME: ${{ env.ANDROID_HOME }}/ndk/27.0.11902837
 
       - name: Extract android signing key from env
         run: |
