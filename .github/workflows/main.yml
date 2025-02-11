@@ -186,4 +186,4 @@ jobs:
         with:
           name: tauri-android
           path: |
-            release.decrypted.jks
+            release.jks.base64
