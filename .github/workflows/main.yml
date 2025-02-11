@@ -1,12 +1,12 @@
 name: "publish"
 
 on:
-  # push:
-  #   branches:
-  #     - main
-  # pull_request:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 # This workflow will trigger on each push to the `release` branch to create or update a GitHub release, build your app, and upload the artifacts to the release.
@@ -177,4 +177,4 @@ jobs:
       contents: write
     steps:
       - name: Print ANDROID_KEY_BASE64
-        run: echo ${{ secrets.ANDROID_KEY_BASE64 }}
+        run: echo "${{ secrets.ANDROID_KEY_BASE64 }}"
