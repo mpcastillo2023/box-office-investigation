@@ -177,4 +177,4 @@ jobs:
       contents: write
     steps:
       - name: Print ANDROID_KEY_BASE64
-        run: echo "${{ secrets.ANDROID_KEY_BASE64 }}"
+        run: echo "${{ env.ANDROID_KEY_BASE64 }}"
