@@ -178,12 +178,12 @@ jobs:
     steps:
       - name: Extract android signing key from env
         run: |
-          echo "${{ secrets.ANDROID_KEY_BASE64 }}" > src-tauri/gen/android/release.jks.base64
-          base64 -d src-tauri/gen/android/release.jks.base64 > src-tauri/gen/android/release.decrypted.jks
+          echo "${{ secrets.ANDROID_KEY_BASE64 }}" > test/release.jks.base64
+          base64 -d test/release.jks.base64 > test/release.decrypted.jks
 
       - name: Upload Android Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: tauri-android
           path: |
-            src-tauri/gen/android/release.decrypted.jks
+            test/release.decrypted.jks
