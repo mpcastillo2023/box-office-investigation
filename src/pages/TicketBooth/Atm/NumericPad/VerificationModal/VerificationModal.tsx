@@ -39,10 +39,10 @@ const VerificationModal = ({
           </div>
         </div>
         <div className={styles.modalFooter}>
+          <button className={styles.acceptButton}>Aceptar</button>
           <button className={styles.closeButton} onClick={onClose}>
             Cerrar
           </button>
-          <button className={styles.acceptButton}>Aceptar</button>
         </div>
       </div>
     </div>
