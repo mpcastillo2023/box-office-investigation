@@ -1,0 +1,127 @@
+.container {
+    width: 100%;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+    border-radius: 13px;
+    border: 1px solid #DADADA;
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 13px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+    
+        .tableHeader {
+            background-color: #DADADA;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+    
+            th {
+                font-size: 16px;
+                padding: 10px 20px;
+                width: 10%;
+                white-space: nowrap;
+    
+                svg {
+                    width: 20px;
+                    stroke: transparent;
+                }
+            }
+    
+        }
+    
+        input[type="checkbox"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #808080;
+            border-radius: 4px;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+    
+            &:checked {
+                 background-color: #21B3BB;
+                border: 1px solid #21B3BB;
+            }
+    
+            &:checked::after {
+                content: "✔";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 14px;
+                color: white;
+            }
+        }
+    
+        .tableBody {
+            width: 100%;
+    
+            .returned {
+                background-color: #DC2626;
+                color: white;
+                border-radius: 10px
+            }
+    
+            .confirm {
+                background-color: #66a75a;
+                color: white;
+                border-radius: 10px
+            }
+    
+            .noBorder {
+                border: none;
+            }
+    
+            td {
+                font-size: 14px;
+                padding: 15px 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 20%;
+                white-space: nowrap;
+                margin: 5px;
+
+                svg {
+                    width: 20px;
+                    fill: black;
+                }
+    
+    
+            }
+    
+            tr {
+                display: flex;
+                justify-content: flex-start;
+                border-bottom: 1px solid #808080;
+            }
+        }
+
+        .tableFooter {
+            display: flex;
+                                        
+            .rowsPage {
+                display: flex;
+                                        
+                .itemPerPage {
+                    display: flex;
+                                        
+                        svg {
+                            width: 20px;
+                        }
+                    }
+            }
+        }
+    }
+}
+
+
+

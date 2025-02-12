@@ -19,4 +19,66 @@
             stroke: white;
         }
     }
+
+    .historyBody {
+        border-radius: 13px;
+        border: 1px solid #DADADA;
+        background-color: white;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .tabsContainer{
+        display: flex;
+        margin: 20px 0 30px 0;
+
+            &::after {
+            content: "";
+            display: block;
+            height: 1px;
+            top: 1px;
+            background-color: #dddddd;
+            width: 100%;
+            align-self: end;
+            border-radius: 5px;
+
+        }
+    .tabButton {
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 14px;
+        position: relative;
+        white-space: nowrap;
+        padding: 12px;
+        letter-spacing: 0px;
+        color: #7d838e;
+        padding: 10px 20px;
+
+        &::after {
+            content: "";
+            border-radius: 5px;
+            bottom: -0.4px;
+            height: 1px;
+            left: 0;
+            width: 100%;
+            position: absolute;
+            background-color: #dddddd;
+        }
+
+        &.isActive {
+            font-weight: bold;
+            background-color: #f7f7f7;
+            border-radius: 6px 6px 0 0;
+            color: #21B3BB;
+
+            &::after {
+                background-color: #21B3BB;
+                height: 2px;
+            }
+        }
+}
+
+
+
+    }
 }
