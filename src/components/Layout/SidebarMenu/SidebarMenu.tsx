@@ -1,17 +1,17 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./Styles/styles.module.scss";
-import ClorianLogoSidebar from "../../assets/images/clorian-logotipo-sidebar.png";
-import ArchiveWithArrowIcon from "../../assets/icons/archive-box-arrow.svg";
-import ArchiveBox from "../../assets/icons/archive-box.svg";
-import ChartBarIcon from "../../assets/icons/chart-bar.svg";
-import CubeIcon from "../../assets/icons/cube.svg";
-import HashtagIcon from "../../assets/icons/hashtag.svg";
-import ArrowPathIcon from "../../assets/icons/arrow-path.svg";
-import PrinterIcon from "../../assets/icons/printer.svg";
-import DocumentIcon from "../../assets/icons/document.svg";
-import SignalIcon from "../../assets/icons/signal.svg";
-import BookIcon from "../../assets/icons/book.svg";
-import LOgoutIcon from "../../assets/icons/logout.svg";
+import ClorianLogoSidebar from "@images/clorian-logotipo-sidebar.png";
+import ArchiveWithArrowIcon from "@icons/archive-box-arrow.svg";
+import ArchiveBox from "@icons/archive-box.svg";
+import ChartBarIcon from "@icons/chart-bar.svg";
+import CubeIcon from "@icons/cube.svg";
+import HashtagIcon from "@icons/hashtag.svg";
+import ArrowPathIcon from "@icons/arrow-path.svg";
+import PrinterIcon from "@icons/printer.svg";
+import DocumentIcon from "@icons/document.svg";
+import SignalIcon from "@icons/signal.svg";
+import BookIcon from "@icons/book.svg";
+import LOgoutIcon from "@icons/logout.svg";
 
 interface SidebarProps {
   isOpen: boolean;

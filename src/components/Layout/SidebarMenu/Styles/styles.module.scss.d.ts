@@ -1,0 +1,9 @@
+export declare const menuItem: string;
+export declare const menuSection: string;
+export declare const overlay: string;
+export declare const sidebar: string;
+export declare const sidebarClosed: string;
+export declare const sidebarFooter: string;
+export declare const sidebarHeader: string;
+export declare const sidebarMenu: string;
+export declare const sidebarOpen: string;

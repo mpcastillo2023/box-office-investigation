@@ -17,25 +17,36 @@
         display: flex;
         gap: 10px;
 
-        .opction {
-            background-color: #1e8eab;
-            cursor: pointer;
-            border: 1px solid #DADADA;
-            border-radius: 13px;
-            padding: 10px 15px;
-            font-size: 14px;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-
-            svg {
-                position: relative;
-                width: 20px;
-            }
-
-        }
+       
     }   
+
+    .option {
+        background-color: #1e8eab;
+        cursor: pointer;
+        border: 1px solid #DADADA;
+        border-radius: 13px;
+        padding: 10px 15px;
+        font-size: 14px;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    
+        a{
+        text-decoration: none;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+
+        svg {
+            position: relative;
+            width: 20px;
+        }
+    }
+    
+}
 
     .clockContainer {
         display: flex;

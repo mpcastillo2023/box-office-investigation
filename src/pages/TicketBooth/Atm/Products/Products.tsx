@@ -1,10 +1,10 @@
 import styles from "./Styles/styles.module.scss";
-import Calendar from "./../../assets/icons/calendar.svg";
-import TicketIcon from "./../../assets/icons/ticket.svg";
-import ListBulletIcon from "./../../assets/icons/list-bullet.svg";
-import BarsIcon from "./../../assets/icons/bars-3.svg";
-import ClockIcon from "./../../assets/icons/clock.svg";
-import PercentIcon from "./../../assets/icons/percent.svg";
+import Calendar from "@icons/calendar.svg";
+import TicketIcon from "@icons/ticket.svg";
+import ListBulletIcon from "@icons/list-bullet.svg";
+import BarsIcon from "@icons/bars-3.svg";
+import ClockIcon from "@icons/clock.svg";
+import PercentIcon from "@icons/percent.svg";
 import { useState } from "react";
 
 export default function Products() {

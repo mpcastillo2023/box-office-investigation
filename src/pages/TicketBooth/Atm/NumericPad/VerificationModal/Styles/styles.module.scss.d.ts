@@ -1,0 +1,12 @@
+export declare const acceptButton: string;
+export declare const closeButton: string;
+export declare const closeButtonHeader: string;
+export declare const form: string;
+export declare const headerTitle: string;
+export declare const modal: string;
+export declare const modalBody: string;
+export declare const modalFooter: string;
+export declare const modalHeader: string;
+export declare const overlay: string;
+export declare const select: string;
+export declare const titleForm: string;

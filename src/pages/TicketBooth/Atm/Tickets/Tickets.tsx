@@ -1,13 +1,11 @@
 import styles from "./Styles/styles.module.scss";
-import UserCircleIcon from "./../../assets/icons/user-circle.svg";
-import UsersIcon from "./../../assets/icons/users.svg";
-import HashTagIcon from "./../../assets/icons/hashtag.svg";
+import HashTagIcon from "@icons/hashtag.svg";
 import Card from "./Cards/Cards";
-import TagIcon from "./../../assets/icons/tag.svg";
-import PercentICon from "./../../assets/icons/percent.svg";
-import ChatBubbleIcon from "./../../assets/icons/chat-bubble.svg";
-import ShoppingCarIcon from "./../../assets/icons/shopping-car.svg";
-import XCircleIcon from "./../../assets/icons/x-circule.svg";
+import TagIcon from "@icons/tag.svg";
+import PercentICon from "@icons/percent.svg";
+import ChatBubbleIcon from "@icons/chat-bubble.svg";
+import ShoppingCarIcon from "@icons/shopping-cart.svg";
+import XCircleIcon from "@icons/x-circle.svg";
 export default function Tickets() {
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const target = event.currentTarget;
@@ -20,10 +18,7 @@ export default function Tickets() {
       <div className={styles.ticketsContainer}>
         <div className={styles.sellerContainer}>
           <div className={styles.seller}>
-            <div className={styles.sellerName}>
-              <UserCircleIcon />
-              Distribuidor
-            </div>
+            <div className={styles.sellerName}>Distribuidor</div>
             <input type="text" placeholder="Buscar distribuidor" />
           </div>
           <div className={styles.seller}>
@@ -34,10 +29,7 @@ export default function Tickets() {
             <input type="text" placeholder="Referencia" />
           </div>
         </div>
-        <div className={styles.aforostitle}>
-          <UsersIcon />
-          Colectivos
-        </div>
+        <div className={styles.aforostitle}>Colectivos</div>
         <div className={styles.aforosSelectContainer}>
           <div className={styles.aforosSubTitle}>MIN 1 - MAX 20</div>
           <div className={styles.aforosCards}>
