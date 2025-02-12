@@ -54,7 +54,7 @@
     .productsTitle {
             display: flex;
             justify-content: center;
-            background-color: #21B3BB;
+            background-color: #C8882D;
             border-radius: 13px;
             color: white;
             padding: 5px;
@@ -68,7 +68,7 @@
     }
 
     .selected {
-        background-color: #21B3BB;
+        background-color: #19B03E;
         color: white;
         border: none ! important; 
     }
@@ -89,10 +89,10 @@
         .productsSubTitle {
             display: flex;
             justify-content: flex-start;
-            background-color: #DADADA;
+            background-color: #C8882D;
             border-top-left-radius: 13px;
             border-top-right-radius: 13px;
-            color: #06152B;
+            color: white;
             padding: 5px 10px;
             font-size: 14px;
             gap: 5px;
@@ -132,17 +132,23 @@
         .aforosSubTitle {
             display: flex;
             justify-content: flex-start;
-            background-color: #DADADA;
+            background-color: #844A79;
             border-top-left-radius: 13px;
             border-top-right-radius: 13px;
-            color: #06152B;
+            color: white;
             padding: 5px 10px;
             font-size: 14px;
-            gap: 5px;
+            gap: 8rem;
             align-items: center;
             
             svg {
                 width: 20px;
+            }
+
+            .aforosSubTitleText {
+                display: flex;
+                align-items: center;
+                gap: 5px;
             }
         }
 
@@ -160,11 +166,11 @@
 
         .sessionsSubTitle {
             display: flex;
-            justify-content: flex-start;
-            background-color: #DADADA;
+            justify-content: center;
+            background-color: #844A79;
             border-top-left-radius: 13px;
             border-top-right-radius: 13px;
-            color: #06152B;
+            color: white;
             padding: 5px 10px;
             font-size: 14px;
             gap: 5px;

@@ -1,3 +1,4 @@
+export declare const closeButton: string;
 export declare const menuItem: string;
 export declare const menuSection: string;
 export declare const overlay: string;

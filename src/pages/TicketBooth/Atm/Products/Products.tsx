@@ -5,6 +5,7 @@ import ListBulletIcon from "@icons/list-bullet.svg";
 import BarsIcon from "@icons/bars-3.svg";
 import ClockIcon from "@icons/clock.svg";
 import PercentIcon from "@icons/percent.svg";
+import MapPingIcon from "@icons/map-ping.svg";
 import { useState } from "react";
 
 export default function Products() {
@@ -62,7 +63,11 @@ export default function Products() {
           </div>
           <div className={styles.aforosSelectContainer}>
             <div className={styles.aforosSubTitle}>
-              <BarsIcon /> AFOROS
+              <BarsIcon />
+              <div className={styles.aforosSubTitleText}>
+                <MapPingIcon />
+                AFOROS
+              </div>
             </div>
             <div className={styles.aforoCards}>
               {["MUSEO", "EXPO", "MUSEO"].map((text, index) => (

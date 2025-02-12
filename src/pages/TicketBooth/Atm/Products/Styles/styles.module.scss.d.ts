@@ -1,6 +1,7 @@
 export declare const aforoCards: string;
 export declare const aforosSelectContainer: string;
 export declare const aforosSubTitle: string;
+export declare const aforosSubTitleText: string;
 export declare const calendarContainer: string;
 export declare const calendarIcon: string;
 export declare const card: string;

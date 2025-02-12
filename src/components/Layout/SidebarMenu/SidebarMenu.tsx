@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./Styles/styles.module.scss";
-import ClorianLogoSidebar from "@images/clorian-logotipo-sidebar.png";
 import ArchiveWithArrowIcon from "@icons/archive-box-arrow.svg";
 import ArchiveBox from "@icons/archive-box.svg";
 import ChartBarIcon from "@icons/chart-bar.svg";
@@ -12,6 +11,7 @@ import DocumentIcon from "@icons/document.svg";
 import SignalIcon from "@icons/signal.svg";
 import BookIcon from "@icons/book.svg";
 import LOgoutIcon from "@icons/logout.svg";
+import ArrowSimpleLeftIcon from "@icons/simple-arrow-left.svg";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -50,8 +50,10 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
         }`}
       >
         <div className={styles.sidebarHeader}>
-          <img src={ClorianLogoSidebar} alt="Clorian Logo" />
           Taquilla TPV1 - PROVENÇA
+          <button className={styles.closeButton} onClick={toggleSidebar}>
+            <ArrowSimpleLeftIcon />
+          </button>
         </div>
         <ul className={styles.sidebarMenu}>
           <li className={styles.menuSection}>Operativas</li>

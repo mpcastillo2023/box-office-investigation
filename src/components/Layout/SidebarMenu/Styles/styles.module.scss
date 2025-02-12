@@ -16,9 +16,8 @@
     top: 0;
     left: 0;
     height: 100vh;
-    width: 300px;
+    width: 320px;
     background-color: white;
-    border-right: 1px solid #dadada;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     overflow-x: hidden;
     transition: transform 0.3s ease-in-out;
@@ -39,11 +38,26 @@
     white-space: nowrap;
     display: flex;
     align-items: center;
-    gap: 10px;
     border-bottom: 1px solid #dadada;
+    background-color: #00838F;
+    color: white;
+    justify-content: space-between;
 
     img {
         width: 30px;
+    }
+
+    .closeButton{
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        svg {
+            position: relative;
+            width: 20px;
+            top:3px;
+            stroke: white;
+        }
     }
 }
 
@@ -57,9 +71,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px 10px;
-    border-radius: 11px;
-    margin: 15px 20px;
+    padding: 15px 15px;
 
     svg {
         position: relative;
@@ -68,7 +80,7 @@
 
     &:hover {
         cursor: pointer;
-        background-color: #DFEFF3;
+        background-color: #F7F7F7;
         color: #1E8EAB;
     }
 }

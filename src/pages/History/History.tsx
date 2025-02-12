@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import styles from "./Styles/styles.module.scss";
-import ArrowLeftIcon from "@icons/arrow-left.svg";
+import ArrowSimpleLeftIcon from "@icons/simple-arrow-left.svg";
 
 const History = () => {
   return (
@@ -8,7 +8,7 @@ const History = () => {
       <div className={styles.historyContainer}>
         <div className={styles.historyHeader}>
           <Link to="/ticketbooth">
-            <ArrowLeftIcon />
+            <ArrowSimpleLeftIcon />
           </Link>
           Reservas
         </div>
