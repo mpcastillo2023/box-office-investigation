@@ -60,18 +60,22 @@ const SalesList: React.FC = () => {
       </div>
       <div className={styles.tableFooter}>
         <div className={styles.rowsPage}>
-          <div>
-            Registros por Pagina
-            <div className={styles.itemPerPage}>
+          <div className={styles.itemPerPage}>
+            <div>Registros por Pagina</div>
+            <div className={styles.iconTablePage}>
               10
               <ChevronDownIcon />
             </div>
           </div>
-          <div>Mostrando 1 a 7 de 7 resultados</div>
-          <div>
-            <ChevronLeftIcon />
+          <div className={styles.actualItemPage}>
+            <div>Mostrando 1 a 7 de 7 resultados</div>
+            <div className={styles.iconTablePage}>
+              <ChevronLeftIcon />
+            </div>
             1
-            <ChevronRightIcon />
+            <div className={styles.iconTablePage}>
+              <ChevronRightIcon />
+            </div>
           </div>
         </div>
       </div>

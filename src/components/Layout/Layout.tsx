@@ -10,13 +10,13 @@ const Layout = () => {
     setIsSidebarOpen((prevState) => !prevState);
   };
   return (
-    <div>
+    <>
       <div id="sidebarMenu">
         <SidebarMenu isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       </div>
       <Outlet />
       <Footer toggleSidebar={toggleSidebar} />
-    </div>
+    </>
   );
 };
 

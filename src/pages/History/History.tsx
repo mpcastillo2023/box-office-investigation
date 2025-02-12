@@ -3,6 +3,7 @@ import styles from "./Styles/styles.module.scss";
 import ArrowLeftIcon from "@icons/arrow-left.svg";
 import { useState } from "react";
 import Sales from "./Sales/Sales";
+import List from "./List/List";
 
 const History = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -10,7 +11,7 @@ const History = () => {
   const tabs = [
     { id: 0, label: "ULT.VENTAS", content: <Sales /> },
     { id: 1, label: "BUSCAR", content: "Contenido de la segunda pestaña" },
-    { id: 2, label: "LISTA", content: "Contenido de la tercera pestaña" },
+    { id: 2, label: "LISTA", content: <List /> },
   ];
   return (
     <>

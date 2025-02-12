@@ -101,25 +101,53 @@
             tr {
                 display: flex;
                 justify-content: flex-start;
-                border-bottom: 1px solid #808080;
+                border-bottom: 1px solid #DADADA;
+            }
+        }
+    }
+}
+
+.tableFooter {
+    width: 100%;
+    margin-top: 20px;
+        
+        .rowsPage {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+        
+        
+            .itemPerPage {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+     
+                svg {
+                    width: 15px;
+                }
+            }
+
+        .actualItemPage {
+            display: flex;
+            align-items: center;
+            gap:10px;
+
+            svg {
+                width: 15px;
             }
         }
 
-        .tableFooter {
-            display: flex;
-                                        
-            .rowsPage {
-                display: flex;
-                                        
-                .itemPerPage {
-                    display: flex;
-                                        
-                        svg {
-                            width: 20px;
-                        }
-                    }
-            }
+        .iconTablePage {
+           display: flex;
+            align-items: center;
+            border: 1px solid #DADADA;
+            background-color: white;
+            border-radius: 10px;
+            gap: 0;
+           padding:10px;
         }
+
     }
 }
 

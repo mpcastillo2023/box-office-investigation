@@ -1,5 +1,7 @@
+export declare const actualItemPage: string;
 export declare const confirm: string;
 export declare const container: string;
+export declare const iconTablePage: string;
 export declare const itemPerPage: string;
 export declare const noBorder: string;
 export declare const returned: string;
