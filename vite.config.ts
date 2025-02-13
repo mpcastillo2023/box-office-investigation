@@ -5,7 +5,7 @@ import path from "path";
 
 const host = process.env.TAURI_DEV_HOST;
 
-// https://vitejs.dev/config/
+
 export default defineConfig(async () => ({
   plugins: [
     react(),
@@ -20,6 +20,30 @@ export default defineConfig(async () => ({
     alias: {
       "@icons": path.resolve(__dirname, "./assets/icons"),
       "@images": path.resolve(__dirname, "./assets/images"),
+      "@cg-components": path.resolve(
+            __dirname,
+            "./node_modules/components-gallery/src/components/"
+          ),
+          "@cg-providers": path.resolve(
+            __dirname,
+            "./node_modules/components-gallery/src/providers/"
+          ),
+          "@cg-hooks": path.resolve(
+            __dirname,
+            "./node_modules/components-gallery/src/hooks/"
+          ),
+          "@cg-utils": path.resolve(
+            __dirname,
+            "./node_modules/components-gallery/src/utils/"
+          ),
+          "@cg-icons": path.resolve(
+            __dirname,
+            "./node_modules/components-gallery/assets/icons"
+          ),
+          "@cg-api": path.resolve(
+            __dirname,
+            "./node_modules/components-gallery/src/api"
+          ),
     },
   },
 

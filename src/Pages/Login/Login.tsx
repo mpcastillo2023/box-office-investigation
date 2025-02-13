@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+import { LoginForm } from "components-gallery";
 
-const Login = () => {
-  return <Link to="/ticketbooth">LOGIN</Link>;
+const LoginSSSD = () => {
+  return <LoginForm></LoginForm>;
 };
 
-export default Login;
+export default LoginSSSD;
