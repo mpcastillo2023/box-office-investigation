@@ -17,8 +17,8 @@
         display: flex;
         gap: 10px;
 
-       
-    }   
+
+    }
 
     .option {
         background-color: #1e8eab;
@@ -31,22 +31,23 @@
         display: flex;
         align-items: center;
         gap: 5px;
-    
-        a{
-        text-decoration: none;
-        color: white;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-
 
         svg {
             position: relative;
             width: 20px;
         }
+
+        a {
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+
+        }
+
     }
-    
-}
 
     .clockContainer {
         display: flex;
