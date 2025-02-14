@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./Styles/styles.module.scss";
-import TableRowData from "./TableRow/TableRowData";
+import TableRowData from "../SalesData";
 import CloudIcon from "@icons/cloud.svg";
 import ChevronDownIcon from "@icons/chevron-down.svg";
 import ChevronLeftIcon from "@icons/chevron-left.svg";
 import ChevronRightIcon from "@icons/chevron-right.svg";
 
-const SalesList: React.FC = () => {
+const SalesTable: React.FC = () => {
   return (
     <>
       <div className={styles.container}>
@@ -28,22 +28,13 @@ const SalesList: React.FC = () => {
           </thead>
           <tbody className={styles.tableBody}>
             {TableRowData.map((row, index) => (
-              <tr
-                key={index}
-                className={
-                  index === TableRowData.length - 1 ? styles.noBorder : ""
-                }
-              >
+              <tr key={index} className={index === TableRowData.length - 1 ? styles.noBorder : ""}>
                 <td>
                   <input type="checkbox" id="customCheck" />
                 </td>
                 <td>{<CloudIcon />}</td>
                 <td>{row.local}</td>
-                <td
-                  className={
-                    row.state === "Devuelta" ? styles.returned : styles.confirm
-                  }
-                >
+                <td className={row.state === "Devuelta" ? styles.returned : styles.confirm}>
                   {row.state}
                 </td>
                 <td>{row.product}</td>
@@ -83,4 +74,4 @@ const SalesList: React.FC = () => {
   );
 };
 
-export default SalesList;
+export default SalesTable;

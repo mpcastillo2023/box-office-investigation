@@ -1,7 +1,7 @@
 .historyContainer {
     width: 100%;
     height: 110vh;
-    
+
     .historyHeader {
         display: flex;
         align-items: center;
@@ -26,13 +26,17 @@
         background-color: white;
         margin: 20px;
         padding: 20px;
+
+        @media (max-width: 768px) {
+            margin: 0;
+        }
     }
 
-    .tabsContainer{
+    .tabsContainer {
         display: flex;
         margin: 20px 0 30px 0;
 
-            &::after {
+        &::after {
             content: "";
             display: block;
             height: 1px;
@@ -43,39 +47,40 @@
             border-radius: 5px;
 
         }
-    .tabButton {
-        background-color: transparent;
-        cursor: pointer;
-        font-size: 14px;
-        position: relative;
-        white-space: nowrap;
-        letter-spacing: 0px;
-        color: #7d838e;
-        padding: 20px;
 
-        &::after {
-            content: "";
-            border-radius: 5px;
-            bottom: -0.4px;
-            height: 1px;
-            left: 0;
-            width: 100%;
-            position: absolute;
-            background-color: #dddddd;
-        }
-
-        &.isActive {
-            font-weight: bold;
-            background-color: #f7f7f7;
-            border-radius: 6px 6px 0 0;
-            color: #21B3BB;
+        .tabButton {
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 14px;
+            position: relative;
+            white-space: nowrap;
+            letter-spacing: 0px;
+            color: #7d838e;
+            padding: 20px;
 
             &::after {
-                background-color: #21B3BB;
-                height: 2px;
+                content: "";
+                border-radius: 5px;
+                bottom: -0.4px;
+                height: 1px;
+                left: 0;
+                width: 100%;
+                position: absolute;
+                background-color: #dddddd;
+            }
+
+            &.isActive {
+                font-weight: bold;
+                background-color: #f7f7f7;
+                border-radius: 6px 6px 0 0;
+                color: #21B3BB;
+
+                &::after {
+                    background-color: #21B3BB;
+                    height: 2px;
+                }
             }
         }
-}
 
 
 

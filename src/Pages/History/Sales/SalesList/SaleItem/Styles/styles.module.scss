@@ -1,0 +1,50 @@
+.salesItem {
+	display: flex;
+	justify-content: space-between;
+	padding: 15px 0;
+	border-bottom: 1px solid lightgrey;
+
+	.salesCol {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+
+		.dateId {
+			display: flex;
+			gap: 5px;
+
+			.id {
+				font-weight: 900;
+			}
+		}
+
+		.title {
+			color: #1e8eab;
+			font-style: italic;
+		}
+
+		.salesDate {
+			color: lightgrey;
+			font-style: italic;
+		}
+
+		.confirm,
+		.returned {
+			color: white;
+			border-radius: 10px;
+			padding: 5px;
+		}
+
+		.returned {
+			background-color: #DC2626;
+
+		}
+
+		.confirm {
+			background-color: #66a75a;
+		}
+	}
+
+
+
+}

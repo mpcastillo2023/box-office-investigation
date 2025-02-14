@@ -17,27 +17,32 @@
             color: white;
             font-size: 14px;
         }
+
+        @media (max-width: 768px) {
+            margin-bottom: 10px;
+        }
     }
 
-    .salesFilters{
+    .salesFilters {
         display: flex;
-        gap:10px;
+        gap: 10px;
         align-items: center;
         margin-top: 20px;
-        
-        .inputText{
+
+        .inputText {
             width: 100%;
             display: flex;
         }
 
-        input{
+        input {
             width: 100%;
             border: none;
             border-bottom: 1px solid #808080;
             font-size: 16px;
- 
+
         }
-        svg{
+
+        svg {
             width: 20px;
             border-radius: 4px;
             padding: 5px;
@@ -45,9 +50,9 @@
             background-color: #1e8eab;
         }
 
-        .filtersButton{
+        .filtersButton {
             font-size: 14px;
-            white-space:nowrap;
+            white-space: nowrap;
             background-color: white;
             border: 1px solid #1e8eab;
             cursor: pointer;
@@ -55,6 +60,12 @@
             padding: 13px 15px;
             color: #1e8eab;
         }
-        
+
+        @media (max-width: 768px) {
+            display: none;
+
+        }
     }
+
+
 }

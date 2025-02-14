@@ -1,4 +1,4 @@
-interface TableRow {
+export type Sales = {
   empty: string;
   local: string;
   state: string;
@@ -9,9 +9,9 @@ interface TableRow {
   value: string;
   sessionDate: string;
   salesDate: string;
-}
+};
 
-const TableRowData: TableRow[] = [
+const TableRowData: Sales[] = [
   {
     empty: "",
     local: "71308485",
