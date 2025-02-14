@@ -1,3 +1,4 @@
+export declare const accordionContainer: string;
 export declare const aforoCards: string;
 export declare const aforosSelectContainer: string;
 export declare const aforosSubTitle: string;
@@ -18,3 +19,4 @@ export declare const sessionCardText: string;
 export declare const sessionsCards: string;
 export declare const sessionsSelectContainer: string;
 export declare const sessionsSubTitle: string;
+export declare const title: string;

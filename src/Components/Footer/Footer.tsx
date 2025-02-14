@@ -6,30 +6,32 @@ import ClockIcon from "@icons/clock.svg";
 import BuildingIcon from "@icons/building.svg";
 import ClorianLogo from "@images/clorian-logotipo.png";
 import { Link } from "react-router";
+import { UseIsDesktop } from "components-gallery";
 
 type SidebarProps = {
   toggleSidebar: () => void;
 };
 
 export default function Footer({ toggleSidebar }: SidebarProps) {
+  const { isDesktop } = UseIsDesktop();
   return (
     <>
       <div className={styles.footerContainer}>
         <div className={styles.footerOptions}>
           <div onClick={toggleSidebar} className={styles.option}>
             <Bars4Icon />
-            Menu
+            {isDesktop ? <span>Menu</span> : null}
           </div>
           <div className={styles.option}>
             <Link to="/history">
               <MagnifyingGlass />
-              Reservas
+              {isDesktop ? <span>Reservas</span> : null}
             </Link>
           </div>
           <div className={styles.option}>
             <Link to="/ticketbooth">
               <BuildingIcon />
-              Cajon
+              {isDesktop ? <span>Cajon</span> : null}
             </Link>
           </div>
         </div>

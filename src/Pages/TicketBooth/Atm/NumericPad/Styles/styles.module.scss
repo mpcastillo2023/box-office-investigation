@@ -20,6 +20,7 @@
     width: 100%;
 }
 
+
 .totalHeader {
     display: flex;
     font-size: 14px;
@@ -32,6 +33,13 @@
     border-top-left-radius: 13px;
     border-top-right-radius: 13px;
 
+    .numberOfTicketContainer {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+    }
+
     .totalInfo {
         display: flex;
         align-items: center;
@@ -41,23 +49,23 @@
     svg {
         position: relative;
         width: 20px;
-        top: 3px;
         fill: #06152B;
     }
 }
 
 .deleteBtn {
-    background: none;
-    border: none;
-    
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
     svg {
         position: relative;
         width: 20px;
-        top: 3px;
+
         stroke: red;
         fill: none;
         cursor: pointer;
-        margin-left: 10px;
+
     }
 }
 
@@ -80,7 +88,7 @@
         gap: 10px;
         font-weight: bold;
     }
-   
+
 }
 
 .pago {
@@ -130,7 +138,7 @@
     margin-top: 10px;
 }
 
-.paymentButton{
+.paymentButton {
     flex: 1;
     padding: 15px 10px;
     font-size: 16px;
@@ -140,6 +148,16 @@
     text-align: center;
     background: #1e8eab;
     border-radius: 13px;
-    margin: 1px ;
+    margin: 1px;
 }
 
+
+.title {
+    width: 100%;
+    font-weight: normal !important;
+}
+
+.accordionContainer {
+    border-radius: 13px !important;
+    margin-top: 5px !important;
+}

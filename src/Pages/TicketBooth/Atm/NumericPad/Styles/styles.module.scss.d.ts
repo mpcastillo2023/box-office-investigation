@@ -1,7 +1,9 @@
+export declare const accordionContainer: string;
 export declare const del: string;
 export declare const deleteBtn: string;
 export declare const item: string;
 export declare const itemInfo: string;
+export declare const numberOfTicketContainer: string;
 export declare const numeralPadContainer: string;
 export declare const pago: string;
 export declare const paymentButton: string;
@@ -9,6 +11,7 @@ export declare const paymentOptions: string;
 export declare const reservaEnCurso: string;
 export declare const resumen: string;
 export declare const teclado: string;
+export declare const title: string;
 export declare const totales: string;
 export declare const totalesInfo: string;
 export declare const totalHeader: string;

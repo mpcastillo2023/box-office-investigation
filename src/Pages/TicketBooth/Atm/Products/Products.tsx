@@ -6,6 +6,7 @@ import BarsIcon from "@icons/bars-3.svg";
 import ClockIcon from "@icons/clock.svg";
 import PercentIcon from "@icons/percent.svg";
 import { useState } from "react";
+import { Accordion, UseIsDesktop } from "components-gallery";
 
 export default function Products() {
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
@@ -20,6 +21,7 @@ export default function Products() {
       target.classList.toggle(styles.selected);
     }
   };
+  const { isDesktop } = UseIsDesktop();
   return (
     <>
       <div className={styles.productsContainer}>
@@ -39,57 +41,81 @@ export default function Products() {
             Products
           </div>
           <div className={styles.productsSelectContainer}>
-            <div className={styles.productsSubTitle}>
-              <ListBulletIcon /> VISITAS SENCILLAS CLORIAN
-            </div>
-            <div className={styles.productsCards}>
-              {[
-                "TESTING PROMO SIN COMISION",
-                "PROMO CON COMISION",
-                "2 VENUES DEPENDIENTES",
-              ].map((text, index) => (
-                <div
-                  key={index}
-                  className={`${styles.card} ${
-                    selectedCard === index ? styles.selected : ""
-                  }`}
-                  onClick={() => handleClickProduct(index)}
-                >
-                  {text}
+            <Accordion
+              variant="simple"
+              expanded={isDesktop}
+              shouldDisplayIcon={false}
+              title={
+                <div className={styles.productsSubTitle}>
+                  <ListBulletIcon /> VISITAS SENCILLAS CLORIAN
                 </div>
-              ))}
-            </div>
+              }
+              customStyleClasses={styles}
+            >
+              <div className={styles.productsCards}>
+                {["TESTING PROMO SIN COMISION", "PROMO CON COMISION", "2 VENUES DEPENDIENTES"].map(
+                  (text, index) => (
+                    <div
+                      key={index}
+                      className={`${styles.card} ${selectedCard === index ? styles.selected : ""}`}
+                      onClick={() => handleClickProduct(index)}
+                    >
+                      {text}
+                    </div>
+                  )
+                )}
+              </div>
+            </Accordion>
           </div>
           <div className={styles.aforosSelectContainer}>
-            <div className={styles.aforosSubTitle}>
-              <BarsIcon /> AFOROS
-            </div>
-            <div className={styles.aforoCards}>
-              {["MUSEO", "EXPO", "MUSEO"].map((text, index) => (
-                <div key={index} className={styles.card} onClick={handleClick}>
-                  {text}
+            <Accordion
+              variant="simple"
+              expanded={isDesktop}
+              shouldDisplayIcon={false}
+              title={
+                <div className={styles.aforosSubTitle}>
+                  <BarsIcon /> AFOROS
                 </div>
-              ))}
-            </div>
+              }
+              customStyleClasses={styles}
+            >
+              <div className={styles.aforoCards}>
+                {["MUSEO", "EXPO", "MUSEO"].map((text, index) => (
+                  <div key={index} className={styles.card} onClick={handleClick}>
+                    {text}
+                  </div>
+                ))}
+              </div>
+            </Accordion>
           </div>
+
           <div className={styles.sessionsSelectContainer}>
-            <div className={styles.sessionsSubTitle}>
-              <ClockIcon /> SESIONES 1/1
-            </div>
-            <div className={styles.sessionsCards}>
-              <div className={styles.card} onClick={handleClick}>
-                <div className={styles.sessionCardText}>
-                  <PercentIcon />
-                  <div style={{ whiteSpace: "nowrap" }}>
-                    10:00 - 11:00
-                    <div className={styles.sessionCardDispobility}>
-                      <TicketIcon />
-                      200/200
+            <Accordion
+              variant="simple"
+              expanded={isDesktop}
+              shouldDisplayIcon={false}
+              title={
+                <div className={styles.sessionsSubTitle}>
+                  <ClockIcon /> SESIONES 1/1
+                </div>
+              }
+              customStyleClasses={styles}
+            >
+              <div className={styles.sessionsCards}>
+                <div className={styles.card} onClick={handleClick}>
+                  <div className={styles.sessionCardText}>
+                    <PercentIcon />
+                    <div style={{ whiteSpace: "nowrap" }}>
+                      10:00 - 11:00
+                      <div className={styles.sessionCardDispobility}>
+                        <TicketIcon />
+                        200/200
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Accordion>
           </div>
         </div>
       </div>

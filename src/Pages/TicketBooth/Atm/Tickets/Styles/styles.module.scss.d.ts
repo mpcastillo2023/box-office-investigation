@@ -1,4 +1,6 @@
+export declare const accordionContainer: string;
 export declare const aforosCards: string;
+export declare const aforosContainer: string;
 export declare const aforosSelectContainer: string;
 export declare const aforosSubTitle: string;
 export declare const aforostitle: string;
@@ -14,3 +16,4 @@ export declare const seller: string;
 export declare const sellerContainer: string;
 export declare const sellerName: string;
 export declare const ticketsContainer: string;
+export declare const title: string;

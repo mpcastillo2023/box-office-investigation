@@ -1,89 +1,97 @@
-.productsContainer{
+.productsContainer {
     width: 33%;
+
+    .calendarContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #DADADA;
+        border: 1px solid #DADADA;
+        border-radius: 13px;
+        padding: 7px;
+        font-size: 14px;
+
+
+
+        .calendarIcon {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            svg {
+                position: relative;
+                width: 20px;
+            }
+        }
+
+        .daysContainer {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .day {
+                border-right: 1px solid;
+                padding-right: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+    }
 
     @media (max-width: 768px) {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        }
+    }
 
-    .calendarContainer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background-color: #DADADA;
-            border: 1px solid #DADADA;
-            border-radius: 13px;
-            padding: 7px;
-            font-size: 14px;
 
-          
-
-            .calendarIcon {
-                    display: flex;
-                    align-items: center;
-                    gap: 5px;
-            
-                    svg {
-                        position: relative;
-                        width: 20px;
-                    }
-                }
-
-            .daysContainer {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                
-                    .day {
-                        border-right: 1px solid;
-                        padding-right: 10px;
-                        }
-            }
-        }
 }
 
 
-.products{
+.products {
     margin-top: 5px;
     display: flex;
     gap: 5px;
     flex-direction: column;
 
     .productsTitle {
-            display: flex;
-            justify-content: center;
-            background-color: #21B3BB;
-            border-radius: 13px;
-            color: white;
-            padding: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            gap: 5px;
-            svg {
-               
-                width: 20px;
-            }
+        display: flex;
+        justify-content: center;
+        background-color: #21B3BB;
+        border-radius: 13px;
+        color: white;
+        padding: 5px;
+        font-size: 16px;
+        font-weight: 600;
+        gap: 5px;
+
+        svg {
+
+            width: 20px;
+        }
     }
 
     .selected {
         background-color: #21B3BB;
         color: white;
-        border: none ! important; 
+        border: none ! important;
     }
 
-    .productsSelectContainer{
+    .productsSelectContainer {
 
         border: 1px solid #DADADA;
         border-radius: 13px;
         background-color: white;
 
 
-        .productsCards{
+        .productsCards {
             display: flex;
             padding: 10px;
             justify-content: space-around;
+            flex-wrap: wrap;
         }
 
         .productsSubTitle {
@@ -98,31 +106,32 @@
             gap: 5px;
             align-items: center;
 
-                svg {
-                    width: 20px;
-                }   
+            svg {
+                width: 20px;
             }
+        }
 
     }
 
-         .card {
-            border: 1px solid #DADADA;
-            padding: 5px;
-            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
-            margin: 5px;
-            font-size: 14px;
-            text-align: center;
-            min-width: 6rem;
-            display: flex;
-            min-height: 3rem;
-            justify-content: center;
-            align-items: center;
-            border-radius: 13px;
-    
-             &:hover {
-                 cursor: pointer;
-             }
-         }
+    .card {
+        border: 1px solid #DADADA;
+        padding: 5px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1607843137);
+        margin: 5px;
+        font-size: 14px;
+        text-align: center;
+        min-width: 6rem;
+        display: flex;
+        min-height: 3rem;
+        justify-content: center;
+        align-items: center;
+        border-radius: 13px;
+        flex-wrap: wrap;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
 
     .aforosSelectContainer {
         border: 1px solid #DADADA;
@@ -140,16 +149,17 @@
             font-size: 14px;
             gap: 5px;
             align-items: center;
-            
+
             svg {
                 width: 20px;
             }
         }
 
-        .aforoCards{
+        .aforoCards {
             display: flex;
             padding: 10px;
             justify-content: space-around;
+            flex-wrap: wrap;
         }
     }
 
@@ -169,7 +179,7 @@
             font-size: 14px;
             gap: 5px;
             align-items: center;
-            
+
             svg {
                 width: 20px;
             }
@@ -184,6 +194,7 @@
                 display: flex;
                 gap: 10px;
                 padding-right: 20px;
+
                 svg {
                     width: 25px;
                     position: relative;
@@ -203,5 +214,13 @@
             }
         }
     }
-}
 
+    .title {
+        width: 100%;
+        font-weight: normal !important;
+    }
+
+    .accordionContainer {
+        border-radius: 13px;
+    }
+}
