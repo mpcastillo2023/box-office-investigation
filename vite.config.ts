@@ -5,10 +5,12 @@ import path from "path";
 
 const host = process.env.TAURI_DEV_HOST;
 
-
 export default defineConfig(async () => ({
   plugins: [
-    react(),
+    react({
+      // Use React plugin in all *.jsx and *.tsx files
+      include: ["**/*.{jsx,tsx}", "./node_modules/components-gallery/"],
+    }),
     svgr({
       svgrOptions: {
         exportType: "default",
@@ -18,35 +20,29 @@ export default defineConfig(async () => ({
   ],
   resolve: {
     alias: {
+      react: path.resolve("./node_modules/react"),
+      "react-dom": path.resolve("./node_modules/react-dom"),
+      "react/jsx-runtime": path.resolve("./node_modules/react/jsx-runtime.js"),
+      "react/jsx-dev-runtime": path.resolve("./node_modules/react/jsx-dev-runtime.js"),
       "@icons": path.resolve(__dirname, "./assets/icons"),
       "@images": path.resolve(__dirname, "./assets/images"),
       "@cg-components": path.resolve(
-            __dirname,
-            "./node_modules/components-gallery/src/components/"
-          ),
-          "@cg-providers": path.resolve(
-            __dirname,
-            "./node_modules/components-gallery/src/providers/"
-          ),
-          "@cg-hooks": path.resolve(
-            __dirname,
-            "./node_modules/components-gallery/src/hooks/"
-          ),
-          "@cg-utils": path.resolve(
-            __dirname,
-            "./node_modules/components-gallery/src/utils/"
-          ),
-          "@cg-icons": path.resolve(
-            __dirname,
-            "./node_modules/components-gallery/assets/icons"
-          ),
-          "@cg-api": path.resolve(
-            __dirname,
-            "./node_modules/components-gallery/src/api"
-          ),
+        __dirname,
+        "./node_modules/components-gallery/src/components/"
+      ),
+      "@cg-providers": path.resolve(__dirname, "./node_modules/components-gallery/src/providers/"),
+      "@cg-hooks": path.resolve(__dirname, "./node_modules/components-gallery/src/hooks/"),
+      "@cg-utils": path.resolve(__dirname, "./node_modules/components-gallery/src/utils/"),
+      "@cg-icons": path.resolve(__dirname, "./node_modules/components-gallery/assets/icons"),
+      "@cg-api": path.resolve(__dirname, "./node_modules/components-gallery/src/api"),
     },
   },
-
+  optimizeDeps: {
+    esbuildOptions: {
+      treeShaking: true,
+    },
+    exclude: ["react/jsx-runtime", "react/jsx-dev-runtime"],
+  },
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
   //
   // 1. prevent vite from obscuring rust errors
@@ -56,6 +52,9 @@ export default defineConfig(async () => ({
     port: 1420,
     strictPort: true,
     host: host || false,
+    fs: {
+      strict: false,
+    },
     hmr: host
       ? {
           protocol: "ws",

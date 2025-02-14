@@ -2,11 +2,13 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2020",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "module": "ESNext",
     "skipLibCheck": true,
-   
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -14,13 +16,52 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@cg-components/*": [
+        "./node_modules/components-gallery/src/components/*"
+      ],
+      "@cg-components": [
+        "./node_modules/components-gallery/src/components/index.ts"
+      ],
+      "@cg-providers/*": [
+        "./node_modules/components-gallery/src/providers",
+        "./node_modules/components-gallery/src/providers/*"
+      ],
+      "@cg-hooks/*": [
+        "./node_modules/components-gallery/src/hooks/*",
+        "./node_modules/components-gallery/src/hooks/"
+      ],
+      "@cg-hooks": [
+        "./node_modules/components-gallery/src/hooks/index.ts"
+      ],
+      "@cg-utils/*": [
+        "./node_modules/components-gallery/src/utils/*",
+        "./node_modules/components-gallery/src/utils/",
+      ],
+      "@cg-utils": [
+        "./node_modules/components-gallery/src/utils/index.ts",
+      ],
+      "@cg-icons/*": [
+        "./node_modules/components-gallery/assets/icons/*",
+        "./node_modules/components-gallery/assets/icons/"
+      ],
+      "@cg-api/*": [
+        "./node_modules/components-gallery/src/api/*",
+        "./node_modules/components-gallery/src/api/"
+      ],
+    },
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [
+    "src"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
 }
