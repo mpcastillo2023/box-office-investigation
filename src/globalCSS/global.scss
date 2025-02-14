@@ -61,9 +61,200 @@
     src: url("../assets/fonts/Inter/Inter-Black.ttf");
 }
 
+:root {
+    // Solid Colors
+    --black-solid: #000000;
+    --white-solid: #ffffff;
+
+    // Blue Colors
+    --blue-advice-tooltip-light: #d7dde5;
+    --blue-advice-tooltip-medium: #a5aab2;
+    --blue-advice-tooltip-very-light: #e7ebef;
+    --blue-alert-color: #0172e3;
+    --blue-dark-light: #9ba1aa;
+    --blue-dark-medium: #6a7380;
+    --blue-dark-strong: #06152b;
+    --blue-dark-very-light: #fcfcfc;
+    --blue-frost-bite: #eff7f9;
+    --blue-gray-dark-space-primary: #1d2125;
+    --blue-gray-dark-space-secondary: #282d33;
+    --blue-information-light: #99c7f4;
+    --blue-information-medium: #67aaee;
+    --blue-information-very-light: #cce3f9;
+    --blue-light-primary: #a5d2dd;
+    --blue-light-secondary: #a6e1e4;
+    --blue-medium-primary: #78bbcd;
+    --blue-medium-secondary: #7ad1d6;
+    --blue-strong-primary: #1e8eab;
+    --blue-strong-secondary: #21b3bb;
+    --blue-very-light-primary: #d2e8ee;
+    --blue-very-light-secondary: #d3f0f1;
+    --blue-dark-secondary: #282F3D;
+    --blue-dark-tertiary: #00060D;
+    --blue-dusty-sky: #9eabbc;
+    --ocean-blue: #1e8eab;
+    --water-blue-shade: #1e8eab24;
+    --blue-sky: #C3E7FA;
+
+    // Gray Colors
+    --soft-silver: #cecece;
+    --gray-dark-strong-primary: #51525b;
+    --gray-dark-strong-secondary: #37393c;
+    --gray-gradient-primary-light: #a9adb3;
+    --gray-gradient-primary-medium: #7d838e;
+    --gray-gradient-primary-strong: #273142;
+    --gray-gradient-primary-very-light: #d4d6d9;
+    --gray-gradient-secondary-light: #a0a3a9;
+    --gray-gradient-secondary-medium: #70747d;
+    --gray-gradient-secondary-strong: #111827;
+    --gray-gradient-secondary-very-light: #cfd1d4;
+    --gray-light-primary: #f1f1f1;
+    --gray-light-secondary: #a8a8a8;
+    --gray-medium-primary: #cbcbcb;
+    --gray-medium-secondary: #98a2b3;
+    --gray-silver-mist: #f7f7f7;
+    --gray-solid-light: #dddddd;
+    --gray-strong-primary: #707070;
+    --gray-darker: #393939;
+    --gray-medium-strong: #959595;
+    --cool-gray: #1e8eab29;
+    --soft-silver: #cecece;
+    --gray-light-tertiary: #dadada;
+
+    // Green Colors
+    --green-danger-modal-icon: #e8f7e5;
+    --green-success-light: #c2dcbd;
+    --green-success-medium: #a3ca9c;
+    --green-success-strong: #66a75a;
+    --green-success-very-light: #e0edde;
+
+    // Red Colors
+    --red-danger-light: #e69999;
+    --red-danger-medium: #da6666;
+    --red-danger-modal-icon: #fee2e2;
+    --red-danger-strong: #c10000;
+    --red-danger-very-light: #f3cccc;
+
+    // Yellow Colors
+    --yellow-warning-light: #fdeba1;
+    --yellow-warning-medium: #f5d670;
+    --yellow-warning-strong: #b88d00;
+    --yellow-warning-very-light: #fefce8;
+    --yellow-highlight: #d9f561;
+
+    // Dark Colors
+    --charcoal-navy: #1c212b;
+    --deep-onyx: #0f141d;
+
+    // Shadows
+    --default-box-shadow: 0px 3px 6px #00000029;
+
+    // Background Colors
+    --blue-image-upload-preview: var(--white-solid);
+    --content-background-color: var(--white-solid);
+    --sidebar-background-color: var(--white-solid);
+    --header-background-color: var(--white-solid);
+    --background-order-button-color: var(--white-solid);
+    --white-to-black: var(--white-solid);
+    --black-to-white: var(--black-solid);
+    --table-background-color: var(--white-solid);
+    --background-switch-color: var(--white-solid);
+    --switch-handle-color: var(--white-solid);
+    --search-result-color: var(--white-solid);
+    --background-table-list-color: var(--white-solid);
+    --dropdown-background-color: var(--white-solid);
+    --calendar-element-background-color: var(--white-solid);
+    --calendar-element-default-background-color: var(--gray-light-primary);
+    --gray-divider-gttd-background-color: var(--gray-light-secondary);
+    --search-border-color: var(--white-solid);
+    --background-command-search-color: var(--gray-medium-primary);
+    --gray-border-input-box-color: var(--gray-medium-strong);
+    --sidebar-decorations-background: var(--blue-dusty-sky);
+    --sidebar-hover-menu-background-color: var(--water-blue-shade);
+    --sidebar-dots-hover-background-color: var(--blue-strong-primary);
+    --sidebar-header-border-bottom: var(--soft-silver);
+    --switch-background-color: var(--gray-light-tertiary);
+    --line-tabs-background-color: var(--gray-solid-light);
+    --active-tabs-background-color: var(--gray-silver-mist);
+    --background-accordion-color: var(--white-solid);
+    --background-svg-accordion-color: var(--gray-silver-mist);
+    --sidebar-collapse-icon-background: var(--gray-silver-mist);
+    --background-icons-table-color: var(--white-solid);
+    --background-page-selector-color: var(--white-solid);
+    --background-header-table-color: var(--gray-light-tertiary);
+    --select-background-color-hover: var(--gray-silver-mist);
+    --number-input-label-color: var(--gray-light-primary);
+    --stepper-item-background-color: var(--white-solid);
+    --background-input-hover-color: var(--white-solid);
+    --button-lists-footer-background: var(--water-blue-shade);
+    --background-table-list-background-color: var(--white-solid);
+    --disable-tag-background-color: var(--black-solid);
+
+    // Text Colors
+    --input-text-color: var(--blue-dark-strong);
+    --text-title-color: var(--blue-dark-strong);
+    --text-color: var(--blue-dark-strong);
+    --line-border-color: var(--blue-dusty-sky);
+    --accordion-line-border-color: var(--blue-dark-strong);
+    --text-tabs-color: var(--gray-medium-strong);
+    --sidebar-hover-text-color: var(--blue-strong-primary);
+    --text-table-color: var(--gray-strong-primary);
+    --text-switch-table-color: var(--blue-dark-strong);
+    --text-table-hover-color: var(--blue-dark-strong);
+    --button-text-lists-footer: var(--blue-strong-primary);
+
+    // Dropdown and Sidebar Colors
+    --active-tabs-background-color: var(--gray-silver-mist);
+    --dropdown-header-background-color: var(--gray-silver-mist);
+    --sidebar-hover-menu-background-color: var(--gray-silver-mist);
+    --header-sidebar-background-color: var(--gray-silver-mist);
+    --border-order-button-color: var(--gray-silver-mist);
+    --table-background-color-hover: var(--gray-silver-mist);
+    --background-input-search-color: var(--gray-silver-mist);
+    --search-hover-result-color: var(--gray-silver-mist);
+    --background-select-color: var(--gray-silver-mist);
+    --background-input-color: var(--gray-silver-mist);
+    --text-disabled-color: var(--gray-light-secondary);
+    --background-disabled-color: var(--gray-silver-mist);
+    --footer-list-background-color: var(--gray-silver-mist);
+    --background-table-list-color-hover: var(--white-solid);
+    --search-background-color: var(--gray-silver-mist);
+    --dropdown-calendar-arrow-color: var(--gray-medium-strong);
+    --dropdown-select-arrow-color: var(--gray-medium-strong);
+    --sidebar-header-border-bottom: var(--gray-solid-light);
+
+    // SVG and Sidebar Text Colors
+    --svg-color: var(--black-solid);
+    --text-sidebar-color: var(--black-solid);
+
+    // Miscellaneous Text Colors
+    --text-color: var(--blue-dark-strong);
+    --text-blue-to-gray: var(--blue-dark-strong);
+
+
+    // Button and Border Colors
+    --results-title-background-color: var(--gray-solid-light);
+    --border-button-transfer-list-color: var(--gray-solid-light);
+    --text-switch-color: var(--gray-gradient-primary-strong);
+    --header-border-color: var(--gray-light-primary);
+    --gray-form-login: var(--white-solid);
+    --border-checkbox-disabled: var(--gray-solid-light);
+    --table-border-color: var(--gray-light-tertiary);
+    --border-icons-table-color: var(--gray-light-tertiary);
+    --border-accordion-container-color: var(--soft-silver);
+    --border-transfer-list-color: var(--gray-solid-light);
+
+    // Stepper
+    --background-passed-step: var(--cool-gray);
+}
+
 body {
     margin: 0;
     font-family: "Inter", sans-serif;
     background: #F7F7F7;
     color: #06152B;
+}
+
+:root {
+  width: 100%;
 }
