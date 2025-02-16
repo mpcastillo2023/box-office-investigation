@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "tauri": "tauri",
-    "ts-scss": "typed-scss-modules src --watch"
+    "ts-scss": "typed-scss-modules src --watch",
+    "link:cg": "npm link components-gallery"
   },
   "dependencies": {
     "@tauri-apps/api": "^2",

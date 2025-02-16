@@ -1,0 +1,55 @@
+
+
+.searchContainer{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    flex-direction: column;
+}
+
+.inputsContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        flex-direction: column;
+    }
+
+}
+
+
+.searchInput{
+    input{
+        border-radius: 0px;
+        border:none;
+        border-bottom: 1px solid var(--gray-border-input-box-color);
+        position: relative;
+        top: 0px;
+    }
+
+    
+}
+
+.searchSelect{
+    border: none;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+
+    .dropdownElement {
+        border: none;
+        border-bottom: 1px solid var(--gray-border-input-box-color);
+        border-radius: 0px;
+        position: relative;
+        top: 2px;
+    }
+}
+
+.searchButton{
+    display: flex;
+    width: 100px;
+    align-self: end;
+}

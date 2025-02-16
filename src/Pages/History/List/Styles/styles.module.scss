@@ -2,4 +2,103 @@
     display: flex;
     width: 100%;
     flex-direction: column;
+    gap: 30px;
+    margin: 10px;
+
+    @media (max-width: 768px) {
+        gap: 15px;
+        
+    }
 }
+
+.calendarContainer{
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+    align-items: center;
+    width: 100%;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+    
+}
+
+.row50{
+    width: 50%;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        
+    }
+}
+
+.row33{
+    width: 33%;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        
+    }
+}
+
+.sellerContainer{
+    display: flex;
+    width: 50%;
+    gap: 10px;
+
+    @media (max-width: 768px) {
+        width: 90%;
+    }
+
+}
+
+
+
+.sellerName{
+    align-self: center;
+    background-color: #1e8eab;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: white;
+    
+    svg{
+        width: 30px;
+        fill: white;
+        stroke: white;
+    }
+}
+.searchInput{
+    input{
+        border-radius: 0px;
+        border:none;
+        border-bottom: 1px solid var(--gray-border-input-box-color);
+        position: relative;
+        top: 8px;
+    }
+}
+
+.dateSelect{
+
+    .dropdownElement {
+        border: none;
+        border-bottom: 1px solid var(--gray-border-input-box-color);
+        border-radius: 0px;
+        position: relative;
+        top: 2px;
+        width: 100%;
+    }
+
+}
+
+.searchButton {
+    display: flex;
+    width: 100px;
+    align-self: end;
+    margin-top: 20px;
+}
+
+
