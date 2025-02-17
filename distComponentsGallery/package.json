@@ -46,12 +46,6 @@
   ],
   "main": "./components-gallery.js",
   "module": "./components-gallery.js",
-  "exports": {
-    ".": {
-      "import": "./components-gallery.js",
-      "require": "./components-gallery.js"
-    }
-  },
   "types": "./src/index.d.ts",
   "devDependencies": {
     "@storybook/addon-essentials": "^8.2.9",
