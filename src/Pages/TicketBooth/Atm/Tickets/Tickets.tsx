@@ -83,7 +83,13 @@ export default function Tickets() {
                   {...query}
                   render={products => {
                     return products.map(product => {
-                      return <Card name={product.name} price={product.basePrice} />;
+                      return (
+                        <Card
+                          name={product.name}
+                          price={product.basePrice}
+                          key={product.productId}
+                        />
+                      );
                     });
                   }}
                 />

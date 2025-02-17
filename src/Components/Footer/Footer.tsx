@@ -6,7 +6,9 @@ import ClockIcon from "@icons/clock.svg";
 import BuildingIcon from "@icons/building.svg";
 import ClorianLogo from "@images/clorian-logotipo.png";
 import { Link } from "react-router";
-import { UseIsDesktop } from "components-gallery";
+import { Modal, Switch, UseIsDesktop } from "components-gallery";
+import useNetworkStatus from "../../Hooks/useNetworkStatus";
+import { useEffect, useState } from "react";
 
 type SidebarProps = {
   toggleSidebar: () => void;
@@ -14,6 +16,13 @@ type SidebarProps = {
 
 export default function Footer({ toggleSidebar }: SidebarProps) {
   const { isDesktop } = UseIsDesktop();
+  const { isOnline } = useNetworkStatus();
+  const [isAppOnline, setIsAppOnline] = useState(isOnline);
+  const [shouldDisplayOnlineModal, setShouldDisplayOnlineModal] = useState(false);
+
+  useEffect(() => {
+    setIsAppOnline(isOnline);
+  }, [isOnline]);
   return (
     <>
       <div className={styles.footerContainer}>
@@ -36,6 +45,12 @@ export default function Footer({ toggleSidebar }: SidebarProps) {
           </div>
         </div>
         <div className={styles.clorianInfo}>
+          <Switch
+            textBeside={isAppOnline ? "Online" : "Offline"}
+            value={isAppOnline}
+            onChange={() => setShouldDisplayOnlineModal(true)}
+            customStyles={styles}
+          />
           <div className={styles.clockContainer}>
             <ClockIcon />
             <Clock />
@@ -43,6 +58,21 @@ export default function Footer({ toggleSidebar }: SidebarProps) {
           <img src={ClorianLogo} alt="Clorian Logo" />
         </div>
       </div>
+      <Modal
+        isModalOpen={shouldDisplayOnlineModal}
+        setIsModalOpen={setShouldDisplayOnlineModal}
+        isConfirmModal={true}
+        confirmButtonText={"Confirmar"}
+        cancelButtonText={"Cancelar"}
+        onConfirmHandler={() => setIsAppOnline(prevState => !prevState)}
+        modalTitle={<h3>¿Confirmar que desea cambiar de modo?</h3>}
+      >
+        {isAppOnline ? (
+          <p>La aplicacion va a perder la conexion</p>
+        ) : (
+          <p>La aplicacion va a restablecer la conexion</p>
+        )}
+      </Modal>
     </>
   );
 }
