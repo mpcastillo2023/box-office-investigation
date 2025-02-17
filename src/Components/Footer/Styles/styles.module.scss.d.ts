@@ -3,3 +3,4 @@ export declare const clorianInfo: string;
 export declare const footerContainer: string;
 export declare const footerOptions: string;
 export declare const option: string;
+export declare const switchComponent: string;

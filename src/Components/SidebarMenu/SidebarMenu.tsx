@@ -12,6 +12,7 @@ import DocumentIcon from "@icons/document.svg";
 import SignalIcon from "@icons/signal.svg";
 import BookIcon from "@icons/book.svg";
 import LOgoutIcon from "@icons/logout.svg";
+import CashDropModal from "./CashDropModal/CashDropModal";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -20,6 +21,7 @@ interface SidebarProps {
 
 const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   const sidebarRef = useRef<HTMLDivElement | null>(null);
+  const [isCashDropModalOpen, setIsCashDropModalOpen] = React.useState(false);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -55,7 +57,10 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
         </div>
         <ul className={styles.sidebarMenu}>
           <li className={styles.menuSection}>Operativas</li>
-          <li className={styles.menuItem}>
+          <li
+            onClick={() => setIsCashDropModalOpen(true)}
+            className={styles.menuItem}
+          >
             <ArchiveWithArrowIcon /> Retirada
           </li>
           <li className={styles.menuItem}>
@@ -96,6 +101,11 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
         </ul>
         <div className={styles.sidebarFooter}>v3.28.0 - 20250213 - qa</div>
       </div>
+
+      <CashDropModal
+        isCashDropModalOpen={isCashDropModalOpen}
+        setIsCashDropModalOpen={setIsCashDropModalOpen}
+      />
     </>
   );
 };

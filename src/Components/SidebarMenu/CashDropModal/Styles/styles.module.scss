@@ -1,0 +1,93 @@
+.container {
+    width: 25rem;
+    background: #DADADA;
+    padding: 25px;
+    border-radius: 5px;
+    text-align: center;
+    height: 27rem;
+    margin-top: 15px;
+    border-radius: 19px;
+}
+
+.display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.input {
+    width: 10rem;
+    text-align: right;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 3px;
+    background: #fff;
+    font-size: 18px;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-top: 3rem;
+}
+
+.button {
+    padding: 25px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+}
+
+.delButton {
+    @extend .button;
+    color: red;
+    font-weight: bold;
+}
+
+.modalContent{
+    padding: 0px !important;
+}
+
+
+.modal{
+    padding: 0px !important;
+    min-width: none ! important;
+    max-height: none ! important;
+    .modalHeader{
+        background-color: #21B3BB;
+        color: white;
+        font-size: 18px;
+        display: flex;
+        gap: 15px;
+
+
+        svg{
+            width: 30px;
+        }
+    }
+
+    .modalBody{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .modalFooter{
+        align-self: end;
+
+        button{
+            width: 1rem;
+            font-size: 16px;
+        }
+    }
+}

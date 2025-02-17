@@ -1,0 +1,12 @@
+export declare const button: string;
+export declare const container: string;
+export declare const delButton: string;
+export declare const display: string;
+export declare const input: string;
+export declare const keypad: string;
+export declare const label: string;
+export declare const modal: string;
+export declare const modalBody: string;
+export declare const modalContent: string;
+export declare const modalFooter: string;
+export declare const modalHeader: string;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Styles/styles.module.scss";
 import UserIcon from "@icons/user.svg";
 import TrashIcon from "@icons/trash.svg";
@@ -6,6 +6,7 @@ import {
   Accordion,
   DropdownSelect,
   Modal,
+  Spinner,
   TextInput,
   UseIsDesktop,
 } from "components-gallery";
@@ -13,6 +14,21 @@ import {
 const NumeralPad: React.FC = () => {
   const [pagado, setPagado] = useState<string>("");
   const [isFormModalOpen, setIsFormModalOpen] = useState(false);
+  const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
+
+  const openConfirmModal = () => {
+    setIsConfirmModalOpen(true);
+  };
+
+  useEffect(() => {
+    if (isConfirmModalOpen) {
+      const timer = setTimeout(() => {
+        setIsConfirmModalOpen(false);
+      }, 2000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isConfirmModalOpen]);
 
   const handleClick = (value: string | number) => {
     setPagado((prev) => (prev === "0" ? String(value) : prev + value));
@@ -59,7 +75,6 @@ const NumeralPad: React.FC = () => {
           </div>
 
           <div className={styles.pago}>
-            20px
             <div className={styles.totales}>
               <div className={styles.totalesInfo}>
                 <span>TOTAL</span>
@@ -199,11 +214,19 @@ const NumeralPad: React.FC = () => {
       )}
 
       <Modal
-        setIsModalOpen={setIsFormModalOpen}
-        isModalOpen={isFormModalOpen}
+        withCloseButton={false}
+        setIsModalOpen={setIsConfirmModalOpen}
+        isModalOpen={isConfirmModalOpen}
+        variant="success"
         customStyle={styles}
       >
-        a
+        <div className={styles.confirmModalContainer}>
+          <div className={styles.confirmModalTitle}>
+            <div>Completando la venta. Por favor espere....</div>
+            <div>reserva, pago, impresion...</div>
+          </div>
+          <Spinner customClasses={styles.ldsSpinner} />
+        </div>
       </Modal>
 
       <Modal
@@ -214,7 +237,7 @@ const NumeralPad: React.FC = () => {
         isModalOpen={isFormModalOpen}
         cancelButtonText="Cancelar"
         confirmButtonText="Confirmar"
-        onConfirmHandler={() => {}}
+        onConfirmHandler={openConfirmModal}
         customStyle={styles}
       >
         <div className={styles.modalContainer}>
