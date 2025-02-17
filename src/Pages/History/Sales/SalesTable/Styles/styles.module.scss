@@ -14,27 +14,27 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
-    
+
         .tableHeader {
             background-color: #DADADA;
             min-height: 50px;
             display: flex;
             align-items: center;
-    
+
             th {
                 font-size: 16px;
                 padding: 10px 20px;
                 width: 10%;
                 white-space: nowrap;
-    
+
                 svg {
                     width: 20px;
                     stroke: transparent;
                 }
             }
-    
+
         }
-    
+
         input[type="checkbox"] {
             appearance: none;
             width: 20px;
@@ -44,12 +44,12 @@
             display: inline-block;
             position: relative;
             cursor: pointer;
-    
+
             &:checked {
-                 background-color: #21B3BB;
+                background-color: #21B3BB;
                 border: 1px solid #21B3BB;
             }
-    
+
             &:checked::after {
                 content: "✔";
                 position: absolute;
@@ -60,26 +60,31 @@
                 color: white;
             }
         }
-    
+
         .tableBody {
             width: 100%;
-    
+
+            .returned,
+            .confirm {
+                color: white;
+                border-radius: 10px;
+                width: 100px;
+                text-align: center;
+                padding: 10px 0;
+            }
+
             .returned {
                 background-color: #DC2626;
-                color: white;
-                border-radius: 10px
             }
-    
+
             .confirm {
                 background-color: #66a75a;
-                color: white;
-                border-radius: 10px
             }
-    
+
             .noBorder {
                 border: none;
             }
-    
+
             td {
                 font-size: 14px;
                 padding: 15px 20px;
@@ -94,10 +99,10 @@
                     width: 20px;
                     fill: black;
                 }
-    
-    
+
+
             }
-    
+
             tr {
                 display: flex;
                 justify-content: flex-start;
@@ -110,28 +115,28 @@
 .tableFooter {
     width: 100%;
     margin-top: 20px;
-        
-        .rowsPage {
+
+    .rowsPage {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+
+
+        .itemPerPage {
             display: flex;
-            justify-content: flex-end;
             align-items: center;
-            gap: 20px;
-        
-        
-            .itemPerPage {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-     
-                svg {
-                    width: 15px;
-                }
+            gap: 10px;
+
+            svg {
+                width: 15px;
             }
+        }
 
         .actualItemPage {
             display: flex;
             align-items: center;
-            gap:10px;
+            gap: 10px;
 
             svg {
                 width: 15px;
@@ -139,17 +144,14 @@
         }
 
         .iconTablePage {
-           display: flex;
+            display: flex;
             align-items: center;
             border: 1px solid #DADADA;
             background-color: white;
             border-radius: 10px;
             gap: 0;
-           padding:10px;
+            padding: 10px;
         }
 
     }
 }
-
-
-

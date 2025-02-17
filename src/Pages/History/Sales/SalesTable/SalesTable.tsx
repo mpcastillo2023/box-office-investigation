@@ -34,8 +34,10 @@ const SalesTable: React.FC = () => {
                 </td>
                 <td>{<CloudIcon />}</td>
                 <td>{row.local}</td>
-                <td className={row.state === "Devuelta" ? styles.returned : styles.confirm}>
-                  {row.state}
+                <td>
+                  <div className={row.state === "Devuelta" ? styles.returned : styles.confirm}>
+                    {row.state}
+                  </div>
                 </td>
                 <td>{row.product}</td>
                 <td>{row.client}</td>

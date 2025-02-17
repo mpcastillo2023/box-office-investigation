@@ -4,6 +4,7 @@ import TicketBooth from "./Pages/TicketBooth/TicketBooth";
 import Layout from "./Components/Layout/Layout";
 import History from "./Pages/History/History";
 import Login from "./Pages/Login/Login";
+
 function App() {
   return (
     <BrowserRouter>

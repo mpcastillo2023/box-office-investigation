@@ -1,0 +1,65 @@
+export type SalesGroupsTypes = "WEB_INDIVIDUAL" | "WEB_GROUPS" | "SELLER" | "CUSTOMER_SERVICE" | "BOX_OFFICE" | "SELF_SERVICE" | "HTML";
+export type SaleGroup = {
+    salesGroupId: number;
+    status: boolean;
+    name: Record<string, string>;
+    displayName: Record<string, string>;
+    slug: Record<string, string>;
+    type: SalesGroupsTypes;
+    calendarStatus: 0 | 1;
+    calendarType: "calendar" | "periodic";
+    openingDate: string;
+    periodType: "day" | "week" | "month";
+    numPeriods: number;
+    minTickets: number;
+    maxTickets: number;
+    ticketGroupingType: "Individual" | "Collective" | "Total";
+    reservedEmail: boolean;
+    sendEmailReminder: boolean;
+    sendEmailCancellation: boolean;
+    showPassbookEmail: boolean;
+    showGoogleWalletEmail: boolean;
+    checkBenefits: boolean;
+    createApiSellerSalesGroup: boolean;
+    loyaltyProgramId: number;
+    minNumDays: number;
+    purchaseAfterMinutes: number;
+    editAfterMinutes: number;
+    icon: string;
+    hidden_online: boolean;
+    orderSpecialEvents: "displayOrder" | "event";
+    infoMessage: Record<string, string>;
+    displayOrder: number;
+    id: number;
+    buyerTypesIdArr: number[];
+    paymentMethodsSet: {
+        paymentMethodId: number;
+        displayOrder: number;
+    }[];
+    verifiersSet: Verifier[];
+};
+export type HTMLSaleGroup = {
+    salesGroupHtmlId: number;
+    status: boolean;
+    name: Record<string, string>;
+    displayName: Record<string, string>;
+    slug: Record<string, string>;
+    icon: string;
+    displayOrder: number;
+    id: number;
+    innerHTML: Record<string, string>;
+};
+export type Verifier = {
+    name: string;
+    verifierId: number;
+};
+export type Language = {
+    languageId: number;
+    languageCode: string;
+    countryCode: string;
+    name: string;
+    displayOrder: number;
+    defaultLanguage: boolean;
+    id: number;
+    visible: boolean;
+};

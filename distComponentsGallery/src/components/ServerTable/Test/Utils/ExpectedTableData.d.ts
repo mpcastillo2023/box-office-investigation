@@ -1,0 +1,11 @@
+import { Language } from "src/testUtils/testMockTypes";
+export declare const initialLanguages: Language[];
+export declare const secondPageLanguages: Language[];
+export declare const thirdPageLanguages: Language[];
+export declare const fourthPageLanguages: Language[];
+export declare const searchedLanguages: Language[];
+export declare const hiddenLanguages: Language[];
+export declare const visibleLanguages: Language[];
+export declare const spanishLanguage: Language[];
+export declare const sortFieldAscLanguages: Language[];
+export declare const sortFieldDescLanguages: Language[];

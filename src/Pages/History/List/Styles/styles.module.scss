@@ -1,4 +1,4 @@
-.listContainer{
+.listContainer {
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -7,11 +7,11 @@
 
     @media (max-width: 768px) {
         gap: 15px;
-        
+
     }
 }
 
-.calendarContainer{
+.calendarContainer {
     display: flex;
     gap: 15px;
     font-size: 14px;
@@ -21,28 +21,28 @@
     @media (max-width: 768px) {
         flex-direction: column;
     }
-    
+
 }
 
-.row50{
+.row50 {
     width: 50%;
 
     @media (max-width: 768px) {
         width: 100%;
-        
+
     }
 }
 
-.row33{
+.row33 {
     width: 33%;
 
     @media (max-width: 768px) {
         width: 100%;
-        
+
     }
 }
 
-.sellerContainer{
+.sellerContainer {
     display: flex;
     width: 50%;
     gap: 10px;
@@ -55,7 +55,7 @@
 
 
 
-.sellerName{
+.sellerName {
     align-self: center;
     background-color: #1e8eab;
     border-radius: 5px;
@@ -64,24 +64,25 @@
     display: flex;
     align-items: center;
     color: white;
-    
-    svg{
+
+    svg {
         width: 30px;
         fill: white;
         stroke: white;
     }
 }
-.searchInput{
-    input{
+
+.searchInput {
+    input {
         border-radius: 0px;
-        border:none;
+        border: none;
         border-bottom: 1px solid var(--gray-border-input-box-color);
         position: relative;
         top: 8px;
     }
 }
 
-.dateSelect{
+.dateSelect {
 
     .dropdownElement {
         border: none;
@@ -89,7 +90,7 @@
         border-radius: 0px;
         position: relative;
         top: 2px;
-        width: 100%;
+        width: 100% !important;
     }
 
 }
@@ -100,5 +101,3 @@
     align-self: end;
     margin-top: 20px;
 }
-
-

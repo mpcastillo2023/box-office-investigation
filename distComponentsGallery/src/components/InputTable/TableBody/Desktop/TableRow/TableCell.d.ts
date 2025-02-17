@@ -1,0 +1,21 @@
+import React from "react";
+import { Column, InputTableDataItem } from "@cg-components/InputTable/Types/Types";
+import { customStyleClasses } from "@cg-components/BasicTable/Types/Types";
+type Props = {
+    column: Column;
+    rowIndex: number;
+    colIndex: number;
+    activeIndex: number | null;
+    withActionColumn: boolean;
+    displayData: InputTableDataItem[];
+    item: InputTableDataItem;
+    disabled: boolean;
+    onChangeCellHandler: (value: string | boolean | number, rowIndex: number, field: string | number) => void;
+    isValidCellCallback?: (field: string, cellValue: string | number | boolean) => boolean | Promise<boolean>;
+    onMouseEnterCallback?: (rowIndex: number, colIndex: number) => void;
+    onMouseLeaveCallback?: (rowIndex: number, colIndex: number) => void;
+    numberFormatCallBack?: (value: number | string, rowIndex: number, colIndex: number) => string;
+    customStyle?: customStyleClasses;
+};
+export default function TableCell(props: Props): React.JSX.Element;
+export {};

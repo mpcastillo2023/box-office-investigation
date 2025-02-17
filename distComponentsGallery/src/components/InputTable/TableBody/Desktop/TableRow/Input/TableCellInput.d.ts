@@ -1,0 +1,20 @@
+import { Column } from "@cg-components/InputTable/Types/Types";
+import React from "react";
+import { customStyleClasses } from "@cg-components/BasicTable/Types/Types";
+type Props = {
+    column: Column;
+    rowIndex: number;
+    colIndex: number;
+    activeIndex: number | null;
+    withActionColumn: boolean;
+    disabled: boolean;
+    customStyle?: customStyleClasses;
+    onChangeCellHandler: (value: string | boolean | number, rowIndex: number, field: string | number) => void;
+    cellValue: string | boolean | number;
+    withCellBackground?: boolean;
+    alignment: "center" | "left" | "right";
+    cellIcon?: React.ReactNode;
+    numberFormatCallBack?: (value: number | string, rowIndex: number, colIndex: number) => string;
+};
+export default function TableCellInput({ column, colIndex, rowIndex, onChangeCellHandler, disabled, cellValue, withCellBackground, alignment, customStyle, cellIcon, numberFormatCallBack }: Props): React.JSX.Element;
+export {};
