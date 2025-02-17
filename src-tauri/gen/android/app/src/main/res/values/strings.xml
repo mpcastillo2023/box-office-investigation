@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">box-office</string>
-    <string name="main_activity_title">box-office</string>
+    <string name="app_name">box_office</string>
+    <string name="main_activity_title">box_office</string>
 </resources>
