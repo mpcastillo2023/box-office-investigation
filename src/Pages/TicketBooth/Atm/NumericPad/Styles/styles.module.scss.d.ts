@@ -1,8 +1,15 @@
 export declare const accordionContainer: string;
 export declare const del: string;
 export declare const deleteBtn: string;
+export declare const dropdownWrapper: string;
+export declare const inputsContainer: string;
 export declare const item: string;
 export declare const itemInfo: string;
+export declare const modal: string;
+export declare const modalContainer: string;
+export declare const modalContent: string;
+export declare const modalHeader: string;
+export declare const modalTitle: string;
 export declare const numberOfTicketContainer: string;
 export declare const numeralPadContainer: string;
 export declare const pago: string;

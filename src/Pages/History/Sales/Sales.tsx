@@ -13,7 +13,7 @@ const Sales = () => {
           <div>Ultimas 50 ventas de esta taquilla</div>
           <div className={styles.updateButton}>ACTUALIZAR</div>
         </div>
-        <div>
+        <div className={styles.tableContainer}>
           <div className={styles.salesFilters}>
             <div>
               <QueueIcon />

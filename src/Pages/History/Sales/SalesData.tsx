@@ -1,7 +1,11 @@
+import { Checkbox } from "components-gallery";
+import CloudIcon from "@icons/cloud.svg";
+
 export type Sales = {
-  empty: string;
+  checkbox: string | React.ReactNode;
+  cloud: React.ReactNode;
   local: string;
-  state: string;
+  state: string | React.ReactNode;
   product: string;
   client: string;
   ref: string;
@@ -11,11 +15,28 @@ export type Sales = {
   salesDate: string;
 };
 
+const Cloud = () => {
+  return (
+    <div style={{ width: "30px", height: "30px", fill: "black" }}>
+      <CloudIcon />
+    </div>
+  );
+};
+
+const Confirmed = () => {
+  return <div style={{ color: "#66a75a" }}>Confirmada</div>;
+};
+
+const Returned = () => {
+  return <div style={{ color: "#DC2626" }}>Devuelta</div>;
+};
+
 const TableRowData: Sales[] = [
   {
-    empty: "",
+    checkbox: <Checkbox />,
+    cloud: <Cloud />,
     local: "71308485",
-    state: "Devuelta",
+    state: <Returned />,
     product: "La Pedrera Essencial",
     client: "",
     ref: "",
@@ -25,9 +46,10 @@ const TableRowData: Sales[] = [
     salesDate: "11/02/25 09:52:32",
   },
   {
-    empty: "",
+    checkbox: <Checkbox />,
+    cloud: <Cloud />,
     local: "71308483",
-    state: "Confirmada",
+    state: <Confirmed />,
     product: "La Pedrera Essencial",
     client: "",
     ref: "",
@@ -37,9 +59,10 @@ const TableRowData: Sales[] = [
     salesDate: "11/02/25 09:50:03",
   },
   {
-    empty: "",
+    checkbox: <Checkbox />,
+    cloud: <Cloud />,
     local: "71308473",
-    state: "Confirmada",
+    state: <Confirmed />,
     product: "La Pedrera Essencial",
     client: "",
     ref: "",
@@ -49,9 +72,10 @@ const TableRowData: Sales[] = [
     salesDate: "11/02/25 09:22:12",
   },
   {
-    empty: "",
+    checkbox: <Checkbox />,
+    cloud: <Cloud />,
     local: "71308470",
-    state: "Confirmada",
+    state: <Confirmed />,
     product: "La Pedrera Essencial",
     client: "",
     ref: "",
@@ -61,9 +85,10 @@ const TableRowData: Sales[] = [
     salesDate: "11/02/25 09:16:04",
   },
   {
-    empty: "",
+    checkbox: <Checkbox />,
+    cloud: <Cloud />,
     local: "71308463",
-    state: "Confirmada",
+    state: <Confirmed />,
     product: "La Pedrera Essencial",
     client: "",
     ref: "",
@@ -73,9 +98,10 @@ const TableRowData: Sales[] = [
     salesDate: "10/02/25 17:54:21",
   },
   {
-    empty: "",
+    checkbox: <Checkbox />,
+    cloud: <Cloud />,
     local: "8415808",
-    state: "Confirmada",
+    state: <Confirmed />,
     product: "La Pedrera Essencial",
     client: "",
     ref: "",
@@ -85,9 +111,10 @@ const TableRowData: Sales[] = [
     salesDate: "10/02/25 17:30:39",
   },
   {
-    empty: "",
+    checkbox: <Checkbox />,
+    cloud: <Cloud />,
     local: "71308450",
-    state: "Confirmada",
+    state: <Confirmed />,
     product: "La Pedrera Essencial",
     client: "",
     ref: "",

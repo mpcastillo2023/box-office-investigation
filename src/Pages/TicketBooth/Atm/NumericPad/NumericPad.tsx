@@ -2,19 +2,24 @@ import { useState } from "react";
 import styles from "./Styles/styles.module.scss";
 import UserIcon from "@icons/user.svg";
 import TrashIcon from "@icons/trash.svg";
-import VerificationModal from "./VerificationModal/VerificationModal";
-import { Accordion, UseIsDesktop } from "components-gallery";
+import {
+  Accordion,
+  DropdownSelect,
+  Modal,
+  TextInput,
+  UseIsDesktop,
+} from "components-gallery";
 
 const NumeralPad: React.FC = () => {
   const [pagado, setPagado] = useState<string>("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isFormModalOpen, setIsFormModalOpen] = useState(false);
 
   const handleClick = (value: string | number) => {
-    setPagado(prev => (prev === "0" ? String(value) : prev + value));
+    setPagado((prev) => (prev === "0" ? String(value) : prev + value));
   };
 
   const handleDelete = () => {
-    setPagado(prev => prev.slice(0, -1) || "0");
+    setPagado((prev) => prev.slice(0, -1) || "0");
   };
   const { isDesktop } = UseIsDesktop();
   return (
@@ -54,6 +59,7 @@ const NumeralPad: React.FC = () => {
           </div>
 
           <div className={styles.pago}>
+            20px
             <div className={styles.totales}>
               <div className={styles.totalesInfo}>
                 <span>TOTAL</span>
@@ -70,23 +76,36 @@ const NumeralPad: React.FC = () => {
                 </span>
               </div>
             </div>
-
             <div className={styles.teclado}>
-              {[7, 8, 9, 4, 5, 6, 1, 2, 3, "DEL", 0, "."].map(key => (
+              {[7, 8, 9, 4, 5, 6, 1, 2, 3, "DEL", 0, "."].map((key) => (
                 <button
                   key={String(key)}
                   className={key === "DEL" ? styles.del : ""}
-                  onClick={() => (key === "DEL" ? handleDelete() : handleClick(key))}
+                  onClick={() =>
+                    key === "DEL" ? handleDelete() : handleClick(key)
+                  }
                 >
                   {key}
                 </button>
               ))}
             </div>
-
             <div className={styles.paymentOptions}>
-              <button className={styles.paymentButton}>VOUCHER</button>
-              <button className={styles.paymentButton}>TARJETA</button>
-              <button onClick={() => setIsModalOpen(true)} className={styles.paymentButton}>
+              <button
+                onClick={() => setIsFormModalOpen(true)}
+                className={styles.paymentButton}
+              >
+                VOUCHER
+              </button>
+              <button
+                onClick={() => setIsFormModalOpen(true)}
+                className={styles.paymentButton}
+              >
+                TARJETA
+              </button>
+              <button
+                onClick={() => setIsFormModalOpen(true)}
+                className={styles.paymentButton}
+              >
                 EFECTIVO
               </button>
             </div>
@@ -152,11 +171,13 @@ const NumeralPad: React.FC = () => {
             </div>
 
             <div className={styles.teclado}>
-              {[7, 8, 9, 4, 5, 6, 1, 2, 3, "DEL", 0, "."].map(key => (
+              {[7, 8, 9, 4, 5, 6, 1, 2, 3, "DEL", 0, "."].map((key) => (
                 <button
                   key={String(key)}
                   className={key === "DEL" ? styles.del : ""}
-                  onClick={() => (key === "DEL" ? handleDelete() : handleClick(key))}
+                  onClick={() =>
+                    key === "DEL" ? handleDelete() : handleClick(key)
+                  }
                 >
                   {key}
                 </button>
@@ -166,7 +187,10 @@ const NumeralPad: React.FC = () => {
             <div className={styles.paymentOptions}>
               <button className={styles.paymentButton}>VOUCHER</button>
               <button className={styles.paymentButton}>TARJETA</button>
-              <button onClick={() => setIsModalOpen(true)} className={styles.paymentButton}>
+              <button
+                onClick={() => setIsFormModalOpen(true)}
+                className={styles.paymentButton}
+              >
                 EFECTIVO
               </button>
             </div>
@@ -174,7 +198,67 @@ const NumeralPad: React.FC = () => {
         </Accordion>
       )}
 
-      <VerificationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <Modal
+        setIsModalOpen={setIsFormModalOpen}
+        isModalOpen={isFormModalOpen}
+        customStyle={styles}
+      >
+        a
+      </Modal>
+
+      <Modal
+        modalTitle="Complete el Formulario"
+        variant="success"
+        isConfirmModal
+        setIsModalOpen={setIsFormModalOpen}
+        isModalOpen={isFormModalOpen}
+        cancelButtonText="Cancelar"
+        confirmButtonText="Confirmar"
+        onConfirmHandler={() => {}}
+        customStyle={styles}
+      >
+        <div className={styles.modalContainer}>
+          <div className={styles.modalTitle}>Detalles de la Compra</div>
+          <div className={styles.inputsContainer}>
+            <div>
+              Nombre*
+              <TextInput />
+            </div>
+            <div>
+              Apellido*
+              <TextInput />
+            </div>
+            <div>
+              Nacionalidad*
+              <DropdownSelect
+                customStyle={styles}
+                optionList={[
+                  { optionText: "Español", optionValue: "Español" },
+                  {
+                    optionText: "Estadounidense",
+                    optionValue: "Estadounidense",
+                  },
+                  { optionText: "Mexicano", optionValue: "Mexicano" },
+                  { optionText: "Japonés", optionValue: "Japonés" },
+                  { optionText: "Alemán", optionValue: "Alemán" },
+                ]}
+              />
+            </div>
+            <div>
+              Telefono*
+              <TextInput />
+            </div>
+            <div>
+              Email*
+              <TextInput />
+            </div>
+            <div>
+              Observaciones*
+              <TextInput />
+            </div>
+          </div>
+        </div>
+      </Modal>
     </>
   );
 };
