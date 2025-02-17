@@ -1,7 +1,7 @@
 import "./globalCSS/global.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TicketBooth from "./Pages/TicketBooth/TicketBooth";
-import Layout from "./Components/Layout/Layout";
+import Layout from "./Components/Hoc/Layout/Layout";
 import History from "./Pages/History/History";
 import Login from "./Pages/Login/Login";
 import { QueryClient } from "@tanstack/react-query";

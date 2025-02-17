@@ -7,6 +7,10 @@ import ChatBubbleIcon from "@icons/chat-bubble.svg";
 import ShoppingCarIcon from "@icons/shopping-cart.svg";
 import XCircleIcon from "@icons/x-circle.svg";
 import { Accordion, UseIsDesktop } from "components-gallery";
+import { getQuery } from "../../../../Api/getQuery";
+import { useQuery } from "@tanstack/react-query";
+import QueryWrapper from "../../../../Components/Hoc/QueryWrapper/QueryWrapper";
+import { Product } from "../../../../Types/Product";
 
 export default function Tickets() {
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -17,6 +21,11 @@ export default function Tickets() {
   };
 
   const { isDesktop } = UseIsDesktop();
+
+  const query = useQuery({
+    queryFn: getQuery<Product[]>,
+    queryKey: ["products"],
+  });
   return (
     <>
       <div className={styles.ticketsContainer}>
@@ -70,8 +79,14 @@ export default function Tickets() {
           >
             <div className={styles.aforosContainer}>
               <div className={styles.aforosCards}>
-                <Card name="General" price={20.0} />
-                <Card name="Reducida" price={11.9} />
+                <QueryWrapper
+                  {...query}
+                  render={products => {
+                    return products.map(product => {
+                      return <Card name={product.name} price={product.basePrice} />;
+                    });
+                  }}
+                />
               </div>
             </div>
           </Accordion>

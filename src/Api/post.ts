@@ -1,16 +1,22 @@
-import deepParseJson from "@cg-utils/deepParseJson";
+import { objectHasProperty } from "components-gallery";
 import { errorHandlerForReactQuery } from "./errorHandlerForReactQuery";
-import objectHasProperty from "@cg-utils/objectHasProperty";
 
-const get = async (
+export const post = async (
   url: string,
+  data: unknown,
   headers?: RequestInit["headers"],
   withCredentials = true
 ) => {
   const response = await fetch(url, {
+    method: "POST",
     credentials: withCredentials ? "include" : "omit",
-    headers
+    headers: {
+      "Content-Type": "application/json",
+      ...headers,
+    },
+    body: JSON.stringify(data),
   });
+
   if (!response.ok) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let parsedResponse: any;
@@ -28,28 +34,29 @@ const get = async (
   return response;
 };
 
-export async function getRequest<T>(
+export const postRequest = async (
   url: string,
+  data: unknown,
   headers?: RequestInit["headers"],
   withCredentials = true
-) {
+): Promise<unknown> => {
   try {
-    const response = await get(url, headers, withCredentials);
-    const parsedResponse = (await response?.json()) as Promise<T>;
-    return deepParseJson(parsedResponse) as T;
+    const response = await post(url, data, headers, withCredentials);
+    return response.json();
   } catch (e) {
     errorHandlerForReactQuery(e);
   }
-}
+};
 
-export async function getRequestNoJSON(
+export const postRequestNoJson = async (
   url: string,
+  data: unknown,
   headers?: RequestInit["headers"],
   withCredentials = true
-) {
+): Promise<void> => {
   try {
-    return await get(url, headers, withCredentials);
+    await post(url, data, headers, withCredentials);
   } catch (e) {
     errorHandlerForReactQuery(e);
   }
-}
+};

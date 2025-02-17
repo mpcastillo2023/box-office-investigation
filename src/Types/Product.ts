@@ -1,0 +1,108 @@
+type VenueCapacity = {
+  venueCapacityId: number;
+  shortName: string;
+  color: string;
+  breakDown: boolean;
+  duration: number;
+  barcodeType: string;
+  onlyAccessTime: boolean;
+  venueId: number;
+  maxDisplayAvailability: number;
+  eventsThreshold: number;
+  name: string;
+  description: string;
+  displayOrder: number;
+  displayName: string;
+};
+
+type Venue = {
+  venueId: number;
+  shortName: string;
+  address: string;
+  city: string;
+  hasLimitedCapacity: boolean;
+  canBeSoldOnceStarted: boolean;
+  taxId: number;
+  name: string;
+  description: string;
+  venueCapacityList: VenueCapacity[];
+};
+
+type ProductVenue = {
+  productId: number;
+  venueId: number;
+  displayOrder: number;
+  minSeparation: number;
+  maxSeparation: number;
+  basePrice: number;
+  userInfo: string;
+  openDate: boolean;
+  openTime: boolean;
+  showEvents: boolean;
+  autoSelectEvent: boolean;
+  validType?: string;
+  typePeriodStart?: string;
+  periodStart?: number;
+  typePeriodEnd?: string;
+  periodEnd?: number;
+  venue: Venue;
+  viewDisplayOrder: number;
+};
+
+type ProductCategory = {
+  productCategoryId: number;
+  name: string;
+  description: string;
+  displayOrder: number;
+  clientId: number;
+  general: boolean;
+};
+
+export type Product = {
+  productId: number;
+  shortName: string;
+  slug: string;
+  basePrice: number;
+  onlyExtras: boolean;
+  onlyDependantVenues: boolean;
+  priceByPackage: boolean;
+  allowFreeOnline: boolean;
+  numbered: boolean;
+  disableCart: boolean;
+  showCalendar: boolean;
+  showEvents: boolean;
+  disabledDates: string;
+  weekDays: string;
+  needsCaptcha: boolean;
+  pack: boolean;
+  displayOrder: number;
+  status: "enabled" | "disabled";
+  inviteOnly: boolean;
+  clientId: number;
+  productCategoryId: number;
+  openDate: boolean;
+  openTime: boolean;
+  openHandlesAvailability: boolean;
+  telephoneIsMandatory: boolean;
+  loyaltyProgramId?: number;
+  name: string;
+  description: string;
+  shortDescription: string;
+  image: string;
+  availabilityCalendar: boolean;
+  showAvailability: boolean;
+  ignoreSold: boolean;
+  showGeneralInfo: boolean;
+  imageMobile: string;
+  imageInfo: string;
+  displayAsEvent: boolean;
+  productCategory: ProductCategory;
+  productVenueSet: ProductVenue[];
+  showShareLink?: boolean;
+  enableAutoReschedule?: boolean;
+  hasProductAddOn?: boolean;
+  preventMultiReservation?: boolean;
+  minTickets?: number;
+  maxTickets?: number;
+  ticketGroupingType?: string;
+};

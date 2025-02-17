@@ -1,6 +1,6 @@
 import { useState } from "react";
-import SidebarMenu from "../SidebarMenu/SidebarMenu";
-import Footer from "../Footer/Footer";
+import SidebarMenu from "../../SidebarMenu/SidebarMenu";
+import Footer from "../../Footer/Footer";
 import { Outlet } from "react-router-dom";
 import styles from "./Styles/styles.module.scss";
 

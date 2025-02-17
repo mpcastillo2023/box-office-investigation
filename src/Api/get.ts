@@ -1,22 +1,11 @@
-import { objectHasProperty } from "../utils";
+import { deepParseJson, objectHasProperty } from "components-gallery";
 import { errorHandlerForReactQuery } from "./errorHandlerForReactQuery";
 
-export const post = async (
-  url: string,
-  data: unknown,
-  headers?: RequestInit["headers"],
-  withCredentials = true
-) => {
+const get = async (url: string, headers?: RequestInit["headers"], withCredentials = true) => {
   const response = await fetch(url, {
-    method: "POST",
     credentials: withCredentials ? "include" : "omit",
-    headers: {
-      "Content-Type": "application/json",
-      ...headers
-    },
-    body: JSON.stringify(data)
+    headers,
   });
-
   if (!response.ok) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let parsedResponse: any;
@@ -34,29 +23,28 @@ export const post = async (
   return response;
 };
 
-export const postRequest = async (
+export async function getRequest<T>(
   url: string,
-  data: unknown,
   headers?: RequestInit["headers"],
   withCredentials = true
-): Promise<unknown> => {
+) {
   try {
-    const response = await post(url, data, headers, withCredentials);
-    return response.json();
+    const response = await get(url, headers, withCredentials);
+    const parsedResponse = (await response?.json()) as Promise<T>;
+    return deepParseJson(parsedResponse) as T;
   } catch (e) {
     errorHandlerForReactQuery(e);
   }
-};
+}
 
-export const postRequestNoJson = async (
+export async function getRequestNoJSON(
   url: string,
-  data: unknown,
   headers?: RequestInit["headers"],
   withCredentials = true
-): Promise<void> => {
+) {
   try {
-    await post(url, data, headers, withCredentials);
+    return await get(url, headers, withCredentials);
   } catch (e) {
     errorHandlerForReactQuery(e);
   }
-};
+}

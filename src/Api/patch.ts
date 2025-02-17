@@ -1,4 +1,4 @@
-import objectHasProperty from "@cg-utils/objectHasProperty";
+import { objectHasProperty } from "components-gallery";
 import { errorHandlerForReactQuery } from "./errorHandlerForReactQuery";
 
 export const patch = async (url: string, data: unknown): Promise<unknown> => {
@@ -6,9 +6,9 @@ export const patch = async (url: string, data: unknown): Promise<unknown> => {
     const response = await fetch(url, {
       method: "PATCH",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     });
     if (!response.ok) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any

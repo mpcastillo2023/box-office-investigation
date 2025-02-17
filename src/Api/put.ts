@@ -1,4 +1,4 @@
-import objectHasProperty from "@cg-utils/objectHasProperty";
+import { objectHasProperty } from "components-gallery";
 import { errorHandlerForReactQuery } from "./errorHandlerForReactQuery";
 
 export const putRequest = async (
@@ -39,9 +39,9 @@ const put = async (
     credentials: withCredentials ? "include" : "omit",
     headers: {
       "Content-Type": "application/json",
-      ...headers
+      ...headers,
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(data),
   });
   if (!response.ok) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
