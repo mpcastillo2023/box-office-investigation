@@ -2,5 +2,8 @@ export declare const clockContainer: string;
 export declare const clorianInfo: string;
 export declare const footerContainer: string;
 export declare const footerOptions: string;
+export declare const modal: string;
+export declare const modalContent: string;
+export declare const modalHeader: string;
 export declare const option: string;
 export declare const switchComponent: string;
