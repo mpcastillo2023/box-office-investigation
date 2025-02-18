@@ -32,7 +32,10 @@ const List = () => {
             <UserIcon />
             Distribuidor
           </div>
-          <TextInput placeholder="Buscar distribuidor..." />
+          <TextInput
+            className={styles.searchInput}
+            placeholder="Buscar distribuidor..."
+          />
         </div>
         <div className={styles.calendarContainer}>
           <div className={styles.row50}>
@@ -105,10 +108,8 @@ const List = () => {
         </div>
         <div className={styles.calendarContainer}>
           <div className={styles.row33}>
-            <TextInput
-              placeholder="Referencia"
-              className={styles.searchInput}
-            />
+            Referencia
+            <TextInput className={styles.searchInput} />
           </div>
           <div className={styles.row33}>
             Estado de impresion

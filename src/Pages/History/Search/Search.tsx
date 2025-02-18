@@ -18,7 +18,10 @@ const Search = () => {
             optionList={optionList}
             customStyle={styles}
           />
-          <TextInput placeholder="Introducir numero" />
+          <TextInput
+            className={styles.searchInput}
+            placeholder="Introducir numero"
+          />
         </div>
         <div className={styles.searchButtonContainer}>
           <Button

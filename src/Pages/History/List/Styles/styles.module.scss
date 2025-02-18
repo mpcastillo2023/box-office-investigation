@@ -9,7 +9,26 @@
         gap: 15px;
 
     }
-}
+
+    .searchInput {
+        border-bottom: 1px solid var(--gray-border-input-box-color);
+
+        input {
+            border: none;
+        }
+    }
+
+    .dateSelect {
+    
+        .dropdownElement {
+            border: none;
+            border-bottom: 1px solid var(--gray-border-input-box-color);
+            border-radius: 0px;
+            width: 100%;
+        }
+    
+    }
+} 
 
 .calendarContainer {
     display: flex;
@@ -72,28 +91,9 @@
     }
 }
 
-.searchInput {
-    input {
-        border-radius: 0px;
-        border: none;
-        border-bottom: 1px solid var(--gray-border-input-box-color);
-        position: relative;
-        top: 8px;
-    }
-}
 
-.dateSelect {
 
-    .dropdownElement {
-        border: none;
-        border-bottom: 1px solid var(--gray-border-input-box-color);
-        border-radius: 0px;
-        position: relative;
-        top: 2px;
-        width: 100% !important;
-    }
 
-}
 
 .searchButton {
     display: flex;

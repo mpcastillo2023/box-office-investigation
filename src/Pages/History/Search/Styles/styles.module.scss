@@ -17,6 +17,14 @@
         flex-direction: column;
     }
 
+    .searchInput{
+        border-bottom: 1px solid var(--gray-border-input-box-color);
+
+        input{
+            border: none;
+        }
+    }
+
 }
 
 .searchSelect{
