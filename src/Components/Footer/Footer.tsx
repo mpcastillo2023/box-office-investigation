@@ -18,7 +18,8 @@ export default function Footer({ toggleSidebar }: SidebarProps) {
   const { isDesktop } = UseIsDesktop();
   const { isOnline } = useNetworkStatus();
   const [isAppOnline, setIsAppOnline] = useState(isOnline);
-  const [shouldDisplayOnlineModal, setShouldDisplayOnlineModal] = useState(false);
+  const [shouldDisplayOnlineModal, setShouldDisplayOnlineModal] =
+    useState(false);
 
   useEffect(() => {
     setIsAppOnline(isOnline);
@@ -61,16 +62,18 @@ export default function Footer({ toggleSidebar }: SidebarProps) {
       <Modal
         isModalOpen={shouldDisplayOnlineModal}
         setIsModalOpen={setShouldDisplayOnlineModal}
+        variant="success"
         isConfirmModal={true}
         confirmButtonText={"Confirmar"}
         cancelButtonText={"Cancelar"}
-        onConfirmHandler={() => setIsAppOnline(prevState => !prevState)}
-        modalTitle={<h3>¿Confirmar que desea cambiar de modo?</h3>}
+        customStyle={styles}
+        onConfirmHandler={() => setIsAppOnline((prevState) => !prevState)}
+        modalTitle={<div>¿Confirmar que desea cambiar de modo?</div>}
       >
         {isAppOnline ? (
-          <p>La aplicacion va a perder la conexion</p>
+          <div>La aplicacion va a perder la conexion</div>
         ) : (
-          <p>La aplicacion va a restablecer la conexion</p>
+          <div>La aplicacion va a restablecer la conexion</div>
         )}
       </Modal>
     </>
