@@ -1,5 +1,5 @@
 .container {
-    width: 25rem;
+    width: 20rem;
     background: #DADADA;
     padding: 25px;
     border-radius: 5px;
@@ -55,6 +55,7 @@
 
 .modalContent{
     padding: 0px !important;
+    margin-bottom: 0px;
 }
 
 
@@ -62,6 +63,7 @@
     padding: 0px !important;
     min-width: none ! important;
     max-height: none ! important;
+
     .modalHeader{
         background-color: #21B3BB;
         color: white;
