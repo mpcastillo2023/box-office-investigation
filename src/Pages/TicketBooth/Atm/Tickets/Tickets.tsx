@@ -10,7 +10,7 @@ import { Accordion, UseIsDesktop } from "components-gallery";
 import { getQuery } from "../../../../Api/getQuery";
 import { useQuery } from "@tanstack/react-query";
 import QueryWrapper from "../../../../Components/Hoc/QueryWrapper/QueryWrapper";
-import { Product } from "../../../../Types/Product";
+import { Pricing } from "../../../../Types/Pricing";
 
 export default function Tickets() {
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -23,8 +23,8 @@ export default function Tickets() {
   const { isDesktop } = UseIsDesktop();
 
   const query = useQuery({
-    queryFn: getQuery<Product[]>,
-    queryKey: ["products"],
+    queryFn: getQuery<Pricing[]>,
+    queryKey: ["pricings"],
   });
   return (
     <>
@@ -81,14 +81,10 @@ export default function Tickets() {
               <div className={styles.aforosCards}>
                 <QueryWrapper
                   {...query}
-                  render={products => {
-                    return products.map(product => {
+                  render={pricings => {
+                    return pricings.map(pricing => {
                       return (
-                        <Card
-                          name={product.name}
-                          price={product.basePrice}
-                          key={product.productId}
-                        />
+                        <Card name={pricing.name} price={pricing.price} key={pricing.productId} />
                       );
                     });
                   }}

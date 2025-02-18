@@ -5,7 +5,7 @@ import { Accordion, UseIsDesktop } from "components-gallery";
 import { useQuery } from "@tanstack/react-query";
 import QueryWrapper from "../../../../../Components/Hoc/QueryWrapper/QueryWrapper";
 import { getQuery } from "../../../../../Api";
-import { BuyerTypes } from "../../../../../Types/BuyerTypes";
+import { Product } from "../../../../../Types/Product";
 
 export default function ProductsCatalog() {
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
@@ -17,8 +17,8 @@ export default function ProductsCatalog() {
   const { isDesktop } = UseIsDesktop();
 
   const query = useQuery({
-    queryFn: getQuery<BuyerTypes[]>,
-    queryKey: ["buyerTypes"],
+    queryFn: getQuery<Product[]>,
+    queryKey: ["products"],
   });
   return (
     <div className={styles.productsSelectContainer}>
@@ -37,14 +37,14 @@ export default function ProductsCatalog() {
           <QueryWrapper
             {...query}
             render={data => {
-              return data.map((buyerType, index) => {
+              return data.map((product, index) => {
                 return (
                   <div
-                    key={buyerType.buyerTypeId}
+                    key={product.productId}
                     className={`${styles.card} ${selectedCard === index ? styles.selected : ""}`}
                     onClick={() => handleClickProduct(index)}
                   >
-                    {buyerType.name}
+                    {product.name}
                   </div>
                 );
               });

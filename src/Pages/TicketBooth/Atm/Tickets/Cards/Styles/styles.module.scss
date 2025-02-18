@@ -9,15 +9,21 @@
     gap: 30px;
     justify-content: space-around;
     border-radius: 13px;
+    width: calc(50% - 70px);
+
+    @media (max-width: 768px) {
+        width: calc(100% - 60px);
+    }
 
     .info {
         display: flex;
         flex-direction: column;
+
         .name {
             font-size: 14px;
             color: #333;
         }
-        
+
         .price {
             font-size: 14px;
             font-weight: bold;
@@ -28,6 +34,7 @@
     .counter {
         display: flex;
         align-items: center;
+        margin-left: auto;
 
         .button {
             width: 32px;
@@ -43,7 +50,7 @@
                 background-color: #ddd;
             }
         }
-        
+
         .quantity {
             margin: 0 12px;
             font-size: 14px;
@@ -53,12 +60,5 @@
 }
 
 .selected {
-   border-bottom: 2px solid #21B3BB;
+    border-bottom: 2px solid #21B3BB;
 }
-
-
-
-
-
-
-
