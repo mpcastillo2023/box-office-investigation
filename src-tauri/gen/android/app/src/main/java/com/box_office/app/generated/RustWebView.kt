@@ -6,7 +6,7 @@
 
 @file:Suppress("unused", "SetJavaScriptEnabled")
 
-package com.atm.app
+package com.box_office.app
 
 import android.annotation.SuppressLint
 import android.webkit.*

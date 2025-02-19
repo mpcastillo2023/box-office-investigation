@@ -4,9 +4,9 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
-package com.atm.app
+package com.box_office.app
 
-import com.atm.app.RustWebView
+import com.box_office.app.RustWebView
 import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
@@ -117,7 +117,7 @@ abstract class WryActivity : AppCompatActivity() {
 
     companion object {
         init {
-            System.loadLibrary("atm_lib")
+            System.loadLibrary("box_office_lib")
         }
     }
 

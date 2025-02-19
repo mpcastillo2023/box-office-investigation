@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // SPDX-License-Identifier: MIT
 
-package com.atm.app
+package com.box_office.app
 
 import android.net.Uri
 import android.webkit.*
@@ -92,7 +92,7 @@ class RustWebViewClient(context: Context): WebViewClient() {
 
     companion object {
         init {
-            System.loadLibrary("atm_lib")
+            System.loadLibrary("box_office_lib")
         }
     }
 
