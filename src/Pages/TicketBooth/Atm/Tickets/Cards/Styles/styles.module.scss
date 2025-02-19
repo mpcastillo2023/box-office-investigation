@@ -9,10 +9,11 @@
     gap: 30px;
     justify-content: space-around;
     border-radius: 13px;
-    width: calc(50% - 70px);
+    width: 40%;
+    height: 60px;
 
-    @media (max-width: 768px) {
-        width: calc(100% - 60px);
+    @media (max-width: 1780px) {
+        width: 80%;
     }
 
     .info {
