@@ -200,8 +200,18 @@ const NumeralPad: React.FC = () => {
             </div>
 
             <div className={styles.paymentOptions}>
-              <button className={styles.paymentButton}>VOUCHER</button>
-              <button className={styles.paymentButton}>TARJETA</button>
+              <button
+                onClick={() => setIsFormModalOpen(true)}
+                className={styles.paymentButton}
+              >
+                VOUCHER
+              </button>
+              <button
+                onClick={() => setIsFormModalOpen(true)}
+                className={styles.paymentButton}
+              >
+                TARJETA
+              </button>
               <button
                 onClick={() => setIsFormModalOpen(true)}
                 className={styles.paymentButton}

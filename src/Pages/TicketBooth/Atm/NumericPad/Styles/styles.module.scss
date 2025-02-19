@@ -196,9 +196,7 @@
             margin-bottom: 20px;
             font-size: 16px;
 
-            .dropdownWrapper{
-                width: 100%;
-            }
+            
         } 
         
         .inputsContainer{
@@ -208,6 +206,13 @@
 
             input{
                 font-size: 14px;
+            }
+
+            .dropdownWrapper {
+                width: 100%;
+                .dropdownElement{
+                    width: 100%;
+                }
             }
         }
     }
