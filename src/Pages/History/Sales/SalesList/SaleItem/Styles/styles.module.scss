@@ -8,6 +8,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 5px;
+		align-items: center;
 
 		.dateId {
 			display: flex;
@@ -30,20 +31,11 @@
 
 		.confirm,
 		.returned {
-			color: white;
+			color: white ! important;
 			border-radius: 10px;
 			padding: 5px;
 			width: 100px;
 			text-align: center;
-		}
-
-		.returned {
-			background-color: #DC2626;
-
-		}
-
-		.confirm {
-			background-color: #66a75a;
 		}
 	}
 
