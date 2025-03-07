@@ -12,7 +12,15 @@ import { useQuery } from "@tanstack/react-query";
 import QueryWrapper from "../../../../Components/Hoc/QueryWrapper/QueryWrapper";
 import { Pricing } from "../../../../Types/Pricing";
 
-export default function Tickets() {
+type Props = {
+  setSelectedTickets: React.Dispatch<React.SetStateAction<[] | any>>;
+  selectedTickets: [] | any;
+};
+
+export default function Tickets({
+  setSelectedTickets,
+  selectedTickets,
+}: Props) {
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const target = event.currentTarget;
     if (target) {
@@ -26,6 +34,7 @@ export default function Tickets() {
     queryFn: getQuery<Pricing[]>,
     queryKey: ["pricings"],
   });
+
   return (
     <>
       <div className={styles.ticketsContainer}>
@@ -81,10 +90,17 @@ export default function Tickets() {
               <div className={styles.aforosCards}>
                 <QueryWrapper
                   {...query}
-                  render={pricings => {
-                    return pricings.map(pricing => {
+                  render={(pricings) => {
+                    return pricings.map((pricing) => {
                       return (
-                        <Card name={pricing.name} price={pricing.price} key={pricing.productId} />
+                        <Card
+                          name={pricing.name}
+                          productId={pricing.productId}
+                          price={pricing.price}
+                          key={pricing.productId}
+                          setSelectedTickets={setSelectedTickets}
+                          selectedTickets={selectedTickets}
+                        />
                       );
                     });
                   }}

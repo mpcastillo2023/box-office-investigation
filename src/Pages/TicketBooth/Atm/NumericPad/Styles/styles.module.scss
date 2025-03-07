@@ -69,24 +69,36 @@
     }
 }
 
-.reservaEnCurso {
+.bookingInProgress {
     margin-top: 10px;
     background-color: white;
     padding: 1px 5px;
 }
 
+.items {
+    display: flex;
+    flex-direction: column;
+}
+
 .item {
     display: flex;
     justify-content: space-between;
-    padding: 5px 0;
+    padding: 5px;
     font-size: 14px;
     color: #06152B;
 
-    .itemInfo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+    .itemName{
+        width: 40%;
+    }
+    .itemQuantity{
+        width: 10%;
         font-weight: bold;
+    }
+    .itemPrice{
+        width: 10%;
+        font-weight: bold;
+        display: flex;
+        justify-content: flex-end;
     }
 
 }
