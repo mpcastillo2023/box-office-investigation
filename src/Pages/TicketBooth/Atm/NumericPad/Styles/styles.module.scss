@@ -15,9 +15,10 @@
     }
 }
 
-.resumen {
+.resume {
     border-radius: 13px;
     width: 100%;
+    height: 10rem;
 }
 
 
@@ -103,12 +104,12 @@
 
 }
 
-.pago {
+.payment {
     width: 100%;
     margin-top: 20px;
 }
 
-.totales {
+.totals {
     display: flex;
     justify-content: space-around;
     padding: 10px;
@@ -116,21 +117,21 @@
     margin-bottom: 10px;
     font-size: 14px;
 
-    .totalesInfo {
+    .totalsInfo {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 }
 
-.teclado {
+.keyboard {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
     padding: 5px;
 }
 
-.teclado button {
+.keyboard button {
     padding: 15px;
     font-size: 18px;
     border: none;
@@ -139,7 +140,7 @@
     cursor: pointer;
 }
 
-.teclado .del {
+.keyboard .del {
     background: #DADADA;
     color: #DC2626;
 }

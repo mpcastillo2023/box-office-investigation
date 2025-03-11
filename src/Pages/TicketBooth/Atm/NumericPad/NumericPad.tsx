@@ -61,7 +61,7 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
     <>
       {isDesktop ? (
         <div className={styles.numeralPadContainer}>
-          <div className={styles.resumen}>
+          <div className={styles.resume}>
             <div className={styles.totalHeader}>
               <div>TOTAL</div>
               <div className={styles.totalInfo}>
@@ -103,24 +103,24 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
             </div>
           </div>
 
-          <div className={styles.pago}>
-            <div className={styles.totales}>
-              <div className={styles.totalesInfo}>
+          <div className={styles.payment}>
+            <div className={styles.totals}>
+              <div className={styles.totalsInfo}>
                 <span>TOTAL</span>
                 <span style={{ fontWeight: "bold" }}>{total || "0,00"}</span>
               </div>
-              <div className={styles.totalesInfo}>
+              <div className={styles.totalsInfo}>
                 <span>PAGADO</span>
                 <span style={{ fontWeight: "bold" }}>
                   {parseFloat(paid).toFixed(2) || "0,00"}
                 </span>
               </div>
-              <div className={styles.totalesInfo}>
+              <div className={styles.totalsInfo}>
                 <span>FALTAN</span>
                 <span style={{ fontWeight: "bold" }}>{outstanding}</span>
               </div>
             </div>
-            <div className={styles.teclado}>
+            <div className={styles.keyboard}>
               {[7, 8, 9, 4, 5, 6, 1, 2, 3, "DEL", 0, "."].map((key) => (
                 <button
                   key={String(key)}
@@ -161,7 +161,7 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
           expanded={isDesktop}
           shouldDisplayIcon={false}
           title={
-            <div className={styles.resumen}>
+            <div className={styles.resume}>
               <div className={styles.totalHeader}>
                 <span>TOTAL</span>
                 <div className={styles.totalInfo}>
@@ -191,17 +191,17 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
               ))}
             </div>
           </div>
-          <div className={styles.pago}>
-            <div className={styles.totales}>
-              <div className={styles.totalesInfo}>
+          <div className={styles.payment}>
+            <div className={styles.totals}>
+              <div className={styles.totalsInfo}>
                 <span>TOTAL</span>
                 <span style={{ fontWeight: "bold" }}>40.00</span>
               </div>
-              <div className={styles.totalesInfo}>
+              <div className={styles.totalsInfo}>
                 <span>paid</span>
                 <span style={{ fontWeight: "bold" }}>{paid || "0.00"}</span>
               </div>
-              <div className={styles.totalesInfo}>
+              <div className={styles.totalsInfo}>
                 <span>FALTAN</span>
                 <span style={{ fontWeight: "bold" }}>
                   {(40 - parseFloat(paid || "0")).toFixed(2)}
@@ -209,7 +209,7 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
               </div>
             </div>
 
-            <div className={styles.teclado}>
+            <div className={styles.keyboard}>
               {[7, 8, 9, 4, 5, 6, 1, 2, 3, "DEL", 0, "."].map((key) => (
                 <button
                   key={String(key)}
