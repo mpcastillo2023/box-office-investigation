@@ -7,6 +7,7 @@ import Login from "./Pages/Login/Login";
 import { QueryClient } from "@tanstack/react-query";
 import { createIDBPersister } from "./Utils/OfflineDb/createIdbPersister";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
+import useCheckUpdate from "./Hooks/useCheckUpdate";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -22,8 +23,10 @@ const queryClient = new QueryClient({
 const persister = createIDBPersister();
 
 function App() {
+  const { message } = useCheckUpdate();
   return (
     <PersistQueryClientProvider client={queryClient} persistOptions={{ persister }}>
+      {message}
       <BrowserRouter>
         <Routes>
           <Route index element={<Login />}></Route>
