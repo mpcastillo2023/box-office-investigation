@@ -1,0 +1,42 @@
+.settingsTitle{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #00838F;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+
+    svg{
+        width: 25px;
+        stroke: white;
+        position: relative;
+        top: 4px;
+    }
+    .saveButtonContainer{
+        margin-right: 30px;
+
+        .saveButton {
+            background-color: #1e8eab;
+            padding: 10px 15px;
+            margin-right: 10px;
+
+            svg{
+                position: relative;
+                top: 2px;
+                width: 20px;
+                stroke: white;
+            }
+        }
+    }
+    
+}
+
+.settingsContainer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px;
+}

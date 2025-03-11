@@ -10,6 +10,7 @@ import styles from "./Styles/styles.module.scss";
 import { useState } from "react";
 import ClorianLogo from "@images/clorian-logo-login.png";
 import { useNavigate } from "react-router-dom";
+import LoginFooter from "./LoginFooter/LoginFooter";
 
 const Login = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -90,6 +91,9 @@ const Login = () => {
         </div>
         <div className={styles.loginFooter}>
           <Checkbox textBeside="Modo Offline" />
+        </div>
+        <div style={{ marginTop: "auto" }}>
+          <LoginFooter />
         </div>
       </div>
     </>
