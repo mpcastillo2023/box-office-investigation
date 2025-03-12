@@ -4,10 +4,12 @@ import { relaunch } from "@tauri-apps/plugin-process";
 
 export default function useCheckUpdate() {
   const [hasRun, setHasRun] = useState(false);
+
   useEffect(() => {
     async function checkUpdate() {
       try {
         const update = await check();
+        console.log(update);
         if (update) {
           let downloaded = 0;
           let contentLength = 0;

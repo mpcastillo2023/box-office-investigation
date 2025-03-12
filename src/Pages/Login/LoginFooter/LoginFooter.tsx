@@ -2,7 +2,6 @@ import styles from "./Styles/styles.module.scss";
 import Clock from "../../../Components/Clock/Clock";
 import ClockIcon from "@icons/clock.svg";
 import ClorianLogo from "@images/clorian-logotipo.png";
-import { Button } from "components-gallery";
 import CogIcon from "@icons/cog.svg";
 import { Link } from "react-router-dom";
 
