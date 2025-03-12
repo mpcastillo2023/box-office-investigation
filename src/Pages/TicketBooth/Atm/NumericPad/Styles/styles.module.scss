@@ -15,9 +15,10 @@
     }
 }
 
-.resumen {
+.resume {
     border-radius: 13px;
     width: 100%;
+    height: 10rem;
 }
 
 
@@ -69,34 +70,48 @@
     }
 }
 
-.reservaEnCurso {
+.bookingInProgress {
     margin-top: 10px;
     background-color: white;
     padding: 1px 5px;
 }
 
+.items {
+    display: flex;
+    flex-direction: column;
+}
+
 .item {
     display: flex;
     justify-content: space-between;
-    padding: 5px 0;
+    padding: 5px;
     font-size: 14px;
     color: #06152B;
 
-    .itemInfo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+    .itemName {
+        width: 40%;
+    }
+
+    .itemQuantity {
+        width: 10%;
         font-weight: bold;
+    }
+
+    .itemPrice {
+        width: 10%;
+        font-weight: bold;
+        display: flex;
+        justify-content: flex-end;
     }
 
 }
 
-.pago {
+.payment {
     width: 100%;
     margin-top: 20px;
 }
 
-.totales {
+.totals {
     display: flex;
     justify-content: space-around;
     padding: 10px;
@@ -104,21 +119,21 @@
     margin-bottom: 10px;
     font-size: 14px;
 
-    .totalesInfo {
+    .totalsInfo {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 }
 
-.teclado {
+.keyboard {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
     padding: 5px;
 }
 
-.teclado button {
+.keyboard button {
     padding: 15px;
     font-size: 18px;
     border: none;
@@ -127,9 +142,9 @@
     cursor: pointer;
 }
 
-.teclado .del {
-    background: #DC2626;
-    color: white;
+.keyboard .del {
+    background: #DADADA;
+    color: #DC2626;
 }
 
 .paymentOptions {
@@ -162,59 +177,61 @@
     margin-top: 5px !important;
 }
 
-.confirmModalContainer{
+.confirmModalContainer {
     font-size: 16px;
     padding: 20px 5px;
-    .confirmModalTitle{
+
+    .confirmModalTitle {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 }
 
-.ldsSpinner{
+.ldsSpinner {
     margin: 20px auto !important;
 }
 
 .modal {
-    padding:0px !important;
+    padding: 0px !important;
+
     .modalHeader {
-       font-size: 16px;
-       padding: 15px ;
-       background-color: #21B3BB ;
-       color: white ;
+        font-size: 16px;
+        padding: 15px;
+        background-color: #00BCD4;
+        color: white;
     }
 
-    .modalContent{
+    .modalContent {
         padding: 0px 25px !important;
 
-        .modalContainer{
+        .modalContainer {
             padding: 15px;
         }
 
-        .modalTitle{
+        .modalTitle {
             margin-bottom: 20px;
             font-size: 16px;
 
-           
-        } 
-        
-        .inputsContainer{
+
+        }
+
+        .inputsContainer {
             display: flex;
             flex-direction: column;
             gap: 20px;
 
-            input{
+            input {
                 font-size: 14px;
             }
 
             .dropdownWrapper {
                 width: 100%;
-            
+
                 .dropdownElement {
                     width: 100%;
                 }
             }
         }
     }
-}   
+}

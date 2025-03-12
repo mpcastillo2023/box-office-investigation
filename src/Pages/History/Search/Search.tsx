@@ -11,7 +11,7 @@ const Search = () => {
   return (
     <>
       <div className={styles.searchContainer}>
-        <div>Buscar por:</div>
+        <div>Buscar por*</div>
         <div className={styles.inputsContainer}>
           <DropdownSelect
             className={styles.searchSelect}
@@ -19,12 +19,17 @@ const Search = () => {
             customStyle={styles}
           />
           <TextInput
-            placeholder="Introducir numero"
             className={styles.searchInput}
+            placeholder="Introducir numero"
           />
         </div>
-        <div className={styles.searchButton}>
-          <Button size="full" type="submit" variant="primary">
+        <div className={styles.searchButtonContainer}>
+          <Button
+            className={styles.searchButton}
+            size="full"
+            type="submit"
+            variant="primary"
+          >
             Buscar
           </Button>
         </div>

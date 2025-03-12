@@ -1,0 +1,10 @@
+export declare const column: string;
+export declare const dropdownElement: string;
+export declare const input: string;
+export declare const managementBody: string;
+export declare const managementContainer: string;
+export declare const managementTitle: string;
+export declare const row: string;
+export declare const select: string;
+export declare const selectedOption: string;
+export declare const textBeside: string;

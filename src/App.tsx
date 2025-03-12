@@ -9,6 +9,7 @@ import { createIDBPersister } from "./Utils/OfflineDb/createIdbPersister";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import useCheckUpdate from "./Hooks/useCheckUpdate";
 import useGetAppVersion from "./Hooks/useGetAppVersion";
+import Settings from "./Pages/Settings/Settings";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,11 +32,12 @@ function App() {
       <BrowserRouter>
         {appVersion}
         <Routes>
-          <Route index element={<Login />}></Route>
+          <Route index element={<Login />} />
           <Route path="/" element={<Layout />}>
-            <Route path="/ticketbooth" element={<TicketBooth />} />
-            <Route path="/history" element={<History />} />
+            <Route path="ticketbooth" element={<TicketBooth />} />
+            <Route path="history" element={<History />} />
           </Route>
+          <Route path="/settings" element={<Settings />} />
         </Routes>
       </BrowserRouter>
     </PersistQueryClientProvider>

@@ -1,48 +1,100 @@
-import { Button, LoginForm, TextInput } from "components-gallery";
+import {
+  Button,
+  Checkbox,
+  EmailInput,
+  Modal,
+  PasswordInput,
+  RadioButtonGroup,
+} from "components-gallery";
 import styles from "./Styles/styles.module.scss";
-import { Link } from "react-router";
+import { useState } from "react";
+import ClorianLogo from "@images/clorian-logo-login.png";
+import { useNavigate } from "react-router-dom";
+import LoginFooter from "./LoginFooter/LoginFooter";
 
 const Login = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const ticketBooth = () => {
+    navigate("/ticketBooth");
+  };
   return (
     <>
       <div className={styles.loginContainer}>
-        <LoginForm
-          className={styles.login}
-          children={
-            <div className={styles.loginForm}>
-              Usuario*
-              <TextInput />
-              Contraseña*
-              <TextInput />
-              <Link to={"/ticketbooth"}>
-                <Button size="full" type="submit" variant="primary">
-                  Sign in
-                </Button>
-              </Link>
-            </div>
-          }
-          formFooter={
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
+        <div className={styles.loginForm}>
+          <div className={styles.loginLogo}>
+            <img src={ClorianLogo} alt="Clorian Logo" />
+          </div>
+          <div>
+            Usuario
+            <EmailInput />
+          </div>
+          <div>
+            Contraseña
+            <PasswordInput />
+          </div>
+          <div style={{ width: "87%" }}>
+            <Button
+              size="full"
+              variant="primary"
+              onClick={() => setIsModalOpen(true)}
             >
-              <a
-                href="/"
-                target="_blank"
-                style={{
-                  fontSize: "0.8rem",
-                  color: "var(--blue-strong-primary)",
-                }}
-                rel="noopener noreferrer"
-              >
-                Terms and Conditions
-              </a>
-            </div>
-          }
-        />
+              Iniciar Sesión
+            </Button>
+          </div>
+          <Modal
+            modalTitle="Complete el Formulario"
+            variant="success"
+            isConfirmModal
+            setIsModalOpen={setIsModalOpen}
+            isModalOpen={isModalOpen}
+            cancelButtonText="Cancelar"
+            confirmButtonText="Confirmar"
+            onConfirmHandler={ticketBooth}
+            customStyle={styles}
+            children={
+              <div className={styles.modalContent}>
+                <RadioButtonGroup
+                  customStyles={styles}
+                  name="test"
+                  options={[
+                    {
+                      optionText: "Visita libre Castillo de Bourdeilles",
+                      optionValue: "Visita libre Castillo de Bourdeilles",
+                    },
+                    {
+                      optionText: "Talleres individuales Bourdeilles",
+                      optionValue: "Talleres individuales Bourdeilles",
+                    },
+                    {
+                      optionText: "Escape game",
+                      optionValue: "Escape game",
+                    },
+                    {
+                      optionText: "Audioguide Bourdeilles",
+                      optionValue: "Audioguide Bourdeilles",
+                    },
+                    {
+                      optionText: "Visita guiada bourdeilles",
+                      optionValue: "Visita guiada bourdeilles",
+                    },
+                    {
+                      optionText: "Billet jumelé MAAP - BOURDEILLES",
+                      optionValue: "Billet jumelé MAAP - BOURDEILLES",
+                    },
+                  ]}
+                />
+              </div>
+            }
+          />
+        </div>
+        <div className={styles.loginFooter}>
+          <Checkbox textBeside="Modo Offline" />
+        </div>
+        <div style={{ marginTop: "auto" }}>
+          <LoginFooter />
+        </div>
       </div>
     </>
   );

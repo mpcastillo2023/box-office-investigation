@@ -18,7 +18,6 @@
     height: 100vh;
     width: 300px;
     background-color: white;
-    border-right: 1px solid #dadada;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     overflow-x: hidden;
     transition: transform 0.3s ease-in-out;
@@ -34,13 +33,21 @@
 }
 
 .sidebarHeader {
-    padding: 15px;
+    padding: 20px;
     font-weight: bold;
     white-space: nowrap;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
     border-bottom: 1px solid #dadada;
+    background-color: #00838F;
+    color: white;
+
+    svg{
+        position: relative;
+        top: 2px;
+        width: 20px;
+    }
 
     img {
         width: 30px;
@@ -57,9 +64,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px 10px;
-    border-radius: 11px;
-    margin: 15px 20px;
+    padding: 15px;
 
     svg {
         position: relative;
@@ -68,8 +73,8 @@
 
     &:hover {
         cursor: pointer;
-        background-color: #DFEFF3;
-        color: #1E8EAB;
+        background-color: #F7F7F7;
+        color: #696969;
     }
 }
 
@@ -78,7 +83,7 @@
     margin-top: 15px;
     cursor: default;
     color: #959595;
-    background-color: #FAFAFA;
+    background-color: #F7F7F7;
     padding: 10px 15px;
 }
 

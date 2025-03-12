@@ -1,0 +1,64 @@
+.loginFooterContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #DADADA;
+    padding: 10px;
+}
+
+.versionContainer{
+    font-size: 14px;
+}
+
+.clorianInfo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .settingsButton {
+        background-color: #0182FF;
+        cursor: pointer;
+        border: 1px solid #DADADA;
+        border-radius: 13px;
+        padding: 10px 15px;
+        font-size: 14px;
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        text-decoration: none;
+        
+        svg {
+            position: relative;
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .clockContainer {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+        
+        svg {
+            position: relative;
+            width: 20px;
+        }
+    }
+
+    img {
+        position: relative;
+        width: 80px;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+    svg{
+        width: 30px;
+    }
+}

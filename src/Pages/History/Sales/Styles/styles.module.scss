@@ -15,7 +15,7 @@
         justify-content: space-between;
 
         .updateButton {
-            background-color: #1e8eab;
+            background-color: #09BCD4;
             cursor: pointer;
             border-radius: 13px;
             padding: 13px 15px;
@@ -52,19 +52,20 @@
             width: 20px;
             border-radius: 4px;
             padding: 5px;
-            color: white;
-            background-color: #1e8eab;
+            color: #666666;
+            background-color: white;
+            border: 1px solid #8d8d8d;
         }
 
         .filtersButton {
             font-size: 14px;
             white-space: nowrap;
             background-color: white;
-            border: 1px solid #1e8eab;
+            border: 1px solid #8d8d8d;
             cursor: pointer;
             border-radius: 13px;
             padding: 13px 15px;
-            color: #1e8eab;
+            color: #666666;
         }
 
         @media (max-width: 768px) {

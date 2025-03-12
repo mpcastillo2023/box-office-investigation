@@ -1,0 +1,11 @@
+export declare const button: string;
+export declare const column: string;
+export declare const dropdownElement: string;
+export declare const input: string;
+export declare const row: string;
+export declare const select: string;
+export declare const selectedOption: string;
+export declare const textBeside: string;
+export declare const visualizationBody: string;
+export declare const visualizationContainer: string;
+export declare const visualizationTitle: string;

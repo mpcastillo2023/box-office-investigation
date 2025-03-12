@@ -1,0 +1,79 @@
+.printingContainer {
+    border: 1px solid #DADADA;
+    border-radius: 13px;
+    background-color: white;
+    margin-top: 5px;
+
+    .printingTitle {
+        font-size: 18px;
+        background-color: #00BCD4;
+        color: white;
+        padding: 15px;
+        align-self: center;
+        border-top-left-radius: 13px;
+        border-top-right-radius: 13px;
+    }
+
+    .printingBody {
+        padding: 20px 15px;
+        display: flex;
+        gap: 40px;
+        flex-direction: column;
+        font-size: 14px;
+        height: 50rem;
+
+        .row {
+            display: flex;
+            gap: 20px;
+        }
+        .row50{
+            width: 50%;
+        }
+
+        .column {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .columnSwitch{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .select {
+
+            .dropdownElement {
+                border: none;
+                border-bottom: 1px solid var(--gray-border-input-box-color);
+                border-radius: 0px;
+                width: 100%;
+
+                .selectedOption {
+                    font-size: 14px;
+                }
+            }
+
+        }
+
+        .input {
+            border-bottom: 1px solid var(--gray-border-input-box-color);
+
+            input {
+                border: none;
+                font-size: 14px;
+
+                &:hover {
+                    border: none;
+                    background-color: transparent;
+                }
+            }
+        }
+
+        .textBeside {
+            font-size: 14px;
+        }
+    }
+}

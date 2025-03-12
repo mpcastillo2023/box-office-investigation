@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import styles from "./Styles/styles.module.scss";
-import ArrowLeftIcon from "@icons/arrow-left.svg";
+import SimpleArrowLeftIcon from "@icons/simple-arrow-left.svg";
 import { useState } from "react";
 import Sales from "./Sales/Sales";
 import List from "./List/List";
@@ -19,7 +19,7 @@ const History = () => {
       <div className={styles.historyContainer}>
         <div className={styles.historyHeader}>
           <Link to="/ticketbooth">
-            <ArrowLeftIcon />
+            <SimpleArrowLeftIcon />
           </Link>
           Reservas
         </div>

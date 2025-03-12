@@ -1,0 +1,12 @@
+export declare const column: string;
+export declare const columnSwitch: string;
+export declare const dropdownElement: string;
+export declare const input: string;
+export declare const printingBody: string;
+export declare const printingContainer: string;
+export declare const printingTitle: string;
+export declare const row: string;
+export declare const row50: string;
+export declare const select: string;
+export declare const selectedOption: string;
+export declare const textBeside: string;
