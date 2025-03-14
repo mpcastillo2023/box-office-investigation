@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import styles from "./Styles/styles.module.scss";
 import ArchiveWithArrowIcon from "@icons/archive-box-arrow.svg";
 import ArchiveBox from "@icons/archive-box.svg";
@@ -15,6 +15,7 @@ import CashDropModal from "./CashDropModal/CashDropModal";
 import SimpleArrowLeftIcon from "@icons/simple-arrow-left.svg";
 import { Switch } from "components-gallery";
 import { ThemeContext } from "../../Providers/ThemeProvider";
+import UpdateModal from "../UpdateModal/UpdateModal";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -28,7 +29,10 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (isOpen) {
-        if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
+        if (
+          sidebarRef.current &&
+          !sidebarRef.current.contains(event.target as Node)
+        ) {
           toggleSidebar();
           console.log("clicked outside");
         }
@@ -42,8 +46,19 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   }, [toggleSidebar]);
 
   const { theme, setTheme } = useContext(ThemeContext);
+  const [shouldDisplayUpdateModal, setShouldDisplayUpdateModal] =
+    useState(false);
   return (
     <>
+      {shouldDisplayUpdateModal ? (
+        <UpdateModal
+          shouldDisplayCheckingUpdateInfo={true}
+          onCloseHandler={() => {
+            setShouldDisplayUpdateModal(false);
+          }}
+        />
+      ) : null}
+
       {isOpen && <div className={styles.overlay}></div>}
       <div
         ref={sidebarRef}
@@ -57,7 +72,10 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
         </div>
         <ul className={styles.sidebarMenu}>
           <li className={styles.menuSection}>Operativas</li>
-          <li onClick={() => setIsCashDropModalOpen(true)} className={styles.menuItem}>
+          <li
+            onClick={() => setIsCashDropModalOpen(true)}
+            className={styles.menuItem}
+          >
             <ArchiveWithArrowIcon /> Retirada
           </li>
           <li className={styles.menuItem}>
@@ -85,7 +103,12 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           <li className={styles.menuItem}>
             <PrinterIcon /> Imprimir entrada de prueba
           </li>
-          <li className={styles.menuItem}>
+          <li
+            className={styles.menuItem}
+            onClick={() => {
+              setShouldDisplayUpdateModal(true);
+            }}
+          >
             <SignalIcon /> Comprobar actualizaciones
           </li>
           <li className={styles.menuSection}>Usuario - dquilez</li>
@@ -101,7 +124,7 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           <Switch
             value={theme === "new"}
             textBeside={"Habilitar colores nuevos"}
-            onChange={value => {
+            onChange={(value) => {
               if (value) {
                 setTheme("new");
               } else {

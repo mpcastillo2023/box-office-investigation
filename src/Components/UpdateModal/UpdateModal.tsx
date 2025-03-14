@@ -5,22 +5,34 @@ import { useEffect, useState } from "react";
 import useGetAppVersion from "../../Hooks/useGetAppVersion";
 import styles from "./Styles/styles.module.scss";
 
-type Props = {};
+type Props = {
+  shouldDisplayCheckingUpdateInfo?: boolean;
+  onCloseHandler?: () => void;
+};
 
-export default function UpdateModal({}: Props) {
+export default function UpdateModal({
+  shouldDisplayCheckingUpdateInfo = false,
+  onCloseHandler
+}: Props) {
   const [update, setUpdate] = useState<Update | null>(null);
+  const [isCheckingUpdate, setIsCheckingUpdate] = useState(false);
+  const [hasCheckedUpdate, setHasCheckedUpdate] = useState(false);
   const [downloadedPercent, setDownloadedPercent] = useState(0);
-  const [shouldDisplayDownloadPercent, setShouldDisplayDownloadPercent] = useState(false);
+  const [shouldDisplayDownloadPercent, setShouldDisplayDownloadPercent] =
+    useState(false);
   const { appVersion } = useGetAppVersion();
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(
+    shouldDisplayCheckingUpdateInfo
+  );
   const [dots, setDots] = useState("");
+
   const updateApp = async () => {
     if (update) {
       let downloaded = 0;
       let contentLength = 0;
       // alternatively we could also call update.download() and update.install() separately
       try {
-        await update.downloadAndInstall(event => {
+        await update.downloadAndInstall((event) => {
           switch (event.event) {
             case "Started":
               contentLength = event.data.contentLength || 0;
@@ -41,27 +53,37 @@ export default function UpdateModal({}: Props) {
       await relaunch();
     }
   };
+
   useEffect(() => {
     if (update) {
       setIsModalOpen(true);
     }
   }, [update]);
+
+  useEffect(() => {
+    if (!isModalOpen && onCloseHandler) {
+      onCloseHandler();
+    }
+  }, [isModalOpen]);
+
   useEffect(() => {
     async function checkUpdate() {
       try {
+        setIsCheckingUpdate(true);
         const update = await check();
         setUpdate(update);
       } catch (e) {
         console.log(e);
       }
+      setHasCheckedUpdate(true);
+      setIsCheckingUpdate(false);
     }
     checkUpdate();
   }, []);
-  console.log(shouldDisplayDownloadPercent);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setDots(prev => (prev.length < 3 ? prev + "." : ""));
+      setDots((prev) => (prev.length < 3 ? prev + "." : ""));
     }, 1000); // Changes every second
 
     return () => clearInterval(interval); // Cleanup on unmount
@@ -76,29 +98,49 @@ export default function UpdateModal({}: Props) {
         customStyle={styles}
         modalTitle={<div>Nueva version</div>}
       >
-        Actualmente estas usando la version {appVersion}, quieres actualizar a la version{" "}
-        {update?.version}?
-        <div className={styles.buttonsWrapper}>
-          <Button
-            variant="secondary"
-            className={styles.cancelButton}
-            onClick={() => {
-              setIsModalOpen(false);
-            }}
-          >
-            Cancelar
-          </Button>
-          <Button
-            variant="primary"
-            onClick={() => {
-              updateApp();
-              setDots("");
-              setShouldDisplayDownloadPercent(true);
-            }}
-          >
-            Confirmar
-          </Button>
-        </div>
+        {!update &&
+        shouldDisplayCheckingUpdateInfo &&
+        !hasCheckedUpdate &&
+        isCheckingUpdate ? (
+          <span>
+            Chequeando si hay nueva version disponible para actualizar{dots}
+          </span>
+        ) : null}
+        {!update &&
+        shouldDisplayCheckingUpdateInfo &&
+        hasCheckedUpdate &&
+        !isCheckingUpdate ? (
+          <span>No hay actualizacion disponible</span>
+        ) : null}
+        {update ? (
+          <>
+            <span>
+              Actualmente estas usando la version {appVersion}, quieres
+              actualizar a la version {update?.version}?
+            </span>
+            <div className={styles.buttonsWrapper}>
+              <Button
+                variant="secondary"
+                className={styles.cancelButton}
+                onClick={() => {
+                  setIsModalOpen(false);
+                }}
+              >
+                Cancelar
+              </Button>
+              <Button
+                variant="primary"
+                onClick={() => {
+                  updateApp();
+                  setDots("");
+                  setShouldDisplayDownloadPercent(true);
+                }}
+              >
+                Confirmar
+              </Button>
+            </div>
+          </>
+        ) : null}
       </Modal>
       {shouldDisplayDownloadPercent ? (
         <Portal>
@@ -106,7 +148,10 @@ export default function UpdateModal({}: Props) {
           <div className={styles.downloadPercentage}>
             Actualizando aplicacion{dots}
             <div className={styles.progressContainer}>
-              <div className={styles.progressBar} style={{ width: downloadedPercent + "%" }}></div>
+              <div
+                className={styles.progressBar}
+                style={{ width: downloadedPercent + "%" }}
+              ></div>
             </div>
           </div>
         </Portal>
