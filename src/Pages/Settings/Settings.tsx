@@ -2,6 +2,7 @@ import { Button } from "components-gallery";
 import styles from "./Styles/styles.module.scss";
 import SimpleArrowLeftIcon from "@icons/simple-arrow-left.svg";
 import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 import BasicSettings from "./BasicSettings/BasicSettings";
 import Validation from "./Validation/Validation";
 import Visualization from "./Visualization/Visualization";
@@ -20,7 +21,12 @@ const Settings = () => {
               <SimpleArrowLeftIcon />
             </Link>
           </div>
-          <div>Configurador de taquilla</div>
+          <div>
+            <FormattedMessage
+              id="settings.title"
+              defaultMessage="Configurador de taquilla"
+            />
+          </div>
           <div className={styles.saveButtonContainer}>
             <Button
               size="full"
@@ -29,7 +35,7 @@ const Settings = () => {
               className={styles.saveButton}
             >
               <SaveIcon />
-              Guardar
+              <FormattedMessage id="settings.save" defaultMessage="Guardar" />
             </Button>
           </div>
         </div>
@@ -39,7 +45,7 @@ const Settings = () => {
               width: "33%",
               display: "flex",
               gap: "7px",
-              flexDirection: "column",
+              flexDirection: "column"
             }}
           >
             <BasicSettings />

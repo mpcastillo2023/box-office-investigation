@@ -1,27 +1,47 @@
 import { DropdownSelect, Switch, TextInput } from "components-gallery";
 import styles from "./Styles/styles.module.scss";
+import { FormattedMessage, useIntl } from "react-intl";
+
 const Management = () => {
+  const { formatMessage } = useIntl();
   return (
     <>
       <div className={styles.managementContainer}>
-        <div className={styles.managementTitle}>Administracion</div>
+        <div className={styles.managementTitle}>
+          <FormattedMessage
+            id="management.title"
+            defaultMessage="Administración"
+          />
+        </div>
         <div className={styles.managementBody}>
           <div>
-            API Key <TextInput className={styles.input} />
+            <FormattedMessage id="management.apiKey" defaultMessage="API Key" />
+            <TextInput className={styles.input} />
           </div>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Permitir modo Offline"
+              textBeside={
+                <FormattedMessage
+                  id="management.allowOfflineMode"
+                  defaultMessage="Permitir modo Offline"
+                />
+              }
             />
           </div>
           <div>
-            Rango: Numero de ids a solicitar
+            <FormattedMessage
+              id="management.rangeRequestIds"
+              defaultMessage="Rango: Número de IDs a solicitar"
+            />
             <TextInput className={styles.input} />
           </div>
           <div>
-            Rango: Margen de seguridad (#ids)
+            <FormattedMessage
+              id="management.rangeSafetyMargin"
+              defaultMessage="Rango: Margen de seguridad (#IDs)"
+            />
             <TextInput className={styles.input} />
           </div>
           <div>
@@ -31,30 +51,43 @@ const Management = () => {
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Factura simplificada (obsoleto)"
+              textBeside={
+                <FormattedMessage
+                  id="management.simplifiedInvoice"
+                  defaultMessage="Factura simplificada (obsoleto)"
+                />
+              }
             />
           </div>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Habilitar facturacion (nuevo 2017)"
+              textBeside={
+                <FormattedMessage
+                  id="management.enableBilling"
+                  defaultMessage="Habilitar facturación (nuevo 2017)"
+                />
+              }
             />
           </div>
           <div>
             <TextInput
               className={styles.input}
-              placeholder="Importe minimo para pedir factura"
+              placeholder={formatMessage({ id: "management.minAmountInvoice" })}
             />
           </div>
           <div>
-            Tipo de modal para facturar*
+            <FormattedMessage
+              id="management.invoiceModalType"
+              defaultMessage="Tipo de modal para facturar*"
+            />
             <DropdownSelect
               optionList={[
                 {
                   optionText: "No aplica",
-                  optionValue: "noAplica",
-                },
+                  optionValue: "noAplica"
+                }
               ]}
               customStyle={styles}
               className={styles.select}
@@ -65,55 +98,92 @@ const Management = () => {
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Imprimir informe de cierre"
+              textBeside={
+                <FormattedMessage
+                  id="management.printClosingReport"
+                  defaultMessage="Imprimir informe de cierre"
+                />
+              }
             />
           </div>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Habilitar codigos promocionales"
+              textBeside={
+                <FormattedMessage
+                  id="management.enablePromoCodes"
+                  defaultMessage="Habilitar códigos promocionales"
+                />
+              }
             />
           </div>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Habilitar seleccion de distribuidor"
+              textBeside={
+                <FormattedMessage
+                  id="management.enableDistributorSelection"
+                  defaultMessage="Habilitar selección de distribuidor"
+                />
+              }
             />
           </div>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Habilitar seleccion de escuelas/agencias"
+              textBeside={
+                <FormattedMessage
+                  id="management.enableSchoolAgencySelection"
+                  defaultMessage="Habilitar selección de escuelas/agencias"
+                />
+              }
             />
           </div>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Habilitar cambio de contraseña"
+              textBeside={
+                <FormattedMessage
+                  id="management.enablePasswordChange"
+                  defaultMessage="Habilitar cambio de contraseña"
+                />
+              }
             />
           </div>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Habilitar seleccion impresoras y plantillas"
+              textBeside={
+                <FormattedMessage
+                  id="management.enablePrinterTemplateSelection"
+                  defaultMessage="Habilitar selección impresoras y plantillas"
+                />
+              }
             />
           </div>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Imprimir historico de usuarios"
+              textBeside={
+                <FormattedMessage
+                  id="management.printUserHistory"
+                  defaultMessage="Imprimir histórico de usuarios"
+                />
+              }
             />
           </div>
           <div>
             <TextInput
               className={styles.input}
-              placeholder="Tiempo expiracion (minutos)"
+              placeholder={formatMessage({
+                id: "management.sessionExpirationTime"
+              })}
             />
           </div>
         </div>
@@ -121,4 +191,5 @@ const Management = () => {
     </>
   );
 };
+
 export default Management;

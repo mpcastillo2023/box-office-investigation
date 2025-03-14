@@ -53,40 +53,39 @@ const Login = () => {
             confirmButtonText="Confirmar"
             onConfirmHandler={ticketBooth}
             customStyle={styles}
-            children={
-              <div className={styles.modalContent}>
-                <RadioButtonGroup
-                  name="test"
-                  options={[
-                    {
-                      optionText: "Visita libre Castillo de Bourdeilles",
-                      optionValue: "Visita libre Castillo de Bourdeilles"
-                    },
-                    {
-                      optionText: "Talleres individuales Bourdeilles",
-                      optionValue: "Talleres individuales Bourdeilles"
-                    },
-                    {
-                      optionText: "Escape game",
-                      optionValue: "Escape game"
-                    },
-                    {
-                      optionText: "Audioguide Bourdeilles",
-                      optionValue: "Audioguide Bourdeilles"
-                    },
-                    {
-                      optionText: "Visita guiada bourdeilles",
-                      optionValue: "Visita guiada bourdeilles"
-                    },
-                    {
-                      optionText: "Billet jumelé MAAP - BOURDEILLES",
-                      optionValue: "Billet jumelé MAAP - BOURDEILLES"
-                    }
-                  ]}
-                />
-              </div>
-            }
-          />
+          >
+            <div className={styles.modalContent}>
+              <RadioButtonGroup
+                name="test"
+                options={[
+                  {
+                    optionText: "Visita libre Castillo de Bourdeilles",
+                    optionValue: "Visita libre Castillo de Bourdeilles"
+                  },
+                  {
+                    optionText: "Talleres individuales Bourdeilles",
+                    optionValue: "Talleres individuales Bourdeilles"
+                  },
+                  {
+                    optionText: "Escape game",
+                    optionValue: "Escape game"
+                  },
+                  {
+                    optionText: "Audioguide Bourdeilles",
+                    optionValue: "Audioguide Bourdeilles"
+                  },
+                  {
+                    optionText: "Visita guiada bourdeilles",
+                    optionValue: "Visita guiada bourdeilles"
+                  },
+                  {
+                    optionText: "Billet jumelé MAAP - BOURDEILLES",
+                    optionValue: "Billet jumelé MAAP - BOURDEILLES"
+                  }
+                ]}
+              />
+            </div>
+          </Modal>
         </div>
         <div className={styles.loginFooter}>
           <Checkbox textBeside="Modo Offline" />

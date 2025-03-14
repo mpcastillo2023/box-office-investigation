@@ -1,27 +1,38 @@
 import { DropdownSelect, Switch, TextInput } from "components-gallery";
 import styles from "./Styles/styles.module.scss";
+import { FormattedMessage } from "react-intl";
 
 const Validation = () => {
   return (
     <>
       <div className={styles.validationContainer}>
-        <div className={styles.validationTitle}>Validacion</div>
+        <div className={styles.validationTitle}>
+          <FormattedMessage id="validation.title" defaultMessage="Validación" />
+        </div>
         <div className={styles.validationBody}>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Enviar a tornos"
+              textBeside={
+                <FormattedMessage
+                  id="validation.sendToTurnstiles"
+                  defaultMessage="Enviar a tornos"
+                />
+              }
             />
           </div>
           <div>
-            Metodo de validacion
+            <FormattedMessage
+              id="validation.validationMethod"
+              defaultMessage="Método de validación"
+            />
             <DropdownSelect
               optionList={[
                 {
                   optionText: "No validar entradas",
-                  optionValue: "noValidar",
-                },
+                  optionValue: "noValidar"
+                }
               ]}
               customStyle={styles}
               className={styles.select}
@@ -29,18 +40,29 @@ const Validation = () => {
             />
           </div>
           <div>
-            Verifier POS
+            <FormattedMessage
+              id="validation.verifierPOS"
+              defaultMessage="Verifier POS"
+            />
             <TextInput className={styles.input} placeholder="Ej: 235" />
           </div>
           <div>
-            Verifier ID
+            <FormattedMessage
+              id="validation.verifierID"
+              defaultMessage="Verifier ID"
+            />
             <TextInput className={styles.input} placeholder="Ej: 87" />
           </div>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Validar Impresiones"
+              textBeside={
+                <FormattedMessage
+                  id="validation.validatePrints"
+                  defaultMessage="Validar Impresiones"
+                />
+              }
             />
           </div>
         </div>

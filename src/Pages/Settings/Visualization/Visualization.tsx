@@ -1,139 +1,208 @@
 import { Button, DropdownSelect, Switch, TextInput } from "components-gallery";
 import styles from "./Styles/styles.module.scss";
+import { FormattedMessage, useIntl } from "react-intl";
 
 const Visualization = () => {
+  const { formatMessage } = useIntl();
   return (
     <>
       <div className={styles.visualizationContainer}>
-        <div className={styles.visualizationTitle}>Visualizacion</div>
+        <div className={styles.visualizationTitle}>
+          <FormattedMessage
+            id="visualization.title"
+            defaultMessage="Visualización"
+          />
+        </div>
         <div className={styles.visualizationBody}>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Mostrar solo eventos disponibles"
+              textBeside={
+                <FormattedMessage
+                  id="visualization.showAvailableEvents"
+                  defaultMessage="Mostrar solo eventos disponibles"
+                />
+              }
             />
           </div>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Seleccionar producto principal al iniciar"
+              textBeside={
+                <FormattedMessage
+                  id="visualization.selectMainProduct"
+                  defaultMessage="Seleccionar producto principal al iniciar"
+                />
+              }
             />
           </div>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Mostrar hora de finalizacion del evento"
+              textBeside={
+                <FormattedMessage
+                  id="visualization.showEventEndTime"
+                  defaultMessage="Mostrar hora de finalización del evento"
+                />
+              }
             />
           </div>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Ofrecer siguiente sesion disponible"
+              textBeside={
+                <FormattedMessage
+                  id="visualization.offerNextSession"
+                  defaultMessage="Ofrecer siguiente sesión disponible"
+                />
+              }
             />
           </div>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Mostrar disponibilidad maxima (ej:15/100)"
+              textBeside={
+                <FormattedMessage
+                  id="visualization.showMaxAvailability"
+                  defaultMessage="Mostrar disponibilidad máxima (ej:15/100)"
+                />
+              }
             />
           </div>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Agruypar productos por categoria"
+              textBeside={
+                <FormattedMessage
+                  id="visualization.groupProductsByCategory"
+                  defaultMessage="Agrupar productos por categoría"
+                />
+              }
             />
           </div>
           <div>
             <Switch
               customStyles={styles}
               size="extraSmall"
-              textBeside="Marcar salto de evento en busqueda de reservas"
+              textBeside={
+                <FormattedMessage
+                  id="visualization.markEventJump"
+                  defaultMessage="Marcar salto de evento en búsqueda de reservas"
+                />
+              }
             />
           </div>
           <div>
             <Button className={styles.button} size="medium" variant="primary">
-              MENSAJES DEL DISPLAY
+              <FormattedMessage
+                id="visualization.displayMessages"
+                defaultMessage="MENSAJES DEL DISPLAY"
+              />
             </Button>
           </div>
           <div className={styles.row}>
             <div className={styles.column}>
-              Formulario de compra*
+              <FormattedMessage
+                id="visualization.purchaseForm"
+                defaultMessage="Formulario de compra*"
+              />
               <DropdownSelect
                 className={styles.select}
                 customStyle={styles}
                 optionList={[
                   {
                     optionText: "Nunca",
-                    optionValue: "nunca",
-                  },
+                    optionValue: "nunca"
+                  }
                 ]}
                 value={"nunca"}
               />
             </div>
             <div className={styles.column}>
-              Cada X compras*
+              <FormattedMessage
+                id="visualization.everyXPurchases"
+                defaultMessage="Cada X compras*"
+              />
               <TextInput className={styles.input} placeholder="0" />
             </div>
           </div>
           <div className={styles.row}>
             <div className={styles.column}>
-              Productos/pag*
+              <FormattedMessage
+                id="visualization.productsPerPage"
+                defaultMessage="Productos/pag*"
+              />
               <TextInput className={styles.input} />
             </div>
             <div className={styles.column}>
-              Sessiones/pag*
-              <TextInput className={styles.input} />
-            </div>
-          </div>
-          <div className={styles.row}>
-            <div className={styles.column}>
-              Promociones/pag*
-              <TextInput className={styles.input} />
-            </div>
-            <div className={styles.column}>
-              Zoom de aplicacion
+              <FormattedMessage
+                id="visualization.sessionsPerPage"
+                defaultMessage="Sesiones/pag*"
+              />
               <TextInput className={styles.input} />
             </div>
           </div>
           <div className={styles.row}>
             <div className={styles.column}>
-              Idioma de datos por defecto*
+              <FormattedMessage
+                id="visualization.promotionsPerPage"
+                defaultMessage="Promociones/pag*"
+              />
+              <TextInput className={styles.input} />
+            </div>
+            <div className={styles.column}>
+              <FormattedMessage
+                id="visualization.applicationZoom"
+                defaultMessage="Zoom de aplicación"
+              />
+              <TextInput className={styles.input} />
+            </div>
+          </div>
+          <div className={styles.row}>
+            <div className={styles.column}>
+              <FormattedMessage
+                id="visualization.defaultDataLanguage"
+                defaultMessage="Idioma de datos por defecto*"
+              />
               <DropdownSelect
                 className={styles.select}
                 customStyle={styles}
                 optionList={[
                   {
                     optionText: "CA-Català",
-                    optionValue: "catalan",
+                    optionValue: "catalan"
                   },
                   {
                     optionText: "ES-Español",
-                    optionValue: "spanish",
-                  },
+                    optionValue: "spanish"
+                  }
                 ]}
                 value={"catalan"}
               />
             </div>
             <div>
-              Idioma aplicacion actual
+              <FormattedMessage
+                id="visualization.currentApplicationLanguage"
+                defaultMessage="Idioma aplicación actual"
+              />
               <DropdownSelect
                 className={styles.select}
                 customStyle={styles}
                 optionList={[
                   {
                     optionText: "CA-Català",
-                    optionValue: "catalan",
+                    optionValue: "catalan"
                   },
                   {
                     optionText: "ES-Español",
-                    optionValue: "spanish",
-                  },
+                    optionValue: "spanish"
+                  }
                 ]}
                 value={"spanish"}
               />
@@ -141,14 +210,22 @@ const Visualization = () => {
           </div>
           <div className={styles.row}>
             <div className={styles.column}>
-              Idiomas de tickets
+              <FormattedMessage
+                id="visualization.ticketLanguages"
+                defaultMessage="Idiomas de tickets"
+              />
               <TextInput className={styles.input} />
             </div>
             <div className={styles.column}>
-              Idiomas de apliacion
+              <FormattedMessage
+                id="visualization.applicationLanguages"
+                defaultMessage="Idiomas de aplicación"
+              />
               <TextInput
                 className={styles.input}
-                placeholder="Idioma por defecto"
+                placeholder={formatMessage({
+                  id: "visualization.defaultLanguagePlaceholder"
+                })}
               />
             </div>
           </div>
