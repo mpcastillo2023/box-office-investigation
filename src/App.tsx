@@ -10,6 +10,10 @@ import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client
 import Settings from "./Pages/Settings/Settings";
 import { ThemeContextProvider } from "./Providers/ThemeProvider";
 import UpdateModal from "./Components/UpdateModal/UpdateModal";
+import SettingsLogin from "./Pages/SettingsLogin/SettingsLogin";
+import ProductHeader from "./Components/ProductHeader/ProductHeader";
+import { LocaleProvider } from "./Providers/LocaleProvider";
+import { TranslateProvider } from "./Providers/TranslateProvider";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,19 +34,26 @@ function App() {
       client={queryClient}
       persistOptions={{ persister }}
     >
-      <UpdateModal />
-      <ThemeContextProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route index element={<Login />} />
-            <Route path="/" element={<Layout />}>
-              <Route path="ticketbooth" element={<TicketBooth />} />
-              <Route path="history" element={<History />} />
-            </Route>
-            <Route path="/settings" element={<Settings />} />
-          </Routes>
-        </BrowserRouter>
-      </ThemeContextProvider>
+      <LocaleProvider>
+        <TranslateProvider>
+          <UpdateModal />
+          <ThemeContextProvider>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/settings" element={<Settings />} />
+                <Route element={<ProductHeader />}>
+                  <Route path="/" element={<Login />} />
+                  <Route path="/settings/Login" element={<SettingsLogin />} />
+                </Route>
+                <Route element={<Layout />}>
+                  <Route path="/ticketbooth" element={<TicketBooth />} />
+                  <Route path="/history" element={<History />} />
+                </Route>
+              </Routes>
+            </BrowserRouter>
+          </ThemeContextProvider>
+        </TranslateProvider>
+      </LocaleProvider>
     </PersistQueryClientProvider>
   );
 }

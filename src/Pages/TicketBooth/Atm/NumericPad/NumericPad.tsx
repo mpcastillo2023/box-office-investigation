@@ -8,13 +8,14 @@ import {
   Modal,
   Spinner,
   TextInput,
-  UseIsDesktop,
+  UseIsDesktop
 } from "components-gallery";
 
 type Props = {
   setSelectedTickets: React.Dispatch<React.SetStateAction<[] | any>>;
   selectTickets: [] | any;
 };
+
 const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
   const [paid, setPaid] = useState("0");
   const [isFormModalOpen, setIsFormModalOpen] = useState(false);
@@ -295,11 +296,11 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
                   { optionText: "Español", optionValue: "Español" },
                   {
                     optionText: "Estadounidense",
-                    optionValue: "Estadounidense",
+                    optionValue: "Estadounidense"
                   },
                   { optionText: "Mexicano", optionValue: "Mexicano" },
                   { optionText: "Japonés", optionValue: "Japonés" },
-                  { optionText: "Alemán", optionValue: "Alemán" },
+                  { optionText: "Alemán", optionValue: "Alemán" }
                 ]}
               />
             </div>

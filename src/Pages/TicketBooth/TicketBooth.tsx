@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import useNetworkStatus from "../../Hooks/useNetworkStatus";
-import { addData, deleteStore, getStoreData, initDB, Stores } from "../../Utils/OfflineDb/db";
+import {
+  addData,
+  deleteStore,
+  getStoreData,
+  initDB,
+  Stores
+} from "../../Utils/OfflineDb/db";
 import Atm from "./Atm/Atm";
 
 const TicketBooth = () => {
@@ -48,14 +54,14 @@ const TicketBooth = () => {
         {isOnline ? "Has connection" : "Offline"}
         <form
           className="row"
-          onSubmit={e => {
+          onSubmit={(e) => {
             e.preventDefault();
             greet();
           }}
         >
           <input
             id="greet-input"
-            onChange={e => setName(e.currentTarget.value)}
+            onChange={(e) => setName(e.currentTarget.value)}
             placeholder="Enter a name..."
           />
           <button type="submit">Greet</button>

@@ -6,7 +6,6 @@ import { useState } from "react";
 
 export default function Atm() {
   const [selectedTickets, setSelectedTickets] = useState<[] | any>([]);
-  console.log(selectedTickets);
   return (
     <>
       <div className={styles.atmContainer}>

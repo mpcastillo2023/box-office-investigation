@@ -34,7 +34,6 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           !sidebarRef.current.contains(event.target as Node)
         ) {
           toggleSidebar();
-          console.log("clicked outside");
         }
       }
     };
