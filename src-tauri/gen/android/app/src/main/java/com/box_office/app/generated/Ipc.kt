@@ -6,7 +6,7 @@
 
 @file:Suppress("unused")
 
-package com.atm.app
+package com.box_office.app
 
 import android.webkit.*
 
@@ -23,7 +23,7 @@ class Ipc(val webViewClient: RustWebViewClient) {
 
     companion object {
         init {
-            System.loadLibrary("atm_lib")
+            System.loadLibrary("box_office_lib")
         }
     }
 

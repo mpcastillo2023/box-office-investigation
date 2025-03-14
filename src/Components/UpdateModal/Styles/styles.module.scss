@@ -1,0 +1,79 @@
+.modal {
+    padding: 0px !important;
+
+    .modalHeader {
+        background-color: #00BCD4;
+        color: white;
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .modalContent {
+        font-size: 14px !important;
+        padding: 20px;
+    }
+}
+
+.blackDrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    filter: blur(10px);
+}
+
+@keyframes progress {
+    0% {
+        --percentage: 0;
+    }
+
+    100% {
+        --percentage: var(--value);
+    }
+}
+
+.downloadPercentage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 13px;
+}
+
+.progressContainer {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 16px;
+}
+
+.progressBar {
+    height: 100%;
+    background-color: var(--blue-strong-primary);
+    width: 0%;
+    transition: width 0.3s ease-in-out;
+}
+
+.buttonsWrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancelButton {
+    background: var(--red-danger-strong) 0% 0% no-repeat padding-box !important;
+    color: white !important;
+    border: 1px solid var(--red-danger-strong) !important;
+}

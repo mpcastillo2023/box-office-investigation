@@ -256,6 +256,7 @@
     --promotions-highlight: #C65026;
     --box-office-primary-blue: #0182FF;
     --subtitle-text: white;
+    --selected-card-background: #19B03E
 }
 
 
@@ -269,8 +270,8 @@
     --promotions-highlight: var(--blue-strong-secondary);
     --box-office-primary-blue: var(--blue-strong-secondary);
     --subtitle-text: var(--blue-dark-strong);
+    --selected-card-background: var(--blue-strong-secondary);
 }
-
 
 
 body {

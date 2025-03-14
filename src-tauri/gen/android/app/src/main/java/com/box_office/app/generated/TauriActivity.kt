@@ -4,7 +4,7 @@
 
 /* THIS FILE IS AUTO-GENERATED. DO NOT MODIFY!! */
 
-package com.atm.app
+package com.box_office.app
 
 import android.os.Bundle
 import android.content.Intent

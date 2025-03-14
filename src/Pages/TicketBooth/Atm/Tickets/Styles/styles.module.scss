@@ -177,7 +177,7 @@
             }
 
             .selected {
-                background-color: #19B03E;
+                background-color: var(--selected-card-background);
                 color: white;
                 border: none ! important;
             }

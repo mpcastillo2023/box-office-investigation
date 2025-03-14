@@ -1,0 +1,10 @@
+export declare const blackDrop: string;
+export declare const buttonsWrapper: string;
+export declare const cancelButton: string;
+export declare const downloadPercentage: string;
+export declare const modal: string;
+export declare const modalContent: string;
+export declare const modalHeader: string;
+export declare const progress: string;
+export declare const progressBar: string;
+export declare const progressContainer: string;

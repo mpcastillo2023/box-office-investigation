@@ -9,11 +9,9 @@
     gap: 30px;
     justify-content: space-around;
     border-radius: 13px;
-    width: calc(50% - 70px);
+    width: calc(40% - 10px);
+    height: 60px;
 
-    @media (max-width: 768px) {
-        width: calc(100% - 60px);
-    }
 
     .info {
         display: flex;

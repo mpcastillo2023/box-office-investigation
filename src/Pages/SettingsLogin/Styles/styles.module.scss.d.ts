@@ -1,0 +1,12 @@
+export declare const customRadioButtonGroup: string;
+export declare const modal: string;
+export declare const modalContent: string;
+export declare const modalHeader: string;
+export declare const modalInputContent: string;
+export declare const settingsLogin: string;
+export declare const settingsLoginBody: string;
+export declare const settingsLoginButton: string;
+export declare const settingsLoginContainer: string;
+export declare const settingsLoginFooter: string;
+export declare const settingsLoginForm: string;
+export declare const settingsLoginTitle: string;

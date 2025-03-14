@@ -4,25 +4,25 @@
 # SPDX-License-Identifier: Apache-2.0
 # SPDX-License-Identifier: MIT
 
--keep class com.atm.app.* {
+-keep class com.box_office.app.* {
   native <methods>;
 }
 
--keep class com.atm.app.WryActivity {
+-keep class com.box_office.app.WryActivity {
   public <init>(...);
 
-  void setWebView(com.atm.app.RustWebView);
+  void setWebView(com.box_office.app.RustWebView);
   java.lang.Class getAppClass(...);
   java.lang.String getVersion();
 }
 
--keep class com.atm.app.Ipc {
+-keep class com.box_office.app.Ipc {
   public <init>(...);
 
   @android.webkit.JavascriptInterface public <methods>;
 }
 
--keep class com.atm.app.RustWebView {
+-keep class com.box_office.app.RustWebView {
   public <init>(...);
 
   void loadUrlMainThread(...);
@@ -32,6 +32,6 @@
   void evalScript(...);
 }
 
--keep class com.atm.app.RustWebChromeClient,com.atm.app.RustWebViewClient {
+-keep class com.box_office.app.RustWebChromeClient,com.box_office.app.RustWebViewClient {
   public <init>(...);
 }

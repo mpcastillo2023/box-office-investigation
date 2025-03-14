@@ -9,6 +9,7 @@ import { createIDBPersister } from "./Utils/OfflineDb/createIdbPersister";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import Settings from "./Pages/Settings/Settings";
 import { ThemeContextProvider } from "./Providers/ThemeProvider";
+import UpdateModal from "./Components/UpdateModal/UpdateModal";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -16,16 +17,20 @@ const queryClient = new QueryClient({
       refetchOnWindowFocus: false,
       refetchOnReconnect: false,
       retry: 1,
-      staleTime: 1000 * 60 * 60 * 12,
-    },
-  },
+      staleTime: 1000 * 60 * 60 * 12
+    }
+  }
 });
 
 const persister = createIDBPersister();
 
 function App() {
   return (
-    <PersistQueryClientProvider client={queryClient} persistOptions={{ persister }}>
+    <PersistQueryClientProvider
+      client={queryClient}
+      persistOptions={{ persister }}
+    >
+      <UpdateModal />
       <ThemeContextProvider>
         <BrowserRouter>
           <Routes>
