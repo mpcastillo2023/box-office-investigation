@@ -22,7 +22,10 @@ const getDefaultTheme = () => {
 
 const defaultTheme = getDefaultTheme();
 
-export const ThemeContext = createContext<ThemeContextValue>(defaultTheme as ThemeContextValue);
+// eslint-disable-next-line react-refresh/only-export-components
+export const ThemeContext = createContext<ThemeContextValue>(
+  defaultTheme as ThemeContextValue
+);
 
 type Props = {
   children: React.ReactNode;
@@ -53,7 +56,7 @@ export const ThemeContextProvider = ({ children }: Props) => {
     <ThemeContext.Provider
       value={{
         theme,
-        setTheme: setThemeHandler,
+        setTheme: setThemeHandler
       }}
     >
       {children}

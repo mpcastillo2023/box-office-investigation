@@ -1,5 +1,6 @@
 import styles from "./Styles/styles.module.scss";
 import TicketIcon from "@icons/ticket.svg";
+import { FormattedMessage } from "react-intl";
 import CatalogsCalendar from "./Calendar/CatalogCalendar";
 import VenuesCatalog from "./Venues/VenuesCatalog";
 import SessionsCatalog from "./Sessions/CatalogSessions";
@@ -13,7 +14,7 @@ export default function Products() {
         <div className={styles.products}>
           <div className={styles.productsTitle}>
             <TicketIcon />
-            Products
+            <FormattedMessage id="products.title" defaultMessage="Productos" />
           </div>
           <ProductsCatalog />
           <VenuesCatalog />

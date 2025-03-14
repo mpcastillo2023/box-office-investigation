@@ -7,6 +7,7 @@ const messages = {
   es: es
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const TranslateContext = createContext({});
 
 export const TranslateProvider = ({ children }: { children: ReactNode }) => {

@@ -2,7 +2,7 @@ import { getCookie } from "components-gallery";
 import React, { createContext, useState } from "react";
 
 const getLocale = () => {
-  const locale = getCookie("locale") || "en";
+  const locale = getCookie("locale") || "es";
   // Split locales with a region code
   const languageWithoutRegionCode = locale.toLowerCase().split(/[_-]+/)[0];
   return languageWithoutRegionCode;
@@ -12,6 +12,7 @@ type LocaleProviderValue = {
   setLocale: (locale: string) => void;
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const LocaleContext = createContext<LocaleProviderValue>(
   {} as LocaleProviderValue
 );

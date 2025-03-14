@@ -1,15 +1,18 @@
 import { Modal } from "components-gallery";
+import { FormattedMessage } from "react-intl";
 import ArchiveWithArrowIcon from "@icons/archive-box-arrow.svg";
 import styles from "./Styles/styles.module.scss";
 import { useState } from "react";
+import React from "react";
 
 type Props = {
   isCashDropModalOpen: boolean;
   setIsCashDropModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
+
 const CashDropModal = ({
   isCashDropModalOpen,
-  setIsCashDropModalOpen,
+  setIsCashDropModalOpen
 }: Props) => {
   const [amount, setAmount] = useState("0,00 EUR");
 
@@ -23,14 +26,16 @@ const CashDropModal = ({
       return `${newValue} EUR`;
     });
   };
+
   const handleDelete = () => {
     setAmount((prev) => {
-      let cleanValue = prev.replace(" EUR", "").replace(",", ".");
+      const cleanValue = prev.replace(" EUR", "").replace(",", ".");
       if (cleanValue.length <= 1) return "0,00 EUR";
       const newValue = cleanValue.slice(0, -1);
       return `${newValue} EUR`;
     });
   };
+
   return (
     <>
       <Modal
@@ -42,18 +47,29 @@ const CashDropModal = ({
         isConfirmModal
         modalTitle={
           <>
-            <ArchiveWithArrowIcon /> Retirar efectivo
+            <ArchiveWithArrowIcon />
+            <FormattedMessage
+              id="cashDrop.withdrawCash"
+              defaultMessage="Retirar efectivo"
+            />
           </>
         }
       >
         <div className={styles.container}>
           <div className={styles.display}>
-            <span className={styles.label}>IMPORTE</span>
+            <span className={styles.label}>
+              <FormattedMessage id="cashDrop.amount" defaultMessage="IMPORTE" />
+            </span>
             <input className={styles.input} value={amount} readOnly />
           </div>
 
           <div className={styles.display}>
-            <span className={styles.label}>CONFIRMAR</span>
+            <span className={styles.label}>
+              <FormattedMessage
+                id="cashDrop.confirm"
+                defaultMessage="CONFIRMAR"
+              />
+            </span>
             <input className={styles.input} value="0,00 EUR" readOnly />
           </div>
 

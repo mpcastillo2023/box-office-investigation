@@ -10,7 +10,7 @@ const Clock = () => {
         now.toLocaleTimeString("es-ES", {
           hour: "2-digit",
           minute: "2-digit",
-          hour12: false,
+          hour12: false
         })
       );
     };

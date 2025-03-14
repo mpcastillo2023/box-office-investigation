@@ -2,6 +2,7 @@ import { relaunch } from "@tauri-apps/plugin-process";
 import { check, Update } from "@tauri-apps/plugin-updater";
 import { Button, Modal, Portal } from "components-gallery";
 import { useEffect, useState } from "react";
+import { FormattedMessage } from "react-intl";
 import useGetAppVersion from "../../Hooks/useGetAppVersion";
 import styles from "./Styles/styles.module.scss";
 
@@ -30,7 +31,6 @@ export default function UpdateModal({
     if (update) {
       let downloaded = 0;
       let contentLength = 0;
-      // alternatively we could also call update.download() and update.install() separately
       try {
         await update.downloadAndInstall((event) => {
           switch (event.event) {
@@ -47,7 +47,7 @@ export default function UpdateModal({
               break;
           }
         });
-      } catch (e) {
+      } catch {
         setShouldDisplayDownloadPercent(true);
       }
       await relaunch();
@@ -84,9 +84,9 @@ export default function UpdateModal({
   useEffect(() => {
     const interval = setInterval(() => {
       setDots((prev) => (prev.length < 3 ? prev + "." : ""));
-    }, 1000); // Changes every second
+    }, 1000);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -96,27 +96,44 @@ export default function UpdateModal({
         isModalOpen={isModalOpen}
         variant="success"
         customStyle={styles}
-        modalTitle={<div>Nueva version</div>}
+        modalTitle={
+          <FormattedMessage
+            id="updateModal.newVersion"
+            defaultMessage="Nueva versión"
+          />
+        }
       >
         {!update &&
         shouldDisplayCheckingUpdateInfo &&
         !hasCheckedUpdate &&
         isCheckingUpdate ? (
           <span>
-            Chequeando si hay nueva version disponible para actualizar{dots}
+            <FormattedMessage
+              id="updateModal.checking"
+              defaultMessage="Chequeando si hay nueva versión disponible para actualizar"
+            />
+            {dots}
           </span>
         ) : null}
         {!update &&
         shouldDisplayCheckingUpdateInfo &&
         hasCheckedUpdate &&
         !isCheckingUpdate ? (
-          <span>No hay actualizacion disponible</span>
+          <span>
+            <FormattedMessage
+              id="updateModal.noUpdate"
+              defaultMessage="No hay actualización disponible"
+            />
+          </span>
         ) : null}
         {update ? (
           <>
             <span>
-              Actualmente estas usando la version {appVersion}, quieres
-              actualizar a la version {update?.version}?
+              <FormattedMessage
+                id="updateModal.currentVersion"
+                defaultMessage="Actualmente estás usando la versión {appVersion}, ¿quieres actualizar a la versión {updateVersion}?"
+                values={{ appVersion, updateVersion: update?.version }}
+              />
             </span>
             <div className={styles.buttonsWrapper}>
               <Button
@@ -126,7 +143,10 @@ export default function UpdateModal({
                   setIsModalOpen(false);
                 }}
               >
-                Cancelar
+                <FormattedMessage
+                  id="updateModal.cancel"
+                  defaultMessage="Cancelar"
+                />
               </Button>
               <Button
                 variant="primary"
@@ -136,7 +156,10 @@ export default function UpdateModal({
                   setShouldDisplayDownloadPercent(true);
                 }}
               >
-                Confirmar
+                <FormattedMessage
+                  id="updateModal.confirm"
+                  defaultMessage="Confirmar"
+                />
               </Button>
             </div>
           </>
@@ -146,7 +169,11 @@ export default function UpdateModal({
         <Portal>
           <div className={styles.blackDrop}></div>
           <div className={styles.downloadPercentage}>
-            Actualizando aplicacion{dots}
+            <FormattedMessage
+              id="updateModal.updating"
+              defaultMessage="Actualizando aplicación"
+            />
+            {dots}
             <div className={styles.progressContainer}>
               <div
                 className={styles.progressBar}

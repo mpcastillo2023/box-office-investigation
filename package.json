@@ -29,6 +29,7 @@
     "react-router-dom": "^7.1.5"
   },
   "devDependencies": {
+    "@types/node": "^22.3.0",
     "@tauri-apps/cli": "^2",
     "@types/node-sass": "^4.11.8",
     "@types/react": "^18.3.1",

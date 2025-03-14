@@ -26,6 +26,9 @@ module.exports = {
     "react-refresh",
     "unused-imports"
   ],
+  globals: {
+    RequestInit: true
+  },
   rules: {
     "react/react-in-jsx-scope": "off",
     "no-undef": "error",

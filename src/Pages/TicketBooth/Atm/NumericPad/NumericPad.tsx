@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useEffect, useState } from "react";
 import styles from "./Styles/styles.module.scss";
 import UserIcon from "@icons/user.svg";
@@ -10,17 +12,20 @@ import {
   TextInput,
   UseIsDesktop
 } from "components-gallery";
+import { FormattedMessage } from "react-intl";
+import { Tickets } from "../../../../Types/Tickets";
+import React from "react";
 
 type Props = {
-  setSelectedTickets: React.Dispatch<React.SetStateAction<[] | any>>;
-  selectTickets: [] | any;
+  setSelectedTickets: React.Dispatch<React.SetStateAction<[] | Tickets[]>>;
+  selectTickets: Tickets[];
 };
 
 const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
   const [paid, setPaid] = useState("0");
   const [isFormModalOpen, setIsFormModalOpen] = useState(false);
   const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
-  const [total, setTotal] = useState(0);
+  const [totalPrice, setTotalPrice] = useState<number>(0);
 
   useEffect(() => {
     const newTotal = selectTickets.reduce(
@@ -28,7 +33,7 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
       0
     );
 
-    setTotal(newTotal.toFixed(2));
+    setTotalPrice(newTotal);
   }, [selectTickets]);
 
   const openConfirmModal = () => {
@@ -54,35 +59,34 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
   };
 
   const outstanding =
-    total - parseFloat(paid) >= 0
-      ? (total - parseFloat(paid)).toFixed(2)
+    totalPrice - parseFloat(paid) >= 0
+      ? (totalPrice - parseFloat(paid)).toFixed(2)
       : "0,00";
   const { isDesktop } = UseIsDesktop();
+  const quantityOfTickets = selectTickets.reduce(
+    (acc: number, ticket: { quantity: number }) => acc + ticket.quantity,
+    0
+  );
   return (
     <>
       {isDesktop ? (
         <div className={styles.numeralPadContainer}>
           <div className={styles.resume}>
             <div className={styles.totalHeader}>
-              <div>TOTAL</div>
+              <div>
+                <FormattedMessage
+                  id="numeralPad.total"
+                  defaultMessage="TOTAL"
+                />
+              </div>
               <div className={styles.totalInfo}>
                 <div className={styles.numberOfTicketContainer}>
-                  <span>
-                    {selectTickets.reduce(
-                      (acc: number, ticket: { quantity: number }) =>
-                        acc + ticket.quantity,
-                      0
-                    )}
-                  </span>
+                  <span>{quantityOfTickets}</span>
                   <UserIcon />
                 </div>
                 <div className={styles.deleteBtn}>
-                  {selectTickets.reduce(
-                    (acc: number, ticket: { totalPrice: number }) =>
-                      acc + ticket.totalPrice,
-                    0
-                  )}
-                  €
+                  {/*  eslint-disable-next-line react/jsx-no-literals */}
+                  {totalPrice.toFixed(2)}€
                   <div onClick={() => setSelectedTickets([])}>
                     <TrashIcon />
                   </div>
@@ -91,13 +95,14 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
             </div>
             <div className={styles.bookingInProgress}>
               <div className={styles.items}>
-                {selectTickets.map((ticket: any, index: number) => (
+                {selectTickets.map((ticket, index: number) => (
                   <div className={styles.item} key={index}>
                     <span className={styles.itemName}>{ticket.name}</span>
                     <span className={styles.itemQuantity}>
                       {ticket.quantity}
                     </span>
                     <span className={styles.itemPrice}>
+                      {/*  eslint-disable-next-line react/jsx-no-literals */}
                       {ticket.totalPrice}€
                     </span>
                   </div>
@@ -109,20 +114,40 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
           <div className={styles.payment}>
             <div className={styles.totals}>
               <div className={styles.totalsInfo}>
-                <span>TOTAL</span>
-                <span style={{ fontWeight: "bold" }}>{total || "0,00"}</span>
+                <span>
+                  <FormattedMessage
+                    id="numeralPad.total"
+                    defaultMessage="TOTAL"
+                  />
+                </span>
+                <span style={{ fontWeight: "bold" }}>
+                  {/*  eslint-disable-next-line react/jsx-no-literals */}
+                  {totalPrice.toFixed(2)}
+                </span>
               </div>
               <div className={styles.totalsInfo}>
-                <span>PAGADO</span>
+                <span>
+                  <FormattedMessage
+                    id="numeralPad.paid"
+                    defaultMessage="PAGADO"
+                  />
+                </span>
                 <span style={{ fontWeight: "bold" }}>
                   {parseFloat(paid).toFixed(2) || "0,00"}
                 </span>
               </div>
               <div className={styles.totalsInfo}>
-                <span>FALTAN</span>
+                <span>
+                  <FormattedMessage
+                    id="numeralPad.outstanding"
+                    defaultMessage="FALTAN"
+                  />
+                </span>
                 <span style={{ fontWeight: "bold" }}>{outstanding}</span>
               </div>
             </div>
+
+            {/* Keyboard */}
             <div className={styles.keyboard}>
               {[7, 8, 9, 4, 5, 6, 1, 2, 3, "DEL", 0, "."].map((key) => (
                 <button
@@ -136,24 +161,34 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
                 </button>
               ))}
             </div>
+
             <div className={styles.paymentOptions}>
               <button
                 onClick={() => setIsFormModalOpen(true)}
                 className={styles.paymentButton}
               >
-                VOUCHER
+                <FormattedMessage
+                  id="numeralPad.voucher"
+                  defaultMessage="VOUCHER"
+                />
               </button>
               <button
                 onClick={() => setIsFormModalOpen(true)}
                 className={styles.paymentButton}
               >
-                TARJETA
+                <FormattedMessage
+                  id="numeralPad.card"
+                  defaultMessage="TARJETA"
+                />
               </button>
               <button
                 onClick={() => setIsFormModalOpen(true)}
                 className={styles.paymentButton}
               >
-                EFECTIVO
+                <FormattedMessage
+                  id="numeralPad.cash"
+                  defaultMessage="EFECTIVO"
+                />
               </button>
             </div>
           </div>
@@ -166,15 +201,21 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
           title={
             <div className={styles.resume}>
               <div className={styles.totalHeader}>
-                <span>TOTAL</span>
+                <span>
+                  <FormattedMessage
+                    id="numeralPad.total"
+                    defaultMessage="TOTAL"
+                  />
+                </span>
                 <div className={styles.totalInfo}>
                   <div className={styles.numberOfTicketContainer}>
-                    <span>2</span>
+                    <span>{quantityOfTickets}</span>
                     <UserIcon />
                   </div>
 
                   <div className={styles.deleteBtn}>
-                    40,00€
+                    {/*  eslint-disable-next-line react/jsx-no-literals */}
+                    {totalPrice.toFixed(2)}€
                     <TrashIcon />
                   </div>
                 </div>
@@ -185,33 +226,51 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
         >
           <div className={styles.bookingInProgress}>
             <div className={styles.items}>
-              {selectTickets.map((ticket: any, index: number) => (
+              {selectTickets.map((ticket: Tickets, index: number) => (
                 <div className={styles.item} key={index}>
                   <span className={styles.itemName}>{ticket.name}</span>
                   <span className={styles.itemQuantity}>{ticket.quantity}</span>
+                  {/*  eslint-disable-next-line react/jsx-no-literals */}
                   <span className={styles.itemPrice}>{ticket.totalPrice}€</span>
                 </div>
               ))}
             </div>
           </div>
+
           <div className={styles.payment}>
             <div className={styles.totals}>
               <div className={styles.totalsInfo}>
-                <span>TOTAL</span>
-                <span style={{ fontWeight: "bold" }}>40.00</span>
+                <span>
+                  <FormattedMessage
+                    id="numeralPad.total"
+                    defaultMessage="TOTAL"
+                  />
+                </span>
+                <span style={{ fontWeight: "bold" }}>
+                  {totalPrice || "0,00"}
+                </span>
               </div>
               <div className={styles.totalsInfo}>
-                <span>paid</span>
+                <span>
+                  <FormattedMessage
+                    id="numeralPad.paid"
+                    defaultMessage="PAGADO"
+                  />
+                </span>
                 <span style={{ fontWeight: "bold" }}>{paid || "0.00"}</span>
               </div>
               <div className={styles.totalsInfo}>
-                <span>FALTAN</span>
-                <span style={{ fontWeight: "bold" }}>
-                  {(40 - parseFloat(paid || "0")).toFixed(2)}
+                <span>
+                  <FormattedMessage
+                    id="numeralPad.outstanding"
+                    defaultMessage="FALTAN"
+                  />
                 </span>
+                <span style={{ fontWeight: "bold" }}>{outstanding}</span>
               </div>
             </div>
 
+            {/* Keyboard */}
             <div className={styles.keyboard}>
               {[7, 8, 9, 4, 5, 6, 1, 2, 3, "DEL", 0, "."].map((key) => (
                 <button
@@ -231,19 +290,28 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
                 onClick={() => setIsFormModalOpen(true)}
                 className={styles.paymentButton}
               >
-                VOUCHER
+                <FormattedMessage
+                  id="numeralPad.voucher"
+                  defaultMessage="VOUCHER"
+                />
               </button>
               <button
                 onClick={() => setIsFormModalOpen(true)}
                 className={styles.paymentButton}
               >
-                TARJETA
+                <FormattedMessage
+                  id="numeralPad.card"
+                  defaultMessage="TARJETA"
+                />
               </button>
               <button
                 onClick={() => setIsFormModalOpen(true)}
                 className={styles.paymentButton}
               >
-                EFECTIVO
+                <FormattedMessage
+                  id="numeralPad.cash"
+                  defaultMessage="EFECTIVO"
+                />
               </button>
             </div>
           </div>
@@ -259,37 +327,73 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
       >
         <div className={styles.confirmModalContainer}>
           <div className={styles.confirmModalTitle}>
-            <div>Completando la venta. Por favor espere....</div>
-            <div>reserva, pago, impresion...</div>
+            <div>
+              <FormattedMessage
+                id="numeralPad.processing"
+                defaultMessage="Completando la venta. Por favor espere...."
+              />
+            </div>
+            <div>
+              <FormattedMessage
+                id="numeralPad.transactionSteps"
+                defaultMessage="Reserva, pago, impresión..."
+              />
+            </div>
           </div>
           <Spinner customClasses={styles.ldsSpinner} />
         </div>
       </Modal>
 
       <Modal
-        modalTitle="Complete el Formulario"
+        modalTitle={
+          <FormattedMessage
+            id="numeralPad.completeForm"
+            defaultMessage="Complete el Formulario"
+          />
+        }
         variant="success"
         isConfirmModal
         setIsModalOpen={setIsFormModalOpen}
         isModalOpen={isFormModalOpen}
-        cancelButtonText="Cancelar"
-        confirmButtonText="Confirmar"
+        cancelButtonText={
+          <FormattedMessage id="numeralPad.cancel" defaultMessage="Cancelar" />
+        }
+        confirmButtonText={
+          <FormattedMessage
+            id="numeralPad.confirm"
+            defaultMessage="Confirmar"
+          />
+        }
         onConfirmHandler={openConfirmModal}
         customStyle={styles}
       >
         <div className={styles.modalContainer}>
-          <div className={styles.modalTitle}>Detalles de la Compra</div>
+          <div className={styles.modalTitle}>
+            <FormattedMessage
+              id="numeralPad.purchaseDetails"
+              defaultMessage="Detalles de la Compra"
+            />
+          </div>
           <div className={styles.inputsContainer}>
             <div>
-              Nombre*
+              <FormattedMessage
+                id="numeralPad.firstName"
+                defaultMessage="Nombre*"
+              />
               <TextInput />
             </div>
             <div>
-              Apellido*
+              <FormattedMessage
+                id="numeralPad.lastName"
+                defaultMessage="Apellido*"
+              />
               <TextInput />
             </div>
             <div>
-              Nacionalidad*
+              <FormattedMessage
+                id="numeralPad.nationality"
+                defaultMessage="Nacionalidad*"
+              />
               <DropdownSelect
                 customStyle={styles}
                 optionList={[
@@ -305,15 +409,21 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
               />
             </div>
             <div>
-              Telefono*
+              <FormattedMessage
+                id="numeralPad.phone"
+                defaultMessage="Teléfono*"
+              />
               <TextInput />
             </div>
             <div>
-              Email*
+              <FormattedMessage id="numeralPad.email" defaultMessage="Email*" />
               <TextInput />
             </div>
             <div>
-              Observaciones*
+              <FormattedMessage
+                id="numeralPad.notes"
+                defaultMessage="Observaciones*"
+              />
               <TextInput />
             </div>
           </div>

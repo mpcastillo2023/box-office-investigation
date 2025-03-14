@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-literals */
+import { FormattedMessage } from "react-intl";
 import styles from "./Styles/styles.module.scss";
 import Clock from "../Clock/Clock";
 import ClockIcon from "@icons/clock.svg";
@@ -24,12 +26,13 @@ const LoginFooter = () => {
             className={styles.settingsButton}
           >
             <PowerIcon />
-            Cerrar
+            <FormattedMessage id="loginFooter.close" defaultMessage="Cerrar" />
           </Button>
         </div>
         <div>
           <Link className={styles.settingsButton} to="/settings/Login">
-            <CogIcon /> Ayuda
+            <CogIcon />
+            <FormattedMessage id="loginFooter.help" defaultMessage="Ayuda" />
           </Link>
         </div>
         <div className={styles.clockContainer}>

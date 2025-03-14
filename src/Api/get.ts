@@ -1,10 +1,14 @@
 import { deepParseJson, objectHasProperty } from "components-gallery";
 import { errorHandlerForReactQuery } from "./errorHandlerForReactQuery";
 
-const get = async (url: string, headers?: RequestInit["headers"], withCredentials = true) => {
+const get = async (
+  url: string,
+  headers?: RequestInit["headers"],
+  withCredentials = true
+) => {
   const response = await fetch(url, {
     credentials: withCredentials ? "include" : "omit",
-    headers,
+    headers
   });
   if (!response.ok) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

@@ -9,20 +9,17 @@ export default function useCheckUpdate() {
     async function checkUpdate() {
       try {
         const update = await check();
-        console.log(update);
         if (update) {
-          let downloaded = 0;
-          let contentLength = 0;
           // alternatively we could also call update.download() and update.install() separately
           try {
-            await update.downloadAndInstall(event => {
+            await update.downloadAndInstall((event) => {
               switch (event.event) {
                 case "Started":
-                  contentLength = event.data.contentLength || 0;
-                  console.log(`started downloading ${event.data.contentLength} bytes`);
+                  console.log(
+                    `started downloading ${event.data.contentLength} bytes`
+                  );
                   break;
                 case "Progress":
-                  downloaded += event.data.chunkLength;
                   break;
                 case "Finished":
                   console.log("download finished");

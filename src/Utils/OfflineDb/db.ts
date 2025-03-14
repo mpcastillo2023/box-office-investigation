@@ -1,17 +1,17 @@
 let request: IDBOpenDBRequest;
 let db: IDBDatabase;
-let version = 2;
+const version = 2;
 
 export interface Message {
   name: string;
 }
 
 export enum Stores {
-  Messages = "messages",
+  Messages = "messages"
 }
 
 export const initDB = (): Promise<boolean> => {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     // open the connection
     request = indexedDB.open("myDB", version);
 
@@ -36,8 +36,11 @@ export const initDB = (): Promise<boolean> => {
   });
 };
 
-export const addData = <T>(storeName: string, data: T): Promise<T | string | null> => {
-  return new Promise(resolve => {
+export const addData = <T>(
+  storeName: string,
+  data: T
+): Promise<T | string | null> => {
+  return new Promise((resolve) => {
     request = indexedDB.open("myDB", version);
 
     request.onsuccess = () => {
@@ -61,7 +64,7 @@ export const addData = <T>(storeName: string, data: T): Promise<T | string | nul
 };
 
 export const deleteStore = (storeName: string) => {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     request = indexedDB.open("myDB", version);
 
     request.onsuccess = () => {
@@ -83,7 +86,7 @@ export const deleteStore = (storeName: string) => {
 };
 
 export const getStoreData = <T>(storeName: Stores): Promise<T[]> => {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     request = indexedDB.open("myDB");
 
     request.onsuccess = () => {

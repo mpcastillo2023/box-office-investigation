@@ -1,4 +1,5 @@
 import { Spinner } from "components-gallery";
+import { JSX } from "react";
 
 type Props<T> = {
   status: "error" | "success" | "pending";

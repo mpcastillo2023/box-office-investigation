@@ -64,6 +64,7 @@ const TicketBooth = () => {
             onChange={(e) => setName(e.currentTarget.value)}
             placeholder="Enter a name..."
           />
+          {/* eslint-disable-next-line react/jsx-no-literals */}
           <button type="submit">Greet</button>
         </form>
       </main>

@@ -39,9 +39,9 @@ const put = async (
     credentials: withCredentials ? "include" : "omit",
     headers: {
       "Content-Type": "application/json",
-      ...headers,
+      ...headers
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(data)
   });
   if (!response.ok) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

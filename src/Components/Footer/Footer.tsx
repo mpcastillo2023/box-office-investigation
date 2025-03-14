@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import { FormattedMessage } from "react-intl";
 import styles from "./Styles/styles.module.scss";
 import Bars4Icon from "@icons/bars-4.svg";
 import MagnifyingGlass from "@icons/magnifying-glass.svg";
@@ -24,30 +27,55 @@ export default function Footer({ toggleSidebar }: SidebarProps) {
   useEffect(() => {
     setIsAppOnline(isOnline);
   }, [isOnline]);
+
   return (
     <>
       <div className={styles.footerContainer}>
         <div className={styles.footerOptions}>
           <div onClick={toggleSidebar} className={styles.option}>
             <Bars4Icon />
-            {isDesktop ? <span>Menu</span> : null}
+            {isDesktop ? (
+              <span>
+                <FormattedMessage id="footer.menu" defaultMessage="Menú" />
+              </span>
+            ) : null}
           </div>
           <div className={styles.option}>
             <Link to="/history">
               <MagnifyingGlass />
-              {isDesktop ? <span>Reservas</span> : null}
+              {isDesktop ? (
+                <span>
+                  <FormattedMessage
+                    id="footer.reservations"
+                    defaultMessage="Reservas"
+                  />
+                </span>
+              ) : null}
             </Link>
           </div>
           <div className={styles.option}>
             <Link to="/ticketbooth">
               <BuildingIcon />
-              {isDesktop ? <span>Cajon</span> : null}
+              {isDesktop ? (
+                <span>
+                  <FormattedMessage id="footer.drawer" defaultMessage="Cajón" />
+                </span>
+              ) : null}
             </Link>
           </div>
         </div>
         <div className={styles.clorianInfo}>
           <Switch
-            textBeside={isAppOnline ? "Online" : "Offline"}
+            textBeside={
+              isAppOnline ? (
+                <FormattedMessage id="footer.online" defaultMessage="Online" />
+              ) : (
+                <FormattedMessage
+                  id="footer.offline"
+                  defaultMessage="Offline"
+                />
+              )
+            }
             value={isAppOnline}
             onChange={() => setShouldDisplayOnlineModal(true)}
             customStyles={styles}
@@ -64,16 +92,37 @@ export default function Footer({ toggleSidebar }: SidebarProps) {
         setIsModalOpen={setShouldDisplayOnlineModal}
         variant="success"
         isConfirmModal={true}
-        confirmButtonText={"Confirmar"}
-        cancelButtonText={"Cancelar"}
+        confirmButtonText={
+          <FormattedMessage id="footer.confirm" defaultMessage="Confirmar" />
+        }
+        cancelButtonText={
+          <FormattedMessage id="footer.cancel" defaultMessage="Cancelar" />
+        }
         customStyle={styles}
         onConfirmHandler={() => setIsAppOnline((prevState) => !prevState)}
-        modalTitle={<div>¿Confirmar que desea cambiar de modo?</div>}
+        modalTitle={
+          <div>
+            <FormattedMessage
+              id="footer.confirmModeChange"
+              defaultMessage="¿Confirmar que desea cambiar de modo?"
+            />
+          </div>
+        }
       >
         {isAppOnline ? (
-          <div>La aplicacion va a perder la conexion</div>
+          <div>
+            <FormattedMessage
+              id="footer.loseConnection"
+              defaultMessage="La aplicación va a perder la conexión"
+            />
+          </div>
         ) : (
-          <div>La aplicacion va a restablecer la conexion</div>
+          <div>
+            <FormattedMessage
+              id="footer.restoreConnection"
+              defaultMessage="La aplicación va a restablecer la conexión"
+            />
+          </div>
         )}
       </Modal>
     </>

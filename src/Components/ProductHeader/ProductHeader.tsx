@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-literals */
 import { Outlet } from "react-router-dom";
 import styles from "./Styles/styles.module.scss";
 

@@ -8,6 +8,7 @@ import {
 } from "components-gallery";
 import styles from "./Styles/styles.module.scss";
 import { useState } from "react";
+import { FormattedMessage } from "react-intl";
 import ClorianLogo from "@images/clorian-logo-login.png";
 import { useNavigate } from "react-router-dom";
 import LoginFooter from "../../Components/LoginFooter/LoginFooter";
@@ -27,11 +28,11 @@ const Login = () => {
             <img src={ClorianLogo} alt="Clorian Logo" />
           </div>
           <div>
-            Usuario
+            <FormattedMessage id="login.username" defaultMessage="Usuario" />
             <EmailInput />
           </div>
           <div>
-            Contraseña
+            <FormattedMessage id="login.password" defaultMessage="Contraseña" />
             <PasswordInput />
           </div>
           <div style={{ width: "87%" }}>
@@ -40,17 +41,29 @@ const Login = () => {
               variant="primary"
               onClick={() => setIsModalOpen(true)}
             >
-              Iniciar Sesión
+              <FormattedMessage
+                id="login.loginButton"
+                defaultMessage="Iniciar Sesión"
+              />
             </Button>
           </div>
           <Modal
-            modalTitle="Complete el Formulario"
+            modalTitle={
+              <FormattedMessage
+                id="login.completeForm"
+                defaultMessage="Complete el Formulario"
+              />
+            }
             variant="success"
             isConfirmModal
             setIsModalOpen={setIsModalOpen}
             isModalOpen={isModalOpen}
-            cancelButtonText="Cancelar"
-            confirmButtonText="Confirmar"
+            cancelButtonText={
+              <FormattedMessage id="login.cancel" defaultMessage="Cancelar" />
+            }
+            confirmButtonText={
+              <FormattedMessage id="login.confirm" defaultMessage="Confirmar" />
+            }
             onConfirmHandler={ticketBooth}
             customStyle={styles}
           >
@@ -88,7 +101,14 @@ const Login = () => {
           </Modal>
         </div>
         <div className={styles.loginFooter}>
-          <Checkbox textBeside="Modo Offline" />
+          <Checkbox
+            textBeside={
+              <FormattedMessage
+                id="login.offlineMode"
+                defaultMessage="Modo Offline"
+              />
+            }
+          />
         </div>
         <div style={{ marginTop: "auto" }}>
           <LoginFooter />

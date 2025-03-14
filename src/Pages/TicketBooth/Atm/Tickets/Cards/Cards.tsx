@@ -16,7 +16,13 @@ interface CardProps {
       }[]
     >
   >;
-  selectedTickets: [] | any;
+  selectedTickets: {
+    name: string;
+    price: number;
+    quantity: number;
+    totalPrice: number;
+    productId: number;
+  }[];
 }
 
 const Card: React.FC<CardProps> = ({
@@ -24,7 +30,7 @@ const Card: React.FC<CardProps> = ({
   price,
   setSelectedTickets,
   selectedTickets,
-  productId,
+  productId
 }) => {
   const [quantity, setQuantity] = useState<number>(0);
 
@@ -54,8 +60,8 @@ const Card: React.FC<CardProps> = ({
             name,
             price,
             quantity,
-            totalPrice: parseFloat(totalPrice),
-          },
+            totalPrice: parseFloat(totalPrice)
+          }
         ];
       }
     });
@@ -70,9 +76,11 @@ const Card: React.FC<CardProps> = ({
     <div className={`${styles.card} ${quantity > 0 ? styles.selected : ""}`}>
       <div className={styles.info}>
         <span className={styles.name}>{name}</span>
+        {/* eslint-disable-next-line react/jsx-no-literals*/}
         <span className={styles.price}>{price.toFixed(2)} €</span>
       </div>
       <div className={styles.counter}>
+        {/* eslint-disable-next-line react/jsx-no-literals*/}
         <button onClick={decreaseQuantity} className={styles.button}>
           −
         </button>
@@ -81,7 +89,7 @@ const Card: React.FC<CardProps> = ({
             (ticket: { productId: number }) => ticket.productId === productId
           )?.quantity || 0}
         </span>
-
+        {/* eslint-disable-next-line react/jsx-no-literals*/}
         <button onClick={increaseQuantity} className={styles.button}>
           +
         </button>
