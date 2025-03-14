@@ -62,7 +62,7 @@
 
         display: flex;
         justify-content: center;
-        background-color: #1D7A66;
+        background-color: var(--box-office-highlight);
         border-radius: 13px;
         color: white;
         padding: 5px;
@@ -86,10 +86,10 @@
         .aforosSubTitle {
             display: flex;
             justify-content: center;
-            background-color: #1D7A66;
+            background-color: var(--box-office-sub-highlight);
             border-top-left-radius: 13px;
             border-top-right-radius: 13px;
-            color: white;
+            color: var(--subtitle-text);
             padding: 5px 10px;
             font-size: 14px;
             gap: 5px;
@@ -137,7 +137,7 @@
         .promotionsTitle {
             display: flex;
             justify-content: center;
-            background-color: #C65026;
+            background-color: var(--promotions-highlight);
             border-top-left-radius: 13px;
             border-top-right-radius: 13px;
             color: white;

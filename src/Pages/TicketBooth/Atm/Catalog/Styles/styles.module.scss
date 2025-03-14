@@ -61,7 +61,7 @@
     .productsTitle {
         display: flex;
         justify-content: center;
-        background-color: #C98635;
+        background-color: var(--products-highlight);
         border-radius: 13px;
         color: white;
         padding: 5px;
@@ -98,10 +98,10 @@
         .productsSubTitle {
             display: flex;
             justify-content: flex-start;
-            background-color: #C98635;
+            background-color: var(--first-product-subtitle);
             border-top-left-radius: 13px;
             border-top-right-radius: 13px;
-            color: white;
+            color: var(--subtitle-text);
             padding: 5px 10px;
             font-size: 14px;
             gap: 5px;
@@ -142,10 +142,10 @@
         .aforosSubTitle {
             display: flex;
             justify-content: flex-start;
-            background-color: #844A79;
+            background-color: var(--products-sub-title);
             border-top-left-radius: 13px;
             border-top-right-radius: 13px;
-            color: white;
+            color: var(--subtitle-text);
             padding: 5px 10px;
             font-size: 14px;
             gap: 5px;
@@ -172,10 +172,10 @@
         .sessionsSubTitle {
             display: flex;
             justify-content: flex-start;
-            background-color: #844A79;
+            background-color: var(--products-sub-title);
             border-top-left-radius: 13px;
             border-top-right-radius: 13px;
-            color: white;
+            color: var(--subtitle-text);
             padding: 5px 10px;
             font-size: 14px;
             gap: 5px;

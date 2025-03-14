@@ -7,3 +7,4 @@ export declare const sidebarFooter: string;
 export declare const sidebarHeader: string;
 export declare const sidebarMenu: string;
 export declare const sidebarOpen: string;
+export declare const themeSwitchContainer: string;

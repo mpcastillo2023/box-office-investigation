@@ -246,7 +246,32 @@
 
     // Stepper
     --background-passed-step: var(--cool-gray);
+
+    // titlesBackgroundColors
+    --products-highlight: #C98635;
+    --first-product-subtitle: #C98635;
+    --products-sub-title: #844A79;
+    --box-office-highlight: #1D7A66;
+    --box-office-sub-highlight: #1D7A66;
+    --promotions-highlight: #C65026;
+    --box-office-primary-blue: #0182FF;
+    --subtitle-text: white;
 }
+
+
+
+.theme-new {
+    --products-highlight: var(--blue-strong-secondary);
+    --products-sub-title: var(--gray-light-tertiary);
+    --first-product-subtitle: var(--gray-light-tertiary);
+    --box-office-sub-highlight: var(--gray-light-tertiary);
+    --box-office-highlight: var(--blue-strong-secondary);
+    --promotions-highlight: var(--blue-strong-secondary);
+    --box-office-primary-blue: var(--blue-strong-secondary);
+    --subtitle-text: var(--blue-dark-strong);
+}
+
+
 
 body {
     margin: 0;
@@ -256,5 +281,5 @@ body {
 }
 
 :root {
-  width: 100%;
+    width: 100%;
 }

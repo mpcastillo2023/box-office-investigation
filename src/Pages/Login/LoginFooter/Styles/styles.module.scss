@@ -1,4 +1,4 @@
-.loginFooterContainer{
+.loginFooterContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -6,7 +6,7 @@
     padding: 10px;
 }
 
-.versionContainer{
+.versionContainer {
     font-size: 14px;
 }
 
@@ -16,7 +16,7 @@
     gap: 20px;
 
     .settingsButton {
-        background-color: #0182FF;
+        background-color: var(--box-office-primary-blue);
         cursor: pointer;
         border: 1px solid #DADADA;
         border-radius: 13px;
@@ -27,7 +27,7 @@
         align-items: center;
         gap: 5px;
         text-decoration: none;
-        
+
         svg {
             position: relative;
             width: 20px;
@@ -43,7 +43,7 @@
         @media (max-width: 768px) {
             display: none;
         }
-        
+
         svg {
             position: relative;
             width: 20px;
@@ -58,7 +58,8 @@
             display: none;
         }
     }
-    svg{
+
+    svg {
         width: 30px;
     }
 }

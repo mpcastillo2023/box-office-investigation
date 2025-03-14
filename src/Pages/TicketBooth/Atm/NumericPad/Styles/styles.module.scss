@@ -88,14 +88,16 @@
     font-size: 14px;
     color: #06152B;
 
-    .itemName{
+    .itemName {
         width: 40%;
     }
-    .itemQuantity{
+
+    .itemQuantity {
         width: 10%;
         font-weight: bold;
     }
-    .itemPrice{
+
+    .itemPrice {
         width: 10%;
         font-weight: bold;
         display: flex;
@@ -159,7 +161,7 @@
     cursor: pointer;
     color: white;
     text-align: center;
-    background: #0182FF;
+    background: var(--box-office-primary-blue);
     border-radius: 13px;
     margin: 1px;
 }
@@ -175,58 +177,61 @@
     margin-top: 5px !important;
 }
 
-.confirmModalContainer{
+.confirmModalContainer {
     font-size: 16px;
     padding: 20px 5px;
-    .confirmModalTitle{
+
+    .confirmModalTitle {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 }
 
-.ldsSpinner{
+.ldsSpinner {
     margin: 20px auto !important;
 }
 
 .modal {
-    padding:0px !important;
+    padding: 0px !important;
+
     .modalHeader {
-       font-size: 16px;
-       padding: 15px ;
-       background-color: #00BCD4 ;
-       color: white ;
+        font-size: 16px;
+        padding: 15px;
+        background-color: #00BCD4;
+        color: white;
     }
 
-    .modalContent{
+    .modalContent {
         padding: 0px 25px !important;
 
-        .modalContainer{
+        .modalContainer {
             padding: 15px;
         }
 
-        .modalTitle{
+        .modalTitle {
             margin-bottom: 20px;
             font-size: 16px;
 
-            
-        } 
-        
-        .inputsContainer{
+
+        }
+
+        .inputsContainer {
             display: flex;
             flex-direction: column;
             gap: 20px;
 
-            input{
+            input {
                 font-size: 14px;
             }
 
             .dropdownWrapper {
                 width: 100%;
-                .dropdownElement{
+
+                .dropdownElement {
                     width: 100%;
                 }
             }
         }
     }
-}   
+}
