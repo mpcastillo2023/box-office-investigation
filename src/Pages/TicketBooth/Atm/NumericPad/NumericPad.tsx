@@ -82,7 +82,9 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
                     0
                   )}
                   €
-                  <TrashIcon />
+                  <div onClick={() => setSelectedTickets([])}>
+                    <TrashIcon />
+                  </div>
                 </div>
               </div>
             </div>

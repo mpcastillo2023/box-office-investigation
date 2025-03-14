@@ -1,9 +1,11 @@
 import styles from "./Styles/styles.module.scss";
-import Clock from "../../../Components/Clock/Clock";
+import Clock from "../Clock/Clock";
 import ClockIcon from "@icons/clock.svg";
 import ClorianLogo from "@images/clorian-logotipo.png";
 import CogIcon from "@icons/cog.svg";
 import { Link } from "react-router-dom";
+import { Button } from "components-gallery";
+import PowerIcon from "@icons/power.svg";
 
 const LoginFooter = () => {
   return (
@@ -15,7 +17,18 @@ const LoginFooter = () => {
       </div>
       <div className={styles.clorianInfo}>
         <div>
-          <Link className={styles.settingsButton} to="/settings">
+          <Button
+            size="full"
+            variant="primary"
+            type="submit"
+            className={styles.settingsButton}
+          >
+            <PowerIcon />
+            Cerrar
+          </Button>
+        </div>
+        <div>
+          <Link className={styles.settingsButton} to="/settings/Login">
             <CogIcon /> Ayuda
           </Link>
         </div>

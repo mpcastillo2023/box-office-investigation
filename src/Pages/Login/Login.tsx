@@ -10,7 +10,7 @@ import styles from "./Styles/styles.module.scss";
 import { useState } from "react";
 import ClorianLogo from "@images/clorian-logo-login.png";
 import { useNavigate } from "react-router-dom";
-import LoginFooter from "./LoginFooter/LoginFooter";
+import LoginFooter from "../../Components/LoginFooter/LoginFooter";
 
 const Login = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
