@@ -74,9 +74,10 @@ export default function UpdateModal({}: Props) {
         isModalOpen={isModalOpen}
         variant="success"
         customStyle={styles}
-        modalTitle={<div>New app version</div>}
+        modalTitle={<div>Nueva version</div>}
       >
-        You are currently using {appVersion}, would you like to update to the latest version?
+        Actualmente estas usando la version {appVersion}, quieres actualizar a la version{" "}
+        {update?.version}?
         <div className={styles.buttonsWrapper}>
           <Button
             variant="secondary"
