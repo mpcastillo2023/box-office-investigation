@@ -10,24 +10,21 @@ import BuildingIcon from "@icons/building.svg";
 import ClorianLogo from "@images/clorian-logotipo.png";
 import { Link } from "react-router";
 import { Modal, Switch, UseIsDesktop } from "components-gallery";
-import useNetworkStatus from "../../Hooks/useNetworkStatus";
-import { useEffect, useState } from "react";
 import React from "react";
+import UseFooter from "./hooks/UseFooter";
 
 type SidebarProps = {
   toggleSidebar: () => void;
 };
 
 export default function Footer({ toggleSidebar }: SidebarProps) {
-  const { isDesktop } = UseIsDesktop();
-  const { isOnline } = useNetworkStatus();
-  const [isAppOnline, setIsAppOnline] = useState(isOnline);
-  const [shouldDisplayOnlineModal, setShouldDisplayOnlineModal] =
-    useState(false);
-
-  useEffect(() => {
-    setIsAppOnline(isOnline);
-  }, [isOnline]);
+  const {
+    isDesktop,
+    isAppOnline,
+    shouldDisplayOnlineModal,
+    setShouldDisplayOnlineModal,
+    setIsAppOnline
+  } = UseFooter();
 
   return (
     <>

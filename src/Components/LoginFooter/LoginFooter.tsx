@@ -8,6 +8,7 @@ import CogIcon from "@icons/cog.svg";
 import { Link } from "react-router-dom";
 import { Button } from "components-gallery";
 import PowerIcon from "@icons/power.svg";
+import React from "react";
 
 const LoginFooter = () => {
   return (

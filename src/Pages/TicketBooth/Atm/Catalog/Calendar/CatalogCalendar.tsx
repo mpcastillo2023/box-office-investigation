@@ -1,5 +1,6 @@
 import styles from "../Styles/styles.module.scss";
 import Calendar from "@icons/calendar.svg";
+import React from "react";
 import { FormattedMessage } from "react-intl";
 
 export default function CatalogsCalendar() {

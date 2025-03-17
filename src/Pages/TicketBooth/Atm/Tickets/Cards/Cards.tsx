@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Styles/styles.module.scss";
+import UseCards from "./hooks/UseCards";
 
 interface CardProps {
   name: string;
@@ -32,45 +33,12 @@ const Card: React.FC<CardProps> = ({
   selectedTickets,
   productId
 }) => {
-  const [quantity, setQuantity] = useState<number>(0);
-
-  useEffect(() => {
-    setSelectedTickets((prevTickets) => {
-      const ticketExists = prevTickets.find(
-        (ticket) => ticket.productId === productId
-      );
-
-      if (quantity === 0) {
-        return prevTickets.filter((ticket) => ticket.productId !== productId);
-      }
-
-      const totalPrice = (price * quantity).toFixed(2);
-
-      if (ticketExists) {
-        return prevTickets.map((ticket) =>
-          ticket.productId === productId
-            ? { ...ticket, quantity, totalPrice: parseFloat(totalPrice) }
-            : ticket
-        );
-      } else {
-        return [
-          ...prevTickets,
-          {
-            productId,
-            name,
-            price,
-            quantity,
-            totalPrice: parseFloat(totalPrice)
-          }
-        ];
-      }
-    });
-  }, [quantity]);
-
-  const increaseQuantity = () => setQuantity((prev) => prev + 1);
-  const decreaseQuantity = () => {
-    if (quantity > 0) setQuantity((prev) => prev - 1);
-  };
+  const { quantity, increaseQuantity, decreaseQuantity } = UseCards(
+    name,
+    price,
+    productId,
+    setSelectedTickets
+  );
 
   return (
     <div className={`${styles.card} ${quantity > 0 ? styles.selected : ""}`}>

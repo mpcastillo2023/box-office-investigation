@@ -14,6 +14,7 @@ import SettingsLogin from "./Pages/SettingsLogin/SettingsLogin";
 import ProductHeader from "./Components/ProductHeader/ProductHeader";
 import { LocaleProvider } from "./Providers/LocaleProvider";
 import { TranslateProvider } from "./Providers/TranslateProvider";
+import React from "react";
 
 const queryClient = new QueryClient({
   defaultOptions: {

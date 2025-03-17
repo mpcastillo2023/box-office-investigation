@@ -16,6 +16,7 @@ import QueryWrapper from "../../../../Components/Hoc/QueryWrapper/QueryWrapper";
 import { Pricing } from "../../../../Types/Pricing";
 import { Tickets as TicketsType } from "../../../../Types/Tickets";
 import React from "react";
+import UseTickets from "./hooks/UseTickets";
 
 type Props = {
   setSelectedTickets: React.Dispatch<React.SetStateAction<[] | TicketsType[]>>;
@@ -26,14 +27,7 @@ export default function Tickets({
   setSelectedTickets,
   selectedTickets
 }: Props) {
-  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    const target = event.currentTarget;
-    if (target) {
-      target.classList.toggle(styles.selected);
-    }
-  };
-
-  const { isDesktop } = UseIsDesktop();
+  const { isDesktop, handleClick } = UseTickets();
 
   const query = useQuery({
     queryFn: getQuery<Pricing[]>,

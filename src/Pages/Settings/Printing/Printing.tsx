@@ -1,6 +1,7 @@
 import { DropdownSelect, Switch, TextInput } from "components-gallery";
 import styles from "./Styles/styles.module.scss";
 import { FormattedMessage } from "react-intl";
+import React from "react";
 
 const Printing = () => {
   return (

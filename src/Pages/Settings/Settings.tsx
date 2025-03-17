@@ -10,6 +10,7 @@ import SaveIcon from "@icons/save.svg";
 import Management from "./Management/Management";
 import Printing from "./Printing/Printing";
 import Payment from "./Payment/Payment";
+import React from "react";
 
 const Settings = () => {
   return (

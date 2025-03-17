@@ -3,6 +3,7 @@ import SidebarMenu from "../../SidebarMenu/SidebarMenu";
 import Footer from "../../Footer/Footer";
 import { Outlet } from "react-router-dom";
 import styles from "./Styles/styles.module.scss";
+import React from "react";
 
 const Layout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);

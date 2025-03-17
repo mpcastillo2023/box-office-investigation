@@ -4,6 +4,7 @@ import styles from "./Styles/styles.module.scss";
 import Tickets from "./Tickets/Tickets";
 import { useState } from "react";
 import { Tickets as TicketsType } from "../../../Types/Tickets";
+import React from "react";
 
 export default function Atm() {
   const [selectedTickets, setSelectedTickets] = useState<TicketsType[]>([]);
