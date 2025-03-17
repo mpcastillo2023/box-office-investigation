@@ -9,7 +9,7 @@ import ClockIcon from "@icons/clock.svg";
 import BuildingIcon from "@icons/building.svg";
 import ClorianLogo from "@images/clorian-logotipo.png";
 import { Link } from "react-router";
-import { Modal, Switch, UseIsDesktop } from "components-gallery";
+import { Modal, Switch } from "components-gallery";
 import React from "react";
 import UseFooter from "./hooks/UseFooter";
 

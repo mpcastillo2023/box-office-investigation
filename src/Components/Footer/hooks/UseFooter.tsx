@@ -1,6 +1,6 @@
 import { UseIsDesktop } from "components-gallery";
 import { useState, useEffect } from "react";
-import useNetworkStatus from "src/Hooks/useNetworkStatus";
+import useNetworkStatus from "../../../Hooks/useNetworkStatus";
 
 export default function UseTickets() {
   const { isDesktop } = UseIsDesktop();
