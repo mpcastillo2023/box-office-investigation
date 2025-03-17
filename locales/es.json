@@ -180,5 +180,9 @@
 	"sales.printSelection": "IMPRIMIR SELECCIÓN",
 	"sales.confirmed": "Confirmada",
 	"sales.returned": "Devuelta",
-	"sale.ticketShort": "ent"
+	"sale.ticketShort": "ent",
+	"search.reservationLocator": "Localizador de reservas",
+	"search.searchBy": "Buscar por*",
+	"search.enterNumber": "Introducir número",
+	"search.search": "Buscar"
 }
