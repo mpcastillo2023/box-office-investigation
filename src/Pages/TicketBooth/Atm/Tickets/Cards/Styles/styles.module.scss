@@ -11,6 +11,11 @@
     border-radius: 13px;
     width: calc(40% - 10px);
     height: 60px;
+    
+
+    @media (max-width: 1380px) {
+        width: 84%;
+    }
 
 
     .info {

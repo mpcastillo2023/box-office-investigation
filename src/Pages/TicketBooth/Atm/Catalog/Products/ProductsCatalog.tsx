@@ -9,6 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 import QueryWrapper from "../../../../../Components/Hoc/QueryWrapper/QueryWrapper";
 import { getQuery } from "../../../../../Api";
 import { Product } from "../../../../../Types/Product";
+import React from "react";
 
 export default function ProductsCatalog() {
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
@@ -44,7 +45,7 @@ export default function ProductsCatalog() {
         <div className={styles.productsCards}>
           <QueryWrapper
             {...query}
-            render={(data) => {
+            render={(data: Product[]) => {
               return data.map((product, index) => {
                 return (
                   <div

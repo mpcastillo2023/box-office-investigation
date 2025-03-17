@@ -6,58 +6,47 @@ const SalesTable: React.FC = () => {
   const columns = [
     {
       name: "checkbox",
-      label: <Checkbox />,
-      cellType: "string" as const
+      label: <Checkbox />
     },
     {
       name: "cloud",
-      label: "",
-      cellType: "string" as const
+      label: ""
     },
     {
       name: "local",
-      label: "Localizador",
-      cellType: "string" as const
+      label: "Localizador"
     },
     {
       name: "state",
-      label: "Estado",
-      cellType: "string" as const
+      label: "Estado"
     },
     {
       name: "product",
-      label: "Producto",
-      cellType: "string" as const
+      label: "Producto"
     },
     {
       name: "client",
-      label: "Cliente",
-      cellType: "string" as const
+      label: "Cliente"
     },
     {
       name: "ref",
-      label: "Ref/Email",
-      cellType: "string" as const
+      label: "Ref/Email"
     },
     {
       name: "quantity",
-      label: "#",
-      cellType: "string" as const
+      label: "#"
     },
     {
       name: "value",
-      label: "Importe",
-      cellType: "string" as const
+      label: "Importe"
     },
     {
       name: "sessionDate",
-      label: "Fecha de sesion",
-      cellType: "string" as const
+      label: "Fecha de sesion"
     },
     {
       name: "salesDate",
-      label: "Fecha de compra",
-      cellType: "string" as const
+      label: "Fecha de compra"
     }
   ];
   return (

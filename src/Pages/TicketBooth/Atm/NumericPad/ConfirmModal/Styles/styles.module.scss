@@ -1,0 +1,58 @@
+.modal {
+    padding: 0px !important;
+
+    .modalHeader {
+        font-size: 16px;
+        padding: 15px;
+        background-color: #00BCD4;
+        color: white;
+    }
+
+    .modalContent {
+        padding: 0px 25px !important;
+
+        .modalContainer {
+            padding: 15px;
+        }
+
+        .modalTitle {
+            margin-bottom: 20px;
+            font-size: 16px;
+
+
+        }
+
+        .inputsContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            input {
+                font-size: 14px;
+            }
+
+            .dropdownWrapper {
+                width: 100%;
+
+                .dropdownElement {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.confirmModalContainer {
+    font-size: 16px;
+    padding: 20px 5px;
+
+    .confirmModalTitle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.ldsSpinner {
+    margin: 20px auto !important;
+}

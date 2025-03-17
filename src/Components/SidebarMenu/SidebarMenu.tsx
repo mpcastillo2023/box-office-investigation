@@ -69,9 +69,9 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
             id="sidebar.ticketBooth"
             defaultMessage="Taquilla TPV1 - PROVENÇA"
           />
-          <div onClick={toggleSidebar}>
+          <button onClick={toggleSidebar}>
             <SimpleArrowLeftIcon />
-          </div>
+          </button>
         </div>
 
         <ul className={styles.sidebarMenu}>

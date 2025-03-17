@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import useGetAppVersion from "../../Hooks/useGetAppVersion";
 import styles from "./Styles/styles.module.scss";
+import React from "react";
 
 type Props = {
   shouldDisplayCheckingUpdateInfo?: boolean;

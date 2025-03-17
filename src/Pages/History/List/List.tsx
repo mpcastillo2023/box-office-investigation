@@ -2,30 +2,16 @@ import { Button, DropdownSelect, TextInput } from "components-gallery";
 import { FormattedMessage, useIntl } from "react-intl";
 import styles from "./Styles/styles.module.scss";
 import UserIcon from "@icons/user.svg";
+import React from "react";
+import OptionDateList from "./Options/OptionDateList";
 
 const List = () => {
   const { formatMessage } = useIntl();
-  const optionDateList = [
-    {
-      optionText: "11/11/2025",
-      optionValue: "date1"
-    },
-    {
-      optionText: "12/11/2025",
-      optionValue: "date2"
-    }
-  ];
 
-  const optionList = [
-    {
-      optionText: formatMessage({ id: "list.allMale" }),
-      optionValue: "todos"
-    },
-    {
-      optionText: formatMessage({ id: "list.allFemale" }),
-      optionValue: "todas"
-    }
-  ];
+  const optionDateList = OptionDateList;
+
+  const optionList = OptionDateList;
+
   return (
     <>
       <div className={styles.listContainer}>

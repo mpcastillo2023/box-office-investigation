@@ -8,6 +8,7 @@ import { useState } from "react";
 import Sales from "./Sales/Sales";
 import List from "./List/List";
 import Search from "./Search/Search";
+import React from "react";
 
 const History = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -47,7 +48,7 @@ const History = () => {
         <div className={styles.historyBody}>
           <div className={styles.tabsContainer}>
             {tabs.map((tab) => (
-              <div
+              <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`${styles.tabButton} ${
@@ -55,7 +56,7 @@ const History = () => {
                 }`}
               >
                 {tab.label}
-              </div>
+              </button>
             ))}
           </div>
           <div>{tabs[activeTab].content}</div>

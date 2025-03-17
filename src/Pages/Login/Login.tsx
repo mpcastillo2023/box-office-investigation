@@ -12,6 +12,7 @@ import { FormattedMessage } from "react-intl";
 import ClorianLogo from "@images/clorian-logo-login.png";
 import { useNavigate } from "react-router-dom";
 import LoginFooter from "../../Components/LoginFooter/LoginFooter";
+import React from "react";
 
 const Login = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

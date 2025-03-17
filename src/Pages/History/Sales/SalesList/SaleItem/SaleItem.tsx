@@ -1,6 +1,7 @@
 import { FormattedMessage } from "react-intl";
 import { Sales } from "../../SalesData";
 import styles from "./Styles/styles.module.scss";
+import React from "react";
 
 type Props = {
   sale: Sales;

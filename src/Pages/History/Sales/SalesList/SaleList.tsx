@@ -1,3 +1,4 @@
+import React from "react";
 import salesData from "../SalesData";
 import SaleItem from "./SaleItem/SaleItem";
 

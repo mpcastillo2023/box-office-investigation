@@ -4,6 +4,7 @@ import SalesTable from "./SalesTable/SalesTable";
 import styles from "./Styles/styles.module.scss";
 import QueueIcon from "@icons/queue-list.svg";
 import SaleList from "./SalesList/SaleList";
+import React from "react";
 
 const Sales = () => {
   const { isDesktop } = UseIsDesktop();

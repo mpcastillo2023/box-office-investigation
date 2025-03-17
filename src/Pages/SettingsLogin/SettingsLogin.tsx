@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { useNavigate } from "react-router-dom";
 import LoginFooter from "../../Components/LoginFooter/LoginFooter";
+import React from "react";
 
 const SettingsLogin = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

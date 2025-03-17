@@ -12,6 +12,7 @@ import { Link } from "react-router";
 import { Modal, Switch, UseIsDesktop } from "components-gallery";
 import useNetworkStatus from "../../Hooks/useNetworkStatus";
 import { useEffect, useState } from "react";
+import React from "react";
 
 type SidebarProps = {
   toggleSidebar: () => void;
@@ -32,14 +33,14 @@ export default function Footer({ toggleSidebar }: SidebarProps) {
     <>
       <div className={styles.footerContainer}>
         <div className={styles.footerOptions}>
-          <div onClick={toggleSidebar} className={styles.option}>
+          <button onClick={toggleSidebar} className={styles.option}>
             <Bars4Icon />
             {isDesktop ? (
               <span>
                 <FormattedMessage id="footer.menu" defaultMessage="Menú" />
               </span>
             ) : null}
-          </div>
+          </button>
           <div className={styles.option}>
             <Link to="/history">
               <MagnifyingGlass />
