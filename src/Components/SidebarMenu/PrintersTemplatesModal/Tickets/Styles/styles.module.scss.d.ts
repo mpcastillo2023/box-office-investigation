@@ -1,0 +1,9 @@
+export declare const dropdownElement: string;
+export declare const row: string;
+export declare const select: string;
+export declare const selectedOption: string;
+export declare const ticketsContainer: string;
+export declare const ticketsContent: string;
+export declare const ticketsCustom: string;
+export declare const ticketsDefault: string;
+export declare const ticketsTitle: string;

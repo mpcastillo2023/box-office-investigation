@@ -1,9 +1,10 @@
 
 
-.modal{
-    min-width: 60rem;
-    min-height: 55rem;
-    padding: 0;
+.modal{ 
+
+    min-width: 60rem !important;
+    min-height: 55rem !important;
+    padding: 0 !important;
 
     .modalHeader {
         background-color: #00BCD4;
@@ -24,8 +25,11 @@
             padding: 0px;
         }
 
-    }
+    }   
 }
+
+
+
 
 
 .tabContainer{
