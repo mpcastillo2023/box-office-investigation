@@ -1,5 +1,5 @@
 import "./globalCSS/global.scss";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TicketBooth from "./Pages/TicketBooth/TicketBooth";
 import Layout from "./Components/Hoc/Layout/Layout";
 import History from "./Pages/History/History";
@@ -42,18 +42,23 @@ function App() {
           <TranslateProvider>
             <UpdateModal />
             <ThemeContextProvider>
-              <Routes>
-                <Route path="/settings" element={<Settings />} />
-                <Route element={<ProductHeader />}>
-                  <Route path="/" element={<Login />} />
-                  <Route path="/settings/Login" element={<SettingsLogin />} />
-                </Route>
-                <Route element={<Layout />}>
-                  <Route path="/ticket-booth" element={<TicketBooth />} />
-                  <Route path="/history" element={<History />} />
-                  <Route path="/print-templates" element={<PrintTemplates />} />
-                </Route>
-              </Routes>
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/settings" element={<Settings />} />
+                  <Route element={<ProductHeader />}>
+                    <Route path="/" element={<Login />} />
+                    <Route path="/settings/Login" element={<SettingsLogin />} />
+                  </Route>
+                  <Route element={<Layout />}>
+                    <Route path="/ticket-booth" element={<TicketBooth />} />
+                    <Route path="/history" element={<History />} />
+                    <Route
+                      path="/print-templates"
+                      element={<PrintTemplates />}
+                    />
+                  </Route>
+                </Routes>
+              </BrowserRouter>
             </ThemeContextProvider>
           </TranslateProvider>
         </LocaleProvider>
