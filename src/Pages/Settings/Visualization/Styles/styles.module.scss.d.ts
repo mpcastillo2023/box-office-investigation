@@ -1,6 +1,7 @@
 export declare const button: string;
 export declare const column: string;
 export declare const dropdownElement: string;
+export declare const dropdownWrapper: string;
 export declare const input: string;
 export declare const multipleSelectItem: string;
 export declare const row: string;
