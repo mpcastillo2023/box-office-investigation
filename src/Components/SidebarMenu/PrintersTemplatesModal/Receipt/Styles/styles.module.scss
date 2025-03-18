@@ -1,0 +1,36 @@
+.receiptContainer{
+
+    border-top: 1px solid #DADADA;
+    
+    .row {
+        width: 50%;
+    }
+    
+    .select {
+    
+        .dropdownElement {
+            border: none;
+            border-bottom: 1px solid var(--gray-border-input-box-color);
+            border-radius: 0px;
+            width: 100%;
+
+            .selectedOption {
+                font-size: 14px;
+            }
+        }
+    
+        }
+    
+    .receiptTitle {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .receiptContent{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 10px;
+        padding: 15px;
+    }
+}

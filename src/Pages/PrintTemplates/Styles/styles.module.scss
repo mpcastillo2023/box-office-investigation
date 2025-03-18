@@ -1,0 +1,26 @@
+
+.printTemplatesContainer{
+    width: 100%;
+
+    .printTemplatesHeader {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #00838F;
+        padding: 15px 20px;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+    
+        svg {
+            position: relative;
+            top: 2px;
+            width: 25px;
+            stroke: white;
+        }
+    }
+
+    .printTemplatesContent{
+        display: flex;
+    }
+}

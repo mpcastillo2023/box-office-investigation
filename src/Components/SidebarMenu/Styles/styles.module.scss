@@ -66,6 +66,33 @@
     gap: 10px;
     padding: 15px;
 
+    button{
+        width: 100%;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: black;
+        gap: 10px;
+        font-weight: normal;
+        padding: 0;
+
+        svg {
+            stroke: black;
+        }
+
+    }
+
+    a{
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        color: black;
+        gap: 10px;
+        svg{
+            stroke: black;
+        }
+    }
+
     svg {
         position: relative;
         width: 20px;

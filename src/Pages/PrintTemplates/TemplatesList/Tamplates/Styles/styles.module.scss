@@ -1,0 +1,41 @@
+.container {
+    ul{
+        margin: 0;
+    }
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+}
+
+.item {
+    padding: 10px;
+    border-bottom: 1px solid #DADADA;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-right: 1px solid #DADADA;
+}
+
+.fileName {
+    font-weight: 600;
+}
+
+.fileDetails {
+    font-size: 0.875rem;
+    color: #555;
+}
+
+.fileStatus {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: #8f8f8f;
+}

@@ -52,7 +52,7 @@ export default function Footer({ toggleSidebar }: SidebarProps) {
             </Link>
           </div>
           <div className={styles.option}>
-            <Link to="/ticketbooth">
+            <Link to="/ticket-booth">
               <BuildingIcon />
               {isDesktop ? (
                 <span>

@@ -20,6 +20,9 @@ import SimpleArrowLeftIcon from "@icons/simple-arrow-left.svg";
 import { Switch } from "components-gallery";
 import { ThemeContext } from "../../Providers/ThemeProvider";
 import UpdateModal from "../UpdateModal/UpdateModal";
+import useSidebar from "./hooks/useSidebar";
+import { Link } from "react-router-dom";
+import PrintersTemplatesModal from "./PrintersTemplatesModal/PrintersTemplatesModal";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -27,28 +30,17 @@ interface SidebarProps {
 }
 
 const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
-  const sidebarRef = useRef<HTMLDivElement | null>(null);
-  const [isCashDropModalOpen, setIsCashDropModalOpen] = useState(false);
+  const {
+    sidebarRef,
+    isCashDropModalOpen,
+    setIsCashDropModalOpen,
+    shouldDisplayUpdateModal,
+    setShouldDisplayUpdateModal,
+    isPrintersTemplatesModalOpen,
+    setIPrintersTemplatesModalOpen
+  } = useSidebar({ isOpen, toggleSidebar });
+
   const { theme, setTheme } = useContext(ThemeContext);
-  const [shouldDisplayUpdateModal, setShouldDisplayUpdateModal] =
-    useState(false);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        isOpen &&
-        sidebarRef.current &&
-        !sidebarRef.current.contains(event.target as Node)
-      ) {
-        toggleSidebar();
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [toggleSidebar]);
 
   return (
     <>
@@ -81,12 +73,14 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
               defaultMessage="Operativas"
             />
           </li>
-          <li
-            onClick={() => setIsCashDropModalOpen(true)}
-            className={styles.menuItem}
-          >
-            <ArchiveWithArrowIcon />
-            <FormattedMessage id="sidebar.withdraw" defaultMessage="Retirada" />
+          <li className={styles.menuItem}>
+            <button onClick={() => setIsCashDropModalOpen(true)}>
+              <ArchiveWithArrowIcon />
+              <FormattedMessage
+                id="sidebar.withdraw"
+                defaultMessage="Retirada"
+              />
+            </button>
           </li>
           <li className={styles.menuItem}>
             <ArchiveBox />
@@ -125,18 +119,22 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
             />
           </li>
           <li className={styles.menuItem}>
-            <PrinterIcon />
-            <FormattedMessage
-              id="sidebar.printerByProduct"
-              defaultMessage="Impresoras por producto"
-            />
+            <button onClick={() => setIPrintersTemplatesModalOpen(true)}>
+              <PrinterIcon />
+              <FormattedMessage
+                id="sidebar.printerByProduct"
+                defaultMessage="Impresoras por producto"
+              />
+            </button>
           </li>
           <li className={styles.menuItem}>
-            <DocumentIcon />
-            <FormattedMessage
-              id="sidebar.printTemplates"
-              defaultMessage="Plantillas de impresión"
-            />
+            <Link to="/print-templates">
+              <DocumentIcon />
+              <FormattedMessage
+                id="sidebar.printTemplates"
+                defaultMessage="Plantillas de impresión"
+              />
+            </Link>
           </li>
           <li className={styles.menuItem}>
             <PrinterIcon />
@@ -170,8 +168,10 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
             />
           </li>
           <li className={styles.menuItem}>
-            <LogoutIcon />
-            <FormattedMessage id="sidebar.logout" defaultMessage="Logout" />
+            <Link to="/">
+              <LogoutIcon />
+              <FormattedMessage id="sidebar.logout" defaultMessage="Logout" />
+            </Link>
           </li>
         </ul>
         {/*eslint-disable-next-line react/jsx-no-literals */}
@@ -194,6 +194,10 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       <CashDropModal
         isCashDropModalOpen={isCashDropModalOpen}
         setIsCashDropModalOpen={setIsCashDropModalOpen}
+      />
+      <PrintersTemplatesModal
+        isPrintersTemplatesModalOpen={isPrintersTemplatesModalOpen}
+        setIPrintersTemplatesModalOpen={setIPrintersTemplatesModalOpen}
       />
     </>
   );

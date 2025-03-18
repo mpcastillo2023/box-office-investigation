@@ -1,0 +1,49 @@
+
+
+.modal{
+    min-width: 60rem;
+    min-height: 55rem;
+    padding: 0;
+
+    .modalHeader {
+        background-color: #00BCD4;
+        color: white;
+        font-size: 18px;
+        display: flex;
+        gap: 15px;
+        padding: 20px;
+
+        svg {
+            width: 30px;
+        }
+    }
+
+    .modalBody {
+
+        .modalContent {
+            padding: 0px;
+        }
+
+    }
+}
+
+
+.tabContainer{
+    background-color: transparent;
+    padding: 15px 20px;
+
+    .tabButton {
+    
+        &.isActive {
+            background-color: #f7f7f7;
+            color: #21B3BB;
+
+            &::after {
+                background-color: #21B3BB;
+                height: 2px;
+            }
+
+        }
+    }
+}
+

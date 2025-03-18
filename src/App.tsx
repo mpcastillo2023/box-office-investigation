@@ -15,6 +15,7 @@ import ProductHeader from "./Components/ProductHeader/ProductHeader";
 import { LocaleProvider } from "./Providers/LocaleProvider";
 import { TranslateProvider } from "./Providers/TranslateProvider";
 import React from "react";
+import PrintTemplates from "./Pages/PrintTemplates/PrintTemplates";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -47,8 +48,9 @@ function App() {
                   <Route path="/settings/Login" element={<SettingsLogin />} />
                 </Route>
                 <Route element={<Layout />}>
-                  <Route path="/ticketbooth" element={<TicketBooth />} />
+                  <Route path="/ticket-booth" element={<TicketBooth />} />
                   <Route path="/history" element={<History />} />
+                  <Route path="/print-templates" element={<PrintTemplates />} />
                 </Route>
               </Routes>
             </BrowserRouter>

@@ -37,7 +37,7 @@ const History = () => {
     <>
       <div className={styles.historyContainer}>
         <div className={styles.historyHeader}>
-          <Link to="/ticketbooth">
+          <Link to="/ticket-booth">
             <SimpleArrowLeftIcon />
           </Link>
           <FormattedMessage

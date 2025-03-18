@@ -10,7 +10,7 @@ const buyerTypes = [
     requiresPdaAlert: false,
     alertColor: "#null",
     noHandleAvailability: false,
-    status: "enabled",
+    status: "enabled"
   },
   {
     buyerTypeId: 3007,
@@ -23,7 +23,7 @@ const buyerTypes = [
     requiresPdaAlert: false,
     alertColor: "#null",
     noHandleAvailability: false,
-    status: "enabled",
+    status: "enabled"
   },
   {
     buyerTypeId: 3192,
@@ -37,7 +37,7 @@ const buyerTypes = [
     alertColor: "#FF45EC",
     alertSound: "sound3",
     noHandleAvailability: false,
-    status: "enabled",
+    status: "enabled"
   },
   {
     buyerTypeId: 3193,
@@ -51,7 +51,7 @@ const buyerTypes = [
     alertColor: "#FF45EC",
     alertSound: "sound3",
     noHandleAvailability: false,
-    status: "enabled",
+    status: "enabled"
   },
   {
     buyerTypeId: 3524,
@@ -65,8 +65,8 @@ const buyerTypes = [
     alertColor: "#FFDC52",
     alertSound: "sound2",
     noHandleAvailability: false,
-    status: "enabled",
-  },
+    status: "enabled"
+  }
 ];
 
 export default buyerTypes;

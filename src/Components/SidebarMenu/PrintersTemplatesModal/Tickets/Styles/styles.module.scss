@@ -1,0 +1,45 @@
+.ticketsContainer{
+    border-top: 1px solid #DADADA;
+
+    .row {
+        width: 50%;
+    }
+
+    .select {
+    
+        .dropdownElement {
+            border: none;
+            border-bottom: 1px solid var(--gray-border-input-box-color);
+            border-radius: 0px;
+            width: 100%;
+    
+            .selectedOption {
+                font-size: 14px;
+            }
+        }
+    
+    }
+
+    .ticketsTitle{
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .ticketsContent{
+        padding: 15px;
+
+        .ticketsDefault{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .ticketsCustom{
+            display: flex;
+            width: 100%;
+            gap: 10px;
+            margin-top: 30px;
+            align-items: center;
+        }
+    }
+}
