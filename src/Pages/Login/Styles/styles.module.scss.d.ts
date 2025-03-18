@@ -1,4 +1,6 @@
 export declare const customRadioButtonGroup: string;
+export declare const dropdownContainer: string;
+export declare const dropdownElement: string;
 export declare const login: string;
 export declare const loginButton: string;
 export declare const loginContainer: string;

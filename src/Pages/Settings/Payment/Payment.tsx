@@ -1,102 +1,49 @@
+/* eslint-disable react/jsx-no-literals */
 import { DropdownSelect, Switch, TextInput } from "components-gallery";
 import styles from "./Styles/styles.module.scss";
-import { FormattedMessage } from "react-intl";
 import React from "react";
 
 const Payment = () => {
   return (
     <>
       <div className={styles.paymentContainer}>
-        <div className={styles.paymentTitle}>
-          <FormattedMessage id="payment.title" defaultMessage="Validación" />
-        </div>
+        <div className={styles.paymentTitle}>Validación</div>
         <div className={styles.paymentBody}>
           <div className={styles.row}>
             <div className={styles.column}>
               <div>
-                <Switch
-                  customStyles={styles}
-                  size="extraSmall"
-                  textBeside={
-                    <FormattedMessage
-                      id="payment.gloryCashLogy"
-                      defaultMessage="Glory / CashLogy"
-                    />
-                  }
-                />
+                <Switch size="extraSmall" textBeside={"Glory / CashLogy"} />
               </div>
               <div>
-                <Switch
-                  customStyles={styles}
-                  size="extraSmall"
-                  textBeside={
-                    <FormattedMessage
-                      id="payment.cashDrawer"
-                      defaultMessage="Cajón (efectivo)"
-                    />
-                  }
-                />
+                <Switch size="extraSmall" textBeside={"Cajón (efectivo)"} />
               </div>
               <div>
-                <FormattedMessage
-                  id="payment.cashDrawerCommand"
-                  defaultMessage="Comando apertura Cajón"
-                />
+                Comando apertura Cajón
                 <TextInput className={styles.input} />
               </div>
               <div>
+                <Switch size="extraSmall" textBeside={"CashKeeper"} />
+              </div>
+              <div>
                 <Switch
-                  customStyles={styles}
                   size="extraSmall"
-                  textBeside={
-                    <FormattedMessage
-                      id="payment.cashKeeper"
-                      defaultMessage="CashKeeper"
-                    />
-                  }
+                  textBeside={"Importe de cambio obligatorio"}
                 />
               </div>
               <div>
                 <Switch
-                  customStyles={styles}
                   size="extraSmall"
-                  textBeside={
-                    <FormattedMessage
-                      id="payment.mandatoryChangeAmount"
-                      defaultMessage="Importe de cambio obligatorio"
-                    />
-                  }
+                  textBeside={"Habilitar pago diferido"}
                 />
               </div>
               <div>
                 <Switch
-                  customStyles={styles}
                   size="extraSmall"
-                  textBeside={
-                    <FormattedMessage
-                      id="payment.enableDeferredPayment"
-                      defaultMessage="Habilitar pago diferido"
-                    />
-                  }
+                  textBeside={"Habilitar Calculadora de Denominaciones"}
                 />
               </div>
               <div>
-                <Switch
-                  customStyles={styles}
-                  size="extraSmall"
-                  textBeside={
-                    <FormattedMessage
-                      id="payment.enableDenominationCalculator"
-                      defaultMessage="Habilitar Calculadora de Denominaciones"
-                    />
-                  }
-                />
-              </div>
-              <div>
-                <FormattedMessage
-                  id="payment.changeCalculator"
-                  defaultMessage="Calculadora de cambio*"
-                />
+                Calculadora de cambio*
                 <DropdownSelect
                   optionList={[
                     {
@@ -112,10 +59,7 @@ const Payment = () => {
             </div>
             <div className={styles.column}>
               <div>
-                <FormattedMessage
-                  id="payment.terminalType"
-                  defaultMessage="Tipo de terminal"
-                />
+                Tipo de terminal
                 <DropdownSelect
                   optionList={[
                     {
@@ -130,32 +74,20 @@ const Payment = () => {
               </div>
               <div style={{ display: "flex", gap: "7px" }}>
                 <div>
-                  <FormattedMessage
-                    id="payment.terminalNumber"
-                    defaultMessage="Número de terminal"
-                  />
+                  Número de terminal
                   <TextInput className={styles.input} />
                 </div>
                 <div>
-                  <FormattedMessage
-                    id="payment.merchantNumber"
-                    defaultMessage="Número de comercio"
-                  />
+                  Número de comercio
                   <TextInput className={styles.input} />
                 </div>
               </div>
               <div>
-                <FormattedMessage
-                  id="payment.signatureKey"
-                  defaultMessage="Clave de firma"
-                />
+                Clave de firma
                 <TextInput className={styles.input} />
               </div>
               <div>
-                <FormattedMessage
-                  id="payment.mobilePaymentIntegration"
-                  defaultMessage="Integración pago móvil*"
-                />
+                Integración pago móvil*
                 <DropdownSelect
                   optionList={[
                     {
@@ -170,14 +102,8 @@ const Payment = () => {
               </div>
               <div>
                 <Switch
-                  customStyles={styles}
                   size="extraSmall"
-                  textBeside={
-                    <FormattedMessage
-                      id="payment.webserviceRefunds"
-                      defaultMessage="Devoluciones Webservice RedSyS"
-                    />
-                  }
+                  textBeside={"Devoluciones Webservice RedSyS"}
                 />
               </div>
             </div>

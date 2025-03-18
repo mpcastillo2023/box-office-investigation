@@ -1,5 +1,5 @@
 import "./globalCSS/global.scss";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import TicketBooth from "./Pages/TicketBooth/TicketBooth";
 import Layout from "./Components/Hoc/Layout/Layout";
 import History from "./Pages/History/History";
@@ -16,6 +16,7 @@ import { LocaleProvider } from "./Providers/LocaleProvider";
 import { TranslateProvider } from "./Providers/TranslateProvider";
 import React from "react";
 import PrintTemplates from "./Pages/PrintTemplates/PrintTemplates";
+import { AvailableContextProvider } from "./Providers/AvailableLocaleProvider";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -36,11 +37,11 @@ function App() {
       client={queryClient}
       persistOptions={{ persister }}
     >
-      <LocaleProvider>
-        <TranslateProvider>
-          <UpdateModal />
-          <ThemeContextProvider>
-            <BrowserRouter>
+      <AvailableContextProvider>
+        <LocaleProvider>
+          <TranslateProvider>
+            <UpdateModal />
+            <ThemeContextProvider>
               <Routes>
                 <Route path="/settings" element={<Settings />} />
                 <Route element={<ProductHeader />}>
@@ -53,10 +54,10 @@ function App() {
                   <Route path="/print-templates" element={<PrintTemplates />} />
                 </Route>
               </Routes>
-            </BrowserRouter>
-          </ThemeContextProvider>
-        </TranslateProvider>
-      </LocaleProvider>
+            </ThemeContextProvider>
+          </TranslateProvider>
+        </LocaleProvider>
+      </AvailableContextProvider>
     </PersistQueryClientProvider>
   );
 }

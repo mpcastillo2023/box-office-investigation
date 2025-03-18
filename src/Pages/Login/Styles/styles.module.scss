@@ -1,13 +1,13 @@
-.loginContainer{
+.loginContainer {
     display: flex;
     top: 10rem;
     flex-direction: column;
     gap: 15px;
     height: 93.7vh;
 
-    .login{
+    .login {
         width: 30rem;
-        
+
         @media (max-width: 768px) {
             width: 20rem;
             display: flex;
@@ -18,15 +18,42 @@
         display: flex;
         gap: 40px;
     }
-    .loginButton{
+
+    .loginButton {
         width: 103%;
     }
 
-    .loginLogo{
-        img{
+    .loginLogo {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+
+        img {
             width: 10rem;
-        };
+        }
+
+
+
+        .dropdownContainer {
+            width: 110px;
+
+            .dropdownElement {
+                width: 100%;
+                gap: 5px;
+                border: 1px solid var(--gray-solid-light);
+                background-color: var(--background-input-color);
+                color: var(--text-switch-color);
+
+                svg {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    color: var(--gray-solid-light);
+
+                }
+            }
+        }
     }
+
     .loginForm {
         display: flex;
         flex-direction: column;
@@ -38,13 +65,14 @@
         gap: 20px;
         margin-top: 10rem;
     }
-    .loginFooter{
+
+    .loginFooter {
         display: flex;
         align-self: center;
     }
 }
 
-.modal{
+.modal {
     padding: 0px !important;
 
     .modalHeader {
@@ -53,10 +81,12 @@
         background-color: #00BCD4;
         color: white;
     }
-    .modalContent{
+
+    .modalContent {
         margin-top: 30px;
     }
-    .customRadioButtonGroup{
+
+    .customRadioButtonGroup {
         gap: 30px;
     }
 }

@@ -62,3 +62,4 @@ export { default as VerificationInput } from "./VerificationCode/VerificationInp
 export { default as Colors } from "./Colors/Colors";
 export { default as Carousel } from "./Carousel/Carousel";
 export { default as CalendarDropdown } from "./CalendarDropdown/CalendarDropdown";
+export { default as RangeCalendar } from "./RangeCalendar/RangeCalendars";

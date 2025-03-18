@@ -1,11 +1,9 @@
-import { getCookie } from "components-gallery";
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 
-const getLocale = () => {
-  const locale = getCookie("locale") || "es";
-  // Split locales with a region code
-  const languageWithoutRegionCode = locale.toLowerCase().split(/[_-]+/)[0];
-  return languageWithoutRegionCode;
+const getDefaultLocale = () => {
+  const locale = localStorage.getItem("locale") || "es";
+  console.log(locale);
+  return locale;
 };
 type LocaleProviderValue = {
   locale: string;
@@ -22,9 +20,11 @@ type Props = {
 };
 
 export const LocaleProvider = ({ children }: Props) => {
-  const localeCookie = getLocale();
-  const [locale, setLocale] = useState<string>(localeCookie);
+  const [locale, setLocale] = useState<string>(getDefaultLocale());
 
+  useEffect(() => {
+    localStorage.setItem("locale", locale);
+  }, [locale]);
   return (
     <LocaleContext.Provider
       value={{

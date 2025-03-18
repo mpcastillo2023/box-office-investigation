@@ -1,0 +1,21 @@
+import React from "react";
+import { CustomStyles } from "./Types/Types";
+type Props = {
+    prevMonthHandler: () => void;
+    currentMonthHandler: () => void;
+    nextMonthHandler: () => void;
+    lastMonthHandler: () => void;
+    disabled?: boolean;
+    minDate?: Date;
+    maxDate?: Date;
+    startDate?: Date | null;
+    endDate?: Date | null;
+    customStyles?: CustomStyles;
+    year: number;
+    month: number;
+    selectDayHandler: (day: number, month: number, year: number) => void;
+    currentLocale?: Intl.LocalesArgument;
+    withTime?: boolean;
+};
+export default function Calendars(props: Props): React.JSX.Element;
+export {};
