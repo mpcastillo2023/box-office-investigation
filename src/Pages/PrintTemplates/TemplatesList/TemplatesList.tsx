@@ -2,8 +2,14 @@ import React from "react";
 import styles from "./Styles/styles.module.scss";
 import { FormattedMessage } from "react-intl";
 import Templates from "./Tamplates/Templates";
+import { Template } from "../../../Utils/TemplatesListData/TemplatesListData";
 
-const TemplatesList = () => {
+type Props = {
+  activeTemplate: Template | null;
+  setActiveTemplate: React.Dispatch<React.SetStateAction<Template | null>>;
+};
+
+const TemplatesList = ({ activeTemplate, setActiveTemplate }: Props) => {
   return (
     <>
       <div className={styles.templatesListContainer}>
@@ -23,7 +29,10 @@ const TemplatesList = () => {
           />
         </div>
         <div className={styles.templatesListContent}>
-          <Templates />
+          <Templates
+            activeTemplate={activeTemplate}
+            setActiveTemplate={setActiveTemplate}
+          />
         </div>
       </div>
     </>
