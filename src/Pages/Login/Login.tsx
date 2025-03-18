@@ -1,18 +1,22 @@
 import {
   Button,
   Checkbox,
+  DropdownSelect,
   EmailInput,
   Modal,
   PasswordInput,
   RadioButtonGroup
 } from "components-gallery";
 import styles from "./Styles/styles.module.scss";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FormattedMessage } from "react-intl";
 import ClorianLogo from "@images/clorian-logo-login.png";
 import { useNavigate } from "react-router-dom";
 import LoginFooter from "../../Components/LoginFooter/LoginFooter";
 import React from "react";
+import { AvailableLocalesContext } from "../../Providers/AvailableLocaleProvider";
+import { LocaleContext } from "../../Providers/LocaleProvider";
+import Globe from "../../../assets/icons/globe.svg";
 
 const Login = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,12 +25,36 @@ const Login = () => {
   const ticketBooth = () => {
     navigate("/ticketBooth");
   };
+  const { locales } = useContext(AvailableLocalesContext);
+  const { setLocale, locale } = useContext(LocaleContext);
+  const optionList = locales.map((locale) => {
+    return {
+      optionValue: locale,
+      optionText: locale
+    };
+  });
   return (
     <>
       <div className={styles.loginContainer}>
         <div className={styles.loginForm}>
           <div className={styles.loginLogo}>
             <img src={ClorianLogo} alt="Clorian Logo" />
+            <div className={styles.dropdownContainer}>
+              <DropdownSelect
+                customStyle={styles}
+                activeIcon={<Globe />}
+                icon={<Globe />}
+                iconOnLeft={true}
+                optionList={optionList}
+                value={locale}
+                onChange={(option) => {
+                  const { optionValue } = option;
+                  if (typeof optionValue === "string") {
+                    setLocale(optionValue);
+                  }
+                }}
+              />
+            </div>
           </div>
           <div>
             <FormattedMessage id="login.username" defaultMessage="Usuario" />

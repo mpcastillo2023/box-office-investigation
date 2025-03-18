@@ -259,6 +259,10 @@
     --selected-card-background: #19B03E
 }
 
+.size-6 {
+    width: 1.5rem;
+    height: 1.5rem;
+}
 
 
 .theme-new {
@@ -283,4 +287,13 @@ body {
 
 :root {
     width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
 }

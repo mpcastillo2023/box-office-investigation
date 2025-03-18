@@ -15,6 +15,7 @@ import ProductHeader from "./Components/ProductHeader/ProductHeader";
 import { LocaleProvider } from "./Providers/LocaleProvider";
 import { TranslateProvider } from "./Providers/TranslateProvider";
 import React from "react";
+import { AvailableContextProvider } from "./Providers/AvailableLocaleProvider";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -35,26 +36,28 @@ function App() {
       client={queryClient}
       persistOptions={{ persister }}
     >
-      <LocaleProvider>
-        <TranslateProvider>
-          <UpdateModal />
-          <ThemeContextProvider>
-            <BrowserRouter>
-              <Routes>
-                <Route path="/settings" element={<Settings />} />
-                <Route element={<ProductHeader />}>
-                  <Route path="/" element={<Login />} />
-                  <Route path="/settings/Login" element={<SettingsLogin />} />
-                </Route>
-                <Route element={<Layout />}>
-                  <Route path="/ticketbooth" element={<TicketBooth />} />
-                  <Route path="/history" element={<History />} />
-                </Route>
-              </Routes>
-            </BrowserRouter>
-          </ThemeContextProvider>
-        </TranslateProvider>
-      </LocaleProvider>
+      <AvailableContextProvider>
+        <LocaleProvider>
+          <TranslateProvider>
+            <UpdateModal />
+            <ThemeContextProvider>
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/settings" element={<Settings />} />
+                  <Route element={<ProductHeader />}>
+                    <Route path="/" element={<Login />} />
+                    <Route path="/settings/Login" element={<SettingsLogin />} />
+                  </Route>
+                  <Route element={<Layout />}>
+                    <Route path="/ticketbooth" element={<TicketBooth />} />
+                    <Route path="/history" element={<History />} />
+                  </Route>
+                </Routes>
+              </BrowserRouter>
+            </ThemeContextProvider>
+          </TranslateProvider>
+        </LocaleProvider>
+      </AvailableContextProvider>
     </PersistQueryClientProvider>
   );
 }

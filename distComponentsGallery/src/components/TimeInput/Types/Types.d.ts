@@ -3,7 +3,7 @@ export type TimeInputProps = {
      * Event function to change the time
      * @type {(value: Date | string) => void}
      */
-    onChange?: (value: Date | string) => void;
+    onChange?: (value: string) => void;
     /**
      * The value used to control or display the time in the input.
      * @type {Date | string}

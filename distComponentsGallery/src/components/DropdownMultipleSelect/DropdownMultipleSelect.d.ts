@@ -1,12 +1,13 @@
 import React from "react";
 import { SelectOption } from "./Types/Types";
-import { customStyleClasses } from "@cg-components/DropdownSelect/Types/Types";
+import { customStyleClasses as DropdownCustomStyles } from "@cg-components/DropdownSelect/Types/Types";
+import { CustomStyleClasses } from "./Types/Types";
 type Props = {
     optionList: SelectOption[];
     label: React.ReactNode;
     icon?: React.ReactNode;
     activeIcon?: React.ReactNode;
-    customStyle?: customStyleClasses;
+    customStyle?: DropdownCustomStyles & CustomStyleClasses;
     /**
      * The currently selected values.
      * @param {(string | number | boolean)[]}

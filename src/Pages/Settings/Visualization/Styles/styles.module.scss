@@ -21,15 +21,16 @@
         font-size: 14px;
         height: 60rem;
 
-        .row{
+        .row {
             display: flex;
             gap: 20px;
         }
-        .column{
+
+        .column {
             width: 50%;
         }
 
-        .button{
+        .button {
             font-size: 16px;
         }
 
@@ -39,28 +40,53 @@
                 border-bottom: 1px solid var(--gray-border-input-box-color);
                 border-radius: 0px;
                 width: 100%;
+
                 .selectedOption {
                     font-size: 14px;
                 }
             }
         }
-                
+
         .input {
             border-bottom: 1px solid var(--gray-border-input-box-color);
-                
+
             input {
                 border: none;
                 padding: 11px 10px;
                 font-size: 14px;
-                
+
                 &:hover {
                     border: none;
                     background-color: transparent;
                 }
             }
         }
-        .textBeside{
+
+        .textBeside {
             font-size: 14px;
+        }
+    }
+}
+
+.visualizationContainer {
+    .multipleSelectItem {
+        border: none;
+        border-bottom: 1px solid var(--gray-border-input-box-color);
+        padding: 10px 0;
+        width: 100%;
+        border-radius: 0;
+
+        .dropdownWrapper,
+        .dropdownElement {
+            width: 100%;
+        }
+
+
+        svg {
+            stroke: var(--gray-dark-strong-secondary);
+            fill: none;
+            height: 12px;
+            width: 12px;
         }
     }
 }
