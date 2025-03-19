@@ -64,7 +64,7 @@ const Login = () => {
             <FormattedMessage id="login.password" defaultMessage="Contraseña" />
             <PasswordInput />
           </div>
-          <div style={{ width: "87%" }}>
+          <div className={styles.loginButton}>
             <Button
               size="full"
               variant="primary"

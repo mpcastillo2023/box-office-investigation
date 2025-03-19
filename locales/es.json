@@ -149,5 +149,12 @@
 	"buttons.save": "Guardar",
 	"buttons.print": "Imprimir",
 	"buttons.delete": "Eliminar",
-	"templatesList.subtitle": "Seleccionar una plantilla de la lista para editarla"
+	"templatesList.subtitle": "Seleccionar una plantilla de la lista para editarla",
+	"saleDataModal.tab1": "RESUMEN",
+	"saleDataModal.tab2":"DETALLES",
+	"saleDataModal.tab3":"PAGOS",
+	"saleDataModal.tab4":"FORMULARIOS",
+	"saleDataModal.tab5":"VALIDACIONES",
+	"saleDataModal.tab6":"DEVOLUCIONES",
+	"saleDataModal.tab7":"INCIDENCIAS"
 }

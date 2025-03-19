@@ -1,5 +1,5 @@
 import React from "react";
-import salesData from "../SalesData";
+import salesData from "../SalesData/SalesData";
 import SaleItem from "./SaleItem/SaleItem";
 
 export default function SaleList() {

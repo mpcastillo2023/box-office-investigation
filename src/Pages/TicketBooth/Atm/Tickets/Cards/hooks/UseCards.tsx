@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 type Props = {
   name: string;
   price: number;
   productId: number;
-  setSelectedTickets: React.Dispatch<
-    React.SetStateAction<
+  setSelectedTickets: Dispatch<
+    SetStateAction<
       {
         name: string;
         price: number;
@@ -15,30 +15,13 @@ type Props = {
       }[]
     >
   >;
-  selectedTickets: {
-    name: string;
-    price: number;
-    quantity: number;
-    totalPrice: number;
-    productId: number;
-  }[];
 };
-export default function UseTickets(
-  name: string,
-  price: number,
-  productId: number,
-  setSelectedTickets: React.Dispatch<
-    React.SetStateAction<
-      {
-        name: string;
-        price: number;
-        quantity: number;
-        totalPrice: number;
-        productId: number;
-      }[]
-    >
-  >
-) {
+export default function UseTickets({
+  name,
+  price,
+  productId,
+  setSelectedTickets
+}: Props) {
   const [quantity, setQuantity] = useState<number>(0);
 
   useEffect(() => {

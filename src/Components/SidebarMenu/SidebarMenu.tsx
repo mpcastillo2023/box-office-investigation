@@ -175,19 +175,22 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           </li>
         </ul>
         {/*eslint-disable-next-line react/jsx-no-literals */}
-        <div className={styles.sidebarFooter}>v3.28.0 - 20250213 - qa</div>
-
-        <div className={styles.themeSwitchContainer}>
-          <Switch
-            value={theme === "new"}
-            textBeside={
-              <FormattedMessage
-                id="sidebar.enableNewColors"
-                defaultMessage="Habilitar colores nuevos"
-              />
-            }
-            onChange={(value) => setTheme(value ? "new" : "old")}
-          />
+        <div className={styles.sidebarFooter}>
+          BoxOffice v4.0.0 Usuario: boxOffice_user - qa{" "}
+          <div className={styles.themeSwitchContainer}>
+            <Switch
+              customStyles={styles}
+              size="extraSmall"
+              value={theme === "new"}
+              textBeside={
+                <FormattedMessage
+                  id="sidebar.enableNewColors"
+                  defaultMessage="Habilitar colores nuevos"
+                />
+              }
+              onChange={(value) => setTheme(value ? "new" : "old")}
+            />
+          </div>
         </div>
       </div>
 

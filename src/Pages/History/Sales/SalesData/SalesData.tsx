@@ -33,20 +33,12 @@ const Confirmed = () => {
   );
 };
 
-const Returned = () => {
-  return (
-    <div style={{ color: "#DC2626" }}>
-      <FormattedMessage id="sales.returned" defaultMessage="Devuelta" />
-    </div>
-  );
-};
-
 const TableRowData: Sales[] = [
   {
     checkbox: <Checkbox />,
     cloud: <Cloud />,
     local: "71308485",
-    state: <Returned />,
+    state: <Confirmed />,
     product: "La Pedrera Essencial",
     client: "",
     ref: "",

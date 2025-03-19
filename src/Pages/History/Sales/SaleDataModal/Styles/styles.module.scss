@@ -1,0 +1,65 @@
+.modal {
+    padding: 0px !important;
+    min-width: 60rem !important;
+    min-height: 55rem !important;
+
+    .modalHeader {
+        font-size: 18px;
+        background-color: #00BCD4;
+        color: white;
+        justify-content: flex-start;
+        padding: 20px;
+    }
+
+    .modalContent {
+        padding: 0px 25px !important;
+
+        .modalContainer {
+            padding: 15px;
+        }
+
+        .modalTitle {
+            margin-bottom: 20px;
+            font-size: 16px;
+
+
+        }
+
+        .inputsContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            input {
+                font-size: 14px;
+            }
+
+            .dropdownWrapper {
+                width: 100%;
+
+                .dropdownElement {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.tabContainer {
+    background-color: transparent;
+    padding: 15px 20px;
+
+    .tabButton {
+
+        &.isActive {
+            background-color: #f7f7f7;
+            color: #21B3BB;
+
+            &::after {
+                background-color: #21B3BB;
+                height: 2px;
+            }
+
+        }
+    }
+}

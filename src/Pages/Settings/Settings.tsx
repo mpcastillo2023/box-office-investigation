@@ -47,16 +47,16 @@ const Settings = () => {
             <BasicSettings />
             <Validation />
           </div>
-          <div style={{ width: "33%" }}>
+          <div className={styles.visualizationContainer}>
             <Visualization />
           </div>
-          <div style={{ width: "33%" }}>
+          <div className={styles.managementContainer}>
             <Management />
           </div>
-          <div style={{ width: "49.7%" }}>
+          <div className={styles.printingContainer}>
             <Printing />
           </div>
-          <div style={{ width: "49.7%" }}>
+          <div className={styles.paymentContainer}>
             <Payment />
           </div>
         </div>

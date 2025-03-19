@@ -1,6 +1,7 @@
 import React from "react";
-import TableRowData from "../SalesData";
+import TableRowData from "../SalesData/SalesData";
 import { Checkbox, ServerTable } from "components-gallery";
+import SaleDataModal from "../SaleDataModal/SaleDataModal";
 
 const SalesTable: React.FC = () => {
   const columns = [
@@ -63,6 +64,7 @@ const SalesTable: React.FC = () => {
         displayData={TableRowData}
         columns={columns}
       />
+      <SaleDataModal />
     </>
   );
 };

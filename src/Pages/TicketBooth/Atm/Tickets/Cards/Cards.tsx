@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./Styles/styles.module.scss";
 import UseCards from "./hooks/UseCards";
 
@@ -33,12 +33,12 @@ const Card: React.FC<CardProps> = ({
   selectedTickets,
   productId
 }) => {
-  const { quantity, increaseQuantity, decreaseQuantity } = UseCards(
+  const { quantity, increaseQuantity, decreaseQuantity } = UseCards({
     name,
     price,
     productId,
     setSelectedTickets
-  );
+  });
 
   return (
     <div className={`${styles.card} ${quantity > 0 ? styles.selected : ""}`}>
