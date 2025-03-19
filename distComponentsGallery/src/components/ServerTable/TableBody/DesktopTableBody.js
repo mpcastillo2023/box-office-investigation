@@ -1,12 +1,16 @@
 import React from "react";
 import styles from "../Styles/styles.module.scss";
-export default function DesktopTableBody({ columns, displayData, translations, tBodyRef }) {
+export default function DesktopTableBody({ columns, displayData, translations, tBodyRef, onClickCellHandler }) {
     const renderRow = (item, rowIndex) => {
         const row = columns.map((column, colIndex) => {
             const field = column.name;
             const alignment = column.alignment || "left";
             const alignCssClass = alignment ? styles[alignment] : "";
-            return (React.createElement("td", { key: `${column}-${colIndex}-${rowIndex}`, "data-testid": `table-body-cell-${colIndex}-${rowIndex}`, className: `${styles.cell} ${alignCssClass} ` }, item[field]));
+            return (React.createElement("td", { key: `${column}-${colIndex}-${rowIndex}`, "data-testid": `table-body-cell-${colIndex}-${rowIndex}`, className: `${styles.cell} ${alignCssClass} `, onClick: () => {
+                    if (onClickCellHandler) {
+                        onClickCellHandler(item);
+                    }
+                } }, item[field]));
         });
         return row;
     };

@@ -32,6 +32,7 @@ declare const meta: {
         totalItems: number;
         downloadCallBack?: (() => void) | undefined;
         mobileAccordionColumnKey: string | number | symbol;
+        onClickCellHandler?: ((data: object) => void) | undefined;
     }>, props: import("@storybook/csf").StoryContext<import("@storybook/react").ReactRenderer, {
         totalPages: number;
         isFetching: boolean;
@@ -49,6 +50,7 @@ declare const meta: {
         totalItems: number;
         downloadCallBack?: (() => void) | undefined;
         mobileAccordionColumnKey: string | number | symbol;
+        onClickCellHandler?: ((data: object) => void) | undefined;
     }>) => React.JSX.Element)[];
     args: {
         columns: {

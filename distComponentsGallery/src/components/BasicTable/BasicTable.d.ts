@@ -12,7 +12,7 @@ type Props = {
      * @optional
      */
     variant?: "primary" | "secondary";
-    onClickCellHandle?: (data: object) => void;
+    onClickCellHandler?: (data: object) => void;
 } & (WithHoverProps | WithoutHoverProps);
 type WithHoverProps = {
     /** Should handle hover **/

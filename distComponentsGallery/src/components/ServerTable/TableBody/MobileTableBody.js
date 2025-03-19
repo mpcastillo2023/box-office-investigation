@@ -2,12 +2,16 @@ import React from "react";
 import styles from "../Styles/styles.module.scss";
 import Accordion from "@cg-components/Accordion/Accordion";
 import objectHasProperty from "@cg-utils/objectHasProperty";
-export default function MobileTableBody({ columns, displayData, translations, mobileAccordionColumnKey, tBodyRef }) {
+export default function MobileTableBody({ columns, displayData, translations, mobileAccordionColumnKey, tBodyRef, onClickCellHandler }) {
     const renderRow = (item, rowIndex) => {
         const row = columns.map((column, colIndex) => {
             if (column.name === mobileAccordionColumnKey)
                 return null;
-            return (React.createElement("div", { key: `${column}-${colIndex}-${rowIndex}`, "data-testid": `table-body-cell-${colIndex}-${rowIndex}`, className: `${styles.mobileRow} ` },
+            return (React.createElement("div", { key: `${column}-${colIndex}-${rowIndex}`, "data-testid": `table-body-cell-${colIndex}-${rowIndex}`, className: `${styles.mobileRow} `, onClick: () => {
+                    if (onClickCellHandler) {
+                        onClickCellHandler(item);
+                    }
+                } },
                 React.createElement("div", { className: styles.mobileField }, column.label),
                 React.createElement("div", { className: styles.mobileFieldValue }, item[column.name])));
         });

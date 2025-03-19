@@ -25,7 +25,7 @@ const defaultTranslations = {
  * @returns {JSX.Element}
  */
 const tagBorderPadding = 60;
-export default function ServerTable({ totalPages, setQueryParams, isFetching, displayData, columns, page, rowsPerPage, hasSearch = false, filters, queryParams, translations = defaultTranslations, tagText, initialPageIsZero = false, totalItems, downloadCallBack, mobileAccordionColumnKey = "name" }) {
+export default function ServerTable({ totalPages, setQueryParams, isFetching, displayData, columns, page, rowsPerPage, hasSearch = false, filters, queryParams, translations = defaultTranslations, tagText, initialPageIsZero = false, totalItems, downloadCallBack, mobileAccordionColumnKey = "name", onClickCellHandler }) {
     const tHead = UseGetElementDimension();
     const tHeadRef = tHead.elementRef;
     const tHeadHeight = tHead.rect?.height || 0;
@@ -48,7 +48,7 @@ export default function ServerTable({ totalPages, setQueryParams, isFetching, di
                     } },
                     isDesktop ? (React.createElement("table", { className: ` ${styles.tableContent} ` },
                         React.createElement(TableHeader, { columns: columns, queryParams: queryParams, setQueryParams: setQueryParams, tHeadRef: tHeadRef }),
-                        !isFetching ? (React.createElement(DesktopTableBody, { tBodyRef: tBodyRef, isFetching: isFetching, columns: columns, displayData: displayData, translations: translations })) : null)) : (React.createElement(MobileTableBody, { tBodyRef: tBodyRef, isFetching: isFetching, columns: columns, displayData: displayData, translations: translations, mobileAccordionColumnKey: mobileAccordionColumnKey })),
+                        !isFetching ? (React.createElement(DesktopTableBody, { tBodyRef: tBodyRef, isFetching: isFetching, columns: columns, displayData: displayData, translations: translations, onClickCellHandler: onClickCellHandler })) : null)) : (React.createElement(MobileTableBody, { tBodyRef: tBodyRef, isFetching: isFetching, columns: columns, displayData: displayData, translations: translations, mobileAccordionColumnKey: mobileAccordionColumnKey, onClickCellHandler: onClickCellHandler })),
                     isFetching ? React.createElement(Spinner, null) : null),
                 tagText ? (React.createElement(React.Fragment, null,
                     React.createElement("div", { className: styles.tableTag, ref: tableTagRef, style: {

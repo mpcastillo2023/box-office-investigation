@@ -81,6 +81,7 @@ type Props = {
      * @type {string}
      */
     mobileAccordionColumnKey: string | number | symbol;
+    onClickCellHandler?: (data: object) => void;
 };
-export default function ServerTable({ totalPages, setQueryParams, isFetching, displayData, columns, page, rowsPerPage, hasSearch, filters, queryParams, translations, tagText, initialPageIsZero, totalItems, downloadCallBack, mobileAccordionColumnKey }: Props): React.JSX.Element;
+export default function ServerTable({ totalPages, setQueryParams, isFetching, displayData, columns, page, rowsPerPage, hasSearch, filters, queryParams, translations, tagText, initialPageIsZero, totalItems, downloadCallBack, mobileAccordionColumnKey, onClickCellHandler }: Props): React.JSX.Element;
 export {};

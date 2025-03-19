@@ -6,6 +6,7 @@ type Props = {
     isFetching: boolean;
     translations: Translations;
     tBodyRef: (node: Element | null) => void;
+    onClickCellHandler?: (data: object) => void;
 };
-export default function DesktopTableBody({ columns, displayData, translations, tBodyRef }: Props): React.JSX.Element;
+export default function DesktopTableBody({ columns, displayData, translations, tBodyRef, onClickCellHandler }: Props): React.JSX.Element;
 export {};
