@@ -50,20 +50,18 @@ const SalesTable: React.FC = () => {
     }
   ];
   return (
-    <>
-      <ServerTable
-        page={1}
-        mobileAccordionColumnKey={""}
-        rowsPerPage={10}
-        setQueryParams={() => {}}
-        queryParams={{}}
-        totalPages={1}
-        isFetching={false}
-        totalItems={7}
-        displayData={TableRowData}
-        columns={columns}
-      />
-    </>
+    <ServerTable
+      page={1}
+      mobileAccordionColumnKey={""}
+      rowsPerPage={10}
+      setQueryParams={() => {}}
+      queryParams={{}}
+      totalPages={1}
+      isFetching={false}
+      totalItems={7}
+      displayData={TableRowData}
+      columns={columns}
+    />
   );
 };
 
