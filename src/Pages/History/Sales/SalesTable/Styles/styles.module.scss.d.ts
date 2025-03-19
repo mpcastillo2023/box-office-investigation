@@ -1,9 +1,2 @@
-export declare const actualItemPage: string;
-export declare const cellRow: string;
+export declare const cell: string;
 export declare const columnHeaderButton: string;
-export declare const container: string;
-export declare const headerCell: string;
-export declare const iconTablePage: string;
-export declare const itemPerPage: string;
-export declare const rowsPage: string;
-export declare const tableFooter: string;

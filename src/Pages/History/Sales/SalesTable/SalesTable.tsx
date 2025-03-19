@@ -2,6 +2,7 @@ import React from "react";
 import TableRowData from "../SalesData/SalesData";
 import { Checkbox, ServerTable } from "components-gallery";
 import SaleDataModal from "../SaleDataModal/SaleDataModal";
+import styles from "./Styles/styles.module.scss";
 
 const SalesTable: React.FC = () => {
   const columns = [
@@ -63,6 +64,7 @@ const SalesTable: React.FC = () => {
         totalItems={7}
         displayData={TableRowData}
         columns={columns}
+        customStyles={styles}
       />
       <SaleDataModal />
     </>

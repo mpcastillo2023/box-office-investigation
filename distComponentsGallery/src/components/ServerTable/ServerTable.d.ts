@@ -1,5 +1,5 @@
 import React from "react";
-import { Column, TableFilters, Translations } from "./Types/Types";
+import { Column, CustomCssClasses, TableFilters, Translations } from "./Types/Types";
 type Props = {
     /**
      * Total number of pages
@@ -82,6 +82,7 @@ type Props = {
      */
     mobileAccordionColumnKey: string | number | symbol;
     onClickCellHandler?: (data: object) => void;
+    customStyles?: CustomCssClasses;
 };
-export default function ServerTable({ totalPages, setQueryParams, isFetching, displayData, columns, page, rowsPerPage, hasSearch, filters, queryParams, translations, tagText, initialPageIsZero, totalItems, downloadCallBack, mobileAccordionColumnKey, onClickCellHandler }: Props): React.JSX.Element;
+export default function ServerTable({ totalPages, setQueryParams, isFetching, displayData, columns, page, rowsPerPage, hasSearch, filters, queryParams, translations, tagText, initialPageIsZero, totalItems, downloadCallBack, mobileAccordionColumnKey, onClickCellHandler, customStyles }: Props): React.JSX.Element;
 export {};

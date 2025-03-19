@@ -1,5 +1,5 @@
 import React from "react";
-import { Column, Translations } from "../Types/Types";
+import { Column, CustomCssClasses, Translations } from "../Types/Types";
 type Props = {
     columns: Column[];
     displayData?: object[];
@@ -7,6 +7,7 @@ type Props = {
     translations: Translations;
     tBodyRef: (node: Element | null) => void;
     onClickCellHandler?: (data: object) => void;
+    customStyles?: CustomCssClasses;
 };
-export default function DesktopTableBody({ columns, displayData, translations, tBodyRef, onClickCellHandler }: Props): React.JSX.Element;
+export default function DesktopTableBody({ columns, displayData, translations, tBodyRef, onClickCellHandler, customStyles }: Props): React.JSX.Element;
 export {};

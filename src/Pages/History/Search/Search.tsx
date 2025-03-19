@@ -1,6 +1,8 @@
 import { Button, DropdownSelect, TextInput } from "components-gallery";
 import { FormattedMessage, useIntl } from "react-intl";
 import styles from "./Styles/styles.module.scss";
+import utilStyles from "../../../Utils/utils.module.scss";
+import React from "react";
 
 const Search = () => {
   const { formatMessage } = useIntl();
@@ -14,15 +16,21 @@ const Search = () => {
   return (
     <>
       <div className={styles.searchContainer}>
-        <div>
-          <FormattedMessage id="search.searchBy" defaultMessage="Buscar por*" />
-        </div>
         <div className={styles.inputsContainer}>
-          <DropdownSelect
-            className={styles.searchSelect}
-            optionList={optionList}
-            customStyle={styles}
-          />
+          <div>
+            <span className={utilStyles.inputLabel}>
+              <FormattedMessage
+                id="search.searchBy"
+                defaultMessage="Buscar por*"
+              />
+            </span>
+            <DropdownSelect
+              className={styles.searchSelect}
+              optionList={optionList}
+              customStyle={styles}
+            />
+          </div>
+
           <TextInput
             className={styles.searchInput}
             placeholder={formatMessage({ id: "search.enterNumber" })}

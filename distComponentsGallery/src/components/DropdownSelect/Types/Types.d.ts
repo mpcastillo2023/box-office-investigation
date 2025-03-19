@@ -13,6 +13,7 @@ export type customStyleClasses = {
     dropdownElement?: string;
     dropdownContent?: string;
     activeOption?: string;
+    searchSelect?: string;
 };
 export type Translations = {
     enabledLabel: string | React.ReactNode;

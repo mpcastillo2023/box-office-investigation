@@ -1,67 +1,7 @@
-.container {
-    width: 90%;
-    background-color: #f9f9f9;
-    margin-top: 20px;
-    border-radius: 13px;
-    border: 1px solid #DADADA;
-    align-self: center;
-    
+.cell {
+    font-size: 13px !important;
 }
 
-.headerCell {
-    .columnHeaderButton{
-        svg{
-            height: 15px;
-            fill: none;
-        }
-    }
- }
- .cellRow {
-    svg{
-        height: 30px;
-    }
- }
-
-.tableFooter {
-    width: 100%;
-    margin-top: 20px;
-
-    .rowsPage {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 20px;
-
-
-        .itemPerPage {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            svg {
-                width: 15px;
-            }
-        }
-
-        .actualItemPage {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-
-            svg {
-                width: 15px;
-            }
-        }
-
-        .iconTablePage {
-            display: flex;
-            align-items: center;
-            border: 1px solid #DADADA;
-            background-color: white;
-            border-radius: 10px;
-            gap: 0;
-            padding: 10px;
-        }
-
-    }
+.columnHeaderButton {
+    font-size: 14px !important;
 }

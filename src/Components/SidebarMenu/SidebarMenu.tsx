@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext } from "react";
 import { FormattedMessage } from "react-intl";
 import styles from "./Styles/styles.module.scss";
 import ArchiveWithArrowIcon from "@icons/archive-box-arrow.svg";
@@ -157,7 +157,7 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           <li className={styles.menuSection}>
             <FormattedMessage
               id="sidebar.user"
-              defaultMessage="Usuario - dquilez"
+              defaultMessage="Usuario - box-office-qa"
             />
           </li>
           <li className={styles.menuItem}>
@@ -175,18 +175,20 @@ const SidebarMenu: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
           </li>
         </ul>
         {/*eslint-disable-next-line react/jsx-no-literals */}
-        <div className={styles.sidebarFooter}>
-          BoxOffice v4.0.0 Usuario: boxOffice_user - qa{" "}
+        <div className={styles.sidebarFooterWrapper}>
+          <span className={styles.sidebarFooterText}>BoxOffice v4.0.0 </span>
           <div className={styles.themeSwitchContainer}>
             <Switch
               customStyles={styles}
               size="extraSmall"
               value={theme === "new"}
               textBeside={
-                <FormattedMessage
-                  id="sidebar.enableNewColors"
-                  defaultMessage="Habilitar colores nuevos"
-                />
+                <div className={styles.switchText}>
+                  <FormattedMessage
+                    id="sidebar.enableNewColors"
+                    defaultMessage="Habilitar colores nuevos"
+                  />
+                </div>
               }
               onChange={(value) => setTheme(value ? "new" : "old")}
             />

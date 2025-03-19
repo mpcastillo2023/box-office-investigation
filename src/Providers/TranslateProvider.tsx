@@ -27,7 +27,6 @@ export const TranslateContext = createContext({});
 
 export const TranslateProvider = ({ children }: { children: ReactNode }) => {
   const { locale } = useContext(LocaleContext);
-  console.log(messages);
   return (
     <TranslateContext.Provider value={{ useIntl }}>
       <IntlProvider

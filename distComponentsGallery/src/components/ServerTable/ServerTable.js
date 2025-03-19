@@ -25,7 +25,7 @@ const defaultTranslations = {
  * @returns {JSX.Element}
  */
 const tagBorderPadding = 60;
-export default function ServerTable({ totalPages, setQueryParams, isFetching, displayData, columns, page, rowsPerPage, hasSearch = false, filters, queryParams, translations = defaultTranslations, tagText, initialPageIsZero = false, totalItems, downloadCallBack, mobileAccordionColumnKey = "name", onClickCellHandler }) {
+export default function ServerTable({ totalPages, setQueryParams, isFetching, displayData, columns, page, rowsPerPage, hasSearch = false, filters, queryParams, translations = defaultTranslations, tagText, initialPageIsZero = false, totalItems, downloadCallBack, mobileAccordionColumnKey = "name", onClickCellHandler, customStyles }) {
     const tHead = UseGetElementDimension();
     const tHeadRef = tHead.elementRef;
     const tHeadHeight = tHead.rect?.height || 0;
@@ -38,25 +38,25 @@ export default function ServerTable({ totalPages, setQueryParams, isFetching, di
     const isTagBiggerThanBody = tableTagHeight + tagBorderPadding > tBodyHeight;
     const { isDesktop } = UseIsDesktop();
     return (React.createElement(React.Fragment, null,
-        React.createElement("div", { className: styles.serverTable },
+        React.createElement("div", { className: `${styles.serverTable} ${customStyles?.serverTable || ""}` },
             React.createElement(Filters, { filters: filters, setQueryParams: setQueryParams, hasSearch: hasSearch, translations: translations, queryParams: queryParams }),
             React.createElement("div", { style: { position: "relative" } },
-                React.createElement("div", { className: `${styles.tableContentContainer} ${isTagBiggerThanBody}`, style: {
+                React.createElement("div", { className: `${styles.tableContentContainer} ${customStyles?.tableContentContainer || ""} ${isTagBiggerThanBody}`, style: {
                         minHeight: isTagBiggerThanBody
                             ? `${tHeadHeight + tableTagHeight + tagBorderPadding}px`
                             : ""
                     } },
-                    isDesktop ? (React.createElement("table", { className: ` ${styles.tableContent} ` },
+                    isDesktop ? (React.createElement("table", { className: ` ${styles.tableContent} ${customStyles?.tableContent || ""}` },
                         React.createElement(TableHeader, { columns: columns, queryParams: queryParams, setQueryParams: setQueryParams, tHeadRef: tHeadRef }),
                         !isFetching ? (React.createElement(DesktopTableBody, { tBodyRef: tBodyRef, isFetching: isFetching, columns: columns, displayData: displayData, translations: translations, onClickCellHandler: onClickCellHandler })) : null)) : (React.createElement(MobileTableBody, { tBodyRef: tBodyRef, isFetching: isFetching, columns: columns, displayData: displayData, translations: translations, mobileAccordionColumnKey: mobileAccordionColumnKey, onClickCellHandler: onClickCellHandler })),
                     isFetching ? React.createElement(Spinner, null) : null),
                 tagText ? (React.createElement(React.Fragment, null,
-                    React.createElement("div", { className: styles.tableTag, ref: tableTagRef, style: {
+                    React.createElement("div", { className: `${styles.tableTag} ${customStyles?.tableTag || ""}`, ref: tableTagRef, style: {
                             top: tHeadHeight
                         } }, tagText),
-                    React.createElement("div", { className: styles.tableTagBorder, style: {
+                    React.createElement("div", { className: `${styles.tableTag} ${customStyles?.tableTagBorder || ""}`, style: {
                             minHeight: `calc(100% - ${tHeadHeight}px)`
                         } }))) : null)),
-        React.createElement("div", { className: styles.footerContainer },
+        React.createElement("div", { className: `${styles.tableTag} ${customStyles?.footerContainer || ""}` },
             React.createElement(TableFooter, { setQueryParams: setQueryParams, rowsPerPage: rowsPerPage, totalPages: totalPages, translations: translations, currentPage: page, totalItems: totalItems, initialPageIsZero: initialPageIsZero, downloadCallBack: downloadCallBack }))));
 }

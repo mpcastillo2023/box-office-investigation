@@ -16,7 +16,9 @@ import LoginFooter from "../../Components/LoginFooter/LoginFooter";
 import React from "react";
 import { AvailableLocalesContext } from "../../Providers/AvailableLocaleProvider";
 import { LocaleContext } from "../../Providers/LocaleProvider";
-import Globe from "../../../assets/icons/globe.svg";
+import Language from "../../../assets/icons/language.svg";
+import getLocaleOptionText from "./getLocaleOptionText";
+import getActiveLocalOptionText from "./getActiveLocaleOptionText";
 
 const Login = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,23 +29,28 @@ const Login = () => {
   };
   const { locales } = useContext(AvailableLocalesContext);
   const { setLocale, locale } = useContext(LocaleContext);
-  const optionList = locales.map((locale) => {
+  const optionList = locales.map((localeOption) => {
     return {
-      optionValue: locale,
-      optionText: locale
+      optionValue: localeOption,
+      optionText:
+        locale === localeOption
+          ? getActiveLocalOptionText(localeOption)
+          : getLocaleOptionText(localeOption),
+      disabled: locale === localeOption
     };
   });
   return (
     <>
       <div className={styles.loginContainer}>
-        <div className={styles.loginForm}>
-          <div className={styles.loginLogo}>
-            <img src={ClorianLogo} alt="Clorian Logo" />
+        <div className={styles.loginWrapper}>
+          <div className={styles.loginBanner}>
+            <h2 className={styles.loginTitle}>Login</h2>
             <div className={styles.dropdownContainer}>
               <DropdownSelect
+                autowidth={true}
                 customStyle={styles}
-                activeIcon={<Globe />}
-                icon={<Globe />}
+                activeIcon={<Language />}
+                icon={<Language />}
                 iconOnLeft={true}
                 optionList={optionList}
                 value={locale}
@@ -56,26 +63,35 @@ const Login = () => {
               />
             </div>
           </div>
-          <div>
-            <FormattedMessage id="login.username" defaultMessage="Usuario" />
-            <EmailInput />
-          </div>
-          <div>
-            <FormattedMessage id="login.password" defaultMessage="Contraseña" />
-            <PasswordInput />
-          </div>
-          <div className={styles.loginButton}>
-            <Button
-              size="full"
-              variant="primary"
-              onClick={() => setIsModalOpen(true)}
-            >
+          <div className={styles.loginForm}>
+            <div className={styles.loginLogo}>
+              <img src={ClorianLogo} alt="Clorian Logo" />
+            </div>
+            <div>
+              <FormattedMessage id="login.username" defaultMessage="Usuario" />
+              <EmailInput />
+            </div>
+            <div>
               <FormattedMessage
-                id="login.loginButton"
-                defaultMessage="Iniciar Sesión"
+                id="login.password"
+                defaultMessage="Contraseña"
               />
-            </Button>
+              <PasswordInput />
+            </div>
+            <div className={styles.loginButton}>
+              <Button
+                size="full"
+                variant="primary"
+                onClick={() => setIsModalOpen(true)}
+              >
+                <FormattedMessage
+                  id="login.loginButton"
+                  defaultMessage="Iniciar Sesión"
+                />
+              </Button>
+            </div>
           </div>
+
           <Modal
             modalTitle={
               <FormattedMessage

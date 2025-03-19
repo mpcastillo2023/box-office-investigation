@@ -66,7 +66,7 @@
     gap: 10px;
     padding: 15px;
 
-    button{
+    button {
         width: 100%;
         text-decoration: none;
         display: flex;
@@ -82,13 +82,14 @@
 
     }
 
-    a{
+    a {
         text-decoration: none;
         display: flex;
         align-items: center;
         color: black;
         gap: 10px;
-        svg{
+
+        svg {
             stroke: black;
         }
     }
@@ -114,13 +115,26 @@
     padding: 10px 15px;
 }
 
-.sidebarFooter {
-    margin-bottom: 10px;
-    width: 100%;
-    text-align: center;
-    font-size: 12px;
-    color: gray;
+.sidebarFooterWrapper {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 10px;
+
+    .sidebarFooterText {
+        width: 20%;
+        font-size: 12px;
+        color: gray;
+    }
+
+    .switchText {
+
+        font-size: 12px;
+        color: gray;
+    }
 }
+
+
 
 .themeSwitchContainer {
     display: flex;

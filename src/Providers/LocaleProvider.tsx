@@ -2,7 +2,6 @@ import React, { createContext, useEffect, useState } from "react";
 
 const getDefaultLocale = () => {
   const locale = localStorage.getItem("locale") || "es";
-  console.log(locale);
   return locale;
 };
 type LocaleProviderValue = {

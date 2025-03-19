@@ -52,7 +52,7 @@ export default function DropdownSelect({ value = "", optionList, placeholder, ic
                 iconOnLeft && currentIcon,
                 placeholder ? (React.createElement("span", { className: `${customStyle?.placeholder || ""} ${styles.placeholder}` }, placeholder)) : null,
                 React.createElement("span", { style: { display: "none" } }, selectedOption?.optionText),
-                React.createElement("input", { className: `${customStyle?.selectedOption || ""} ${styles.searchSelect}`, onChange: searchHandler, value: searchQuery, ref: searchRef, "aria-label": ariaLabel, "data-testid": "dropdown-search", disabled: disabled }),
+                React.createElement("input", { className: `${customStyle?.searchSelect || ""} ${styles.searchSelect}`, onChange: searchHandler, value: searchQuery, ref: searchRef, "aria-label": ariaLabel, "data-testid": "dropdown-search", disabled: disabled }),
                 !iconOnLeft && currentIcon),
             isOpen && !disabled ? (React.createElement(DropdownContent, { toggleElementRect: toggleElementRect, isOpen: isOpen, setIsOpen: setIsOpen, dropdownContent: React.createElement(OptionList, { onClickOptionHandler: onClickOptionHandler, optionList: filteredOptionList, selectedOptionValue: selectedOption?.optionValue, customStyle: customStyle, ariaLabel: ariaLabel, currentFocusIndex: currentFocusIndex, activeItemRef: activeItemRef, withSubtitle: withSubtitle, translations: translations }), autowidth: autowidth, customStyle: { ...overflowDropDownClass, ...customStyle }, toggleDropdownHandler: toggleDropdownHandler, customPosition: { top: 0, bottom: 0 }, setIsOverflow: setIsOverflow })) : null)));
 }

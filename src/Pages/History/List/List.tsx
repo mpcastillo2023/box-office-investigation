@@ -4,6 +4,7 @@ import styles from "./Styles/styles.module.scss";
 import UserIcon from "@icons/user.svg";
 import React from "react";
 import OptionDateList from "./Options/OptionDateList";
+import utilsStyles from "../../../Utils/utils.module.scss";
 
 const List = () => {
   const { formatMessage } = useIntl();
@@ -30,10 +31,13 @@ const List = () => {
         </div>
         <div className={styles.calendarContainer}>
           <div className={styles.row50}>
-            <FormattedMessage
-              id="list.dateView"
-              defaultMessage="Fecha Vista*"
-            />
+            <span className={utilsStyles.inputLabel}>
+              <FormattedMessage
+                id="list.dateView"
+                defaultMessage="Fecha Vista*"
+              />
+            </span>
+
             <DropdownSelect
               className={styles.dateSelect}
               optionList={optionDateList}
@@ -42,10 +46,13 @@ const List = () => {
             />
           </div>
           <div className={styles.row50}>
-            <FormattedMessage
-              id="list.dateViewUntil"
-              defaultMessage="Fecha Vista hasta*"
-            />
+            <span className={utilsStyles.inputLabel}>
+              <FormattedMessage
+                id="list.dateViewUntil"
+                defaultMessage="Fecha Vista hasta*"
+              />
+            </span>
+
             <DropdownSelect
               className={styles.dateSelect}
               optionList={optionDateList}
@@ -56,7 +63,10 @@ const List = () => {
         </div>
         <div className={styles.calendarContainer}>
           <div className={styles.row33}>
-            <FormattedMessage id="list.product" defaultMessage="Producto" />
+            <span className={utilsStyles.inputLabel}>
+              <FormattedMessage id="list.product" defaultMessage="Producto" />
+            </span>
+
             <DropdownSelect
               className={styles.dateSelect}
               optionList={optionList}
@@ -65,10 +75,12 @@ const List = () => {
             />
           </div>
           <div className={styles.row33}>
-            <FormattedMessage
-              id="list.subproduct"
-              defaultMessage="Subproducto/Aforo"
-            />
+            <span className={utilsStyles.inputLabel}>
+              <FormattedMessage
+                id="list.subproduct"
+                defaultMessage="Subproducto/Aforo"
+              />
+            </span>
             <DropdownSelect
               className={styles.dateSelect}
               optionList={optionList}
@@ -77,7 +89,9 @@ const List = () => {
             />
           </div>
           <div className={styles.row33}>
-            <FormattedMessage id="list.session" defaultMessage="Sesión" />
+            <span className={utilsStyles.inputLabel}>
+              <FormattedMessage id="list.session" defaultMessage="Sesión" />
+            </span>
             <DropdownSelect
               className={styles.dateSelect}
               optionList={optionList}
@@ -88,10 +102,12 @@ const List = () => {
         </div>
         <div className={styles.calendarContainer}>
           <div className={styles.row50}>
-            <FormattedMessage
-              id="list.salesChannel"
-              defaultMessage="Canal de venta"
-            />
+            <span className={utilsStyles.inputLabel}>
+              <FormattedMessage
+                id="list.salesChannel"
+                defaultMessage="Canal de venta"
+              />
+            </span>
             <DropdownSelect
               className={styles.dateSelect}
               optionList={optionList}
@@ -100,7 +116,9 @@ const List = () => {
             />
           </div>
           <div className={styles.row50}>
-            <FormattedMessage id="list.status" defaultMessage="Estado" />
+            <span className={utilsStyles.inputLabel}>
+              <FormattedMessage id="list.status" defaultMessage="Estado" />
+            </span>
             <DropdownSelect
               className={styles.dateSelect}
               optionList={optionList}
@@ -111,14 +129,21 @@ const List = () => {
         </div>
         <div className={styles.calendarContainer}>
           <div className={styles.row33}>
-            <FormattedMessage id="list.reference" defaultMessage="Referencia" />
+            <span className={utilsStyles.inputLabel}>
+              <FormattedMessage
+                id="list.reference"
+                defaultMessage="Referencia"
+              />
+            </span>
             <TextInput className={styles.searchInput} />
           </div>
           <div className={styles.row33}>
-            <FormattedMessage
-              id="list.printStatus"
-              defaultMessage="Estado de impresión"
-            />
+            <span className={utilsStyles.inputLabel}>
+              <FormattedMessage
+                id="list.printStatus"
+                defaultMessage="Estado de impresión"
+              />
+            </span>
             <DropdownSelect
               className={styles.dateSelect}
               optionList={optionList}
@@ -127,7 +152,12 @@ const List = () => {
             />
           </div>
           <div className={styles.row33}>
-            <FormattedMessage id="list.ticketBooth" defaultMessage="Taquilla" />
+            <span className={utilsStyles.inputLabel}>
+              <FormattedMessage
+                id="list.ticketBooth"
+                defaultMessage="Taquilla"
+              />
+            </span>
             <DropdownSelect
               className={styles.dateSelect}
               optionList={optionList}
