@@ -4,3 +4,6 @@ export type RadioButtonOption = {
     optionText: ReactNode | string | JSX.Element;
     disabled?: boolean;
 };
+export type CustomStyleClasses = {
+    customRadioButtonGroup?: string;
+};

@@ -6,6 +6,7 @@ type Props = {
     customStyle?: customStyleClasses;
     onMouseEnterCallback?: (rowIndex: number, colIndex: number) => void;
     onMouseLeaveCallback?: (rowIndex: number, colIndex: number) => void;
+    onClickCellHandler?: (data: object) => void;
 };
-export default function DesktopTableBody({ columns, displayData, customStyle, onMouseEnterCallback, onMouseLeaveCallback }: Props): React.JSX.Element;
+export default function DesktopTableBody({ columns, displayData, customStyle, onMouseEnterCallback, onMouseLeaveCallback, onClickCellHandler }: Props): React.JSX.Element;
 export {};

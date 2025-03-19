@@ -17297,50 +17297,61 @@ function wP({
   displayData: t,
   customStyle: n,
   onMouseEnterCallback: r,
-  onMouseLeaveCallback: o
+  onMouseLeaveCallback: o,
+  onClickCellHandler: i
 }) {
-  const i = (a, s) => e.map((f, c) => {
-    const u = f.name, p = f.alignment || "left", g = wt[p], b = "customCellCssClass", y = Pt(a, b) ? a[b] : "";
+  const l = (s, d) => e.map((c, u) => {
+    const p = c.name, g = c.alignment || "left", b = wt[g], y = "customCellCssClass", h = Pt(s, y) ? s[y] : "";
     return /* @__PURE__ */ A(
       "td",
       {
-        "data-testid": `table-body-cell-${c}-${s}`,
-        className: `${wt.cell} ${g} ${(n == null ? void 0 : n.cell) || ""} ${y || ""}`,
+        "data-testid": `table-body-cell-${u}-${d}`,
+        className: `${wt.cell} ${b} ${(n == null ? void 0 : n.cell) || ""} ${h || ""}`,
+        onClick: () => {
+          i && i(s);
+        },
         onMouseEnter: r ? () => {
-          r(s, c);
+          r(d, u);
         } : void 0,
         onMouseLeave: o ? () => {
-          o(s, c);
+          o(d, u);
         } : void 0,
-        children: a[u]
+        children: s[p]
       },
-      `${f}-${c}-${s}`
+      `${c}-${u}-${d}`
     );
   });
-  return /* @__PURE__ */ A("tbody", { children: t == null ? void 0 : t.map((a, s) => /* @__PURE__ */ A(
+  return /* @__PURE__ */ A("tbody", { children: t == null ? void 0 : t.map((s, d) => /* @__PURE__ */ A(
     "tr",
     {
       className: `${wt.cellRow} ${(n == null ? void 0 : n.cellRow) || ""}`,
-      "data-testid": `table-body-row-${s}`,
-      children: i(a, s)
+      "data-testid": `table-body-row-${d}`,
+      children: l(s, d)
     },
-    `${s}`
+    `${d}`
   )) });
 }
-function CP({ columns: e, displayData: t }) {
-  const n = (o, i) => e.map((a, s) => /* @__PURE__ */ Y(
+function CP({
+  columns: e,
+  displayData: t,
+  onClickCellHandler: n
+}) {
+  const r = (i, l) => e.map((s, d) => /* @__PURE__ */ Y(
     "div",
     {
-      "data-testid": `table-body-cell-${s}-${i}`,
+      "data-testid": `table-body-cell-${d}-${l}`,
       className: `${wt.mobileRow} `,
+      onClick: () => {
+        n && n(i);
+      },
       children: [
-        /* @__PURE__ */ A("div", { className: wt.mobileField, children: a.label }),
-        /* @__PURE__ */ A("div", { className: wt.mobileFieldValue, children: o[a.name] })
+        /* @__PURE__ */ A("div", { className: wt.mobileField, children: s.label }),
+        /* @__PURE__ */ A("div", { className: wt.mobileFieldValue, children: i[s.name] })
       ]
     },
-    `${a}-${s}-${i}`
+    `${s}-${d}-${l}`
   ));
-  return t == null ? void 0 : t.map((o, i) => /* @__PURE__ */ A("div", { className: wt.mobileCard, children: n(o, i) }, i));
+  return t == null ? void 0 : t.map((i, l) => /* @__PURE__ */ A("div", { className: wt.mobileCard, children: r(i, l) }, l));
 }
 function IF(e) {
   const { columns: t, displayData: n, variant: r = "primary", customStyle: o } = e, { isDesktop: i } = Du();

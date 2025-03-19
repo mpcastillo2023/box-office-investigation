@@ -1,5 +1,5 @@
 import React from "react";
-import { RadioButtonOption } from "./Types/types";
+import { CustomStyleClasses, RadioButtonOption } from "./Types/types";
 type Props = {
     /**
      * Options for the radio buttons, including the text label and underlying value.
@@ -36,6 +36,7 @@ type Props = {
      * @param {string}
      */
     display?: "column" | "row";
+    customStyles?: CustomStyleClasses;
 };
 /**
  * RadioButtonGroup component allows users to select a single option from a group of options.
@@ -44,5 +45,5 @@ type Props = {
  * @param {Props} props - Props for the RadioButtonGroup component.
  * @returns {JSX.Element}
  */
-export default function RadioButtonGroup({ options, disabled, value, onChange, ariaLabel, name }: Props): React.JSX.Element;
+export default function RadioButtonGroup({ options, disabled, value, onChange, ariaLabel, name, customStyles }: Props): React.JSX.Element;
 export {};
