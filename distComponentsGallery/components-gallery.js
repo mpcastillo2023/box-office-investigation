@@ -29221,13 +29221,16 @@ function hn(e) {
   }
 }
 const Q7 = () => {
+  if (typeof process > "u")
+    return !1;
   let e;
   try {
     var t;
-    e = JSON.parse((t = process) == null || (t = t.env) == null ? void 0 : t.COLORS);
+    const n = (t = process.env) == null ? void 0 : t.COLORS;
+    n && (e = JSON.parse(n));
   } catch {
   }
-  return typeof e == "boolean" ? e : typeof process < "u" && process.versions !== void 0 && process.versions.node !== void 0;
+  return typeof e == "boolean" ? e : process.versions !== void 0 && process.versions.node !== void 0;
 }, {
   DOMCollection: Z7
 } = Th, J7 = 1, e9 = 8;
