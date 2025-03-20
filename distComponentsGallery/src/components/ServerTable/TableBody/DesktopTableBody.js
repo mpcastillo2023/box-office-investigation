@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../Styles/styles.module.scss";
 export default function DesktopTableBody({ columns, displayData, translations, tBodyRef, onClickCellHandler, customStyles }) {
+    console.log(customStyles);
     const renderRow = (item, rowIndex) => {
         const row = columns.map((column, colIndex) => {
             const field = column.name;
