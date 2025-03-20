@@ -1,0 +1,41 @@
+.detailsContainer {
+    width: 98%;
+    display: flex;
+    padding-bottom: 40px;
+    margin-left: 15px;
+    flex-direction: column;
+    gap: 10px;
+
+    .purchaseDetails{
+
+        .purchaseDetailsTitle {
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .purchaseDetailsTable{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .headerCell {
+                background-color: #00BCD4;
+
+                .columnHeaderButton {
+                    color: white;
+                    font-size: 14px;
+                }
+            }
+
+
+        }
+
+       
+
+
+    }
+
+    
+}

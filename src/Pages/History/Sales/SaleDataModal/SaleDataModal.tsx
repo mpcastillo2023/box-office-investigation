@@ -1,12 +1,21 @@
 import { Modal, Tabs } from "components-gallery";
-import React, { useState } from "react";
+import React from "react";
 import { FormattedMessage } from "react-intl";
 import styles from "./Styles/styles.module.scss";
 import Resume from "./Resume/Resume";
+import Details from "./Details/Details";
+import Payments from "./Payments/Payments";
+import Forms from "./Forms/Forms";
 
-export default function SaleItem() {
-  const [isSaleDataModalOpen, setSaleDataModalOpen] = useState(false);
+type Props = {
+  isSaleDataModalOpen: boolean;
+  setSaleDataModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
 
+export default function SaleItem({
+  isSaleDataModalOpen,
+  setSaleDataModalOpen
+}: Props) {
   const list = [
     {
       tabTitle: (
@@ -18,13 +27,13 @@ export default function SaleItem() {
       tabTitle: (
         <FormattedMessage id="saleDataModal.tab2" defaultMessage="DETALLES" />
       ),
-      tabView: <div>AAA</div>
+      tabView: <Details />
     },
     {
       tabTitle: (
         <FormattedMessage id="saleDataModal.tab3" defaultMessage="PAGOS" />
       ),
-      tabView: <div>AAA</div>
+      tabView: <Payments />
     },
     {
       tabTitle: (
@@ -33,7 +42,7 @@ export default function SaleItem() {
           defaultMessage="FORMULARIOS"
         />
       ),
-      tabView: <div>AAA</div>
+      tabView: <Forms />
     },
     {
       tabTitle: (

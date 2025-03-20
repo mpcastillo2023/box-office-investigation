@@ -1,7 +1,155 @@
 .resumeContainer{
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+    width: 100%;
+    display: flex;
+    padding-bottom: 15px;
 
-    .resumeHeader{
+    .ticketList{
+        width: 50%;
         display: flex;
-        color: #00BCD4;
+        flex-direction: column;
+        gap: 15px;
+
+        .ticketListData{
+            padding-right: 30px;
+            padding-left: 10px;
+        }
+
+        .ticketListTitle {
+            display: flex;
+            color: #00BCD4;
+            padding: 15px;
+            background: #f7f7f7;
+            gap: 10px;
+        }
+
+        .ticketListSubTitle{
+            display: flex;
+            padding: 10px;
+        }
+
+        .ticketListCheckbox{
+            display: flex;
+            font-size: 15px;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #dadada;
+            margin-bottom: 20px;
+            padding: 10px;
+            justify-content: space-between;
+
+            .ticketListHideText{
+                color: #00BCD4;
+            }
+
+            .ticketListCheck{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .ticketListTexts{
+                display: flex;
+                flex-direction: column;
+                .ticketListSubText{
+                    color: gray;
+                }
+            }
+        }
+
+    }
+
+    .resumeData{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .resumeDataTitle {
+            display: flex;
+            color: #00BCD4;
+            padding: 15px;
+            background: #f7f7f7;
+            gap: 10px;
+        }
+
+        .ticketResumeData{
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+
+            .resumeDataTitles{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                text-align: end;
+            }
+
+            .resumeDataValues{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                text-align: start;
+                .confirmed{
+                    color: green;
+                }
+            }
+
+           
+
+        }
     }
 }
+
+.editOption{
+    display: flex;
+    gap: 10px;
+    white-space: nowrap;
+    font-size: 14px;
+    align-items: center;
+    .editIcon {
+        svg {
+            width: 20px;
+        }
+    }
+}
+
+.resumeFooter{
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+
+    .printButton{
+        width: 80px;
+        font-size: 14px;
+    }
+
+    .resumeFooterOptions{
+        width: 15%;
+
+        .select {
+            
+            .dropdownElement {
+                background-color: #1e8eab;
+                border: none;
+                span{
+                    color: white;
+                }
+                svg{
+                    stroke: white;
+                }
+            }
+        }
+    }
+    .resumeFooterPrintButtons{
+        display: flex;
+        gap: 10px;
+    }
+}
+
+.dropdownContentFixed {
+    width: auto !important;
+}
+
+

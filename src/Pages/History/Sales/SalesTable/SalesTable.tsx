@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import TableRowData from "../SalesData/SalesData";
 import { Checkbox, ServerTable } from "components-gallery";
 import SaleDataModal from "../SaleDataModal/SaleDataModal";
 import styles from "./Styles/styles.module.scss";
 
 const SalesTable: React.FC = () => {
+  const [isSaleDataModalOpen, setSaleDataModalOpen] = useState(false);
+
   const columns = [
     {
       name: "checkbox",
@@ -54,6 +56,9 @@ const SalesTable: React.FC = () => {
   return (
     <>
       <ServerTable
+        onClickCellHandler={() => {
+          setSaleDataModalOpen(true);
+        }}
         page={1}
         mobileAccordionColumnKey={""}
         rowsPerPage={10}
@@ -66,7 +71,10 @@ const SalesTable: React.FC = () => {
         columns={columns}
         customStyles={styles}
       />
-      <SaleDataModal />
+      <SaleDataModal
+        isSaleDataModalOpen={isSaleDataModalOpen}
+        setSaleDataModalOpen={setSaleDataModalOpen}
+      />
     </>
   );
 };

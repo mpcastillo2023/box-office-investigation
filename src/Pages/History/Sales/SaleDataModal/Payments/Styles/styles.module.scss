@@ -1,0 +1,67 @@
+.paymentsContainer{
+    width: 98%;
+    display: flex;
+    padding-bottom: 40px;
+    margin-left: 15px;
+    flex-direction: column;
+    gap: 10px;
+
+    .paymentsTitle{
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px;
+    }
+
+    .paymentsInfo{
+        display: flex;
+        gap: 10px;
+        margin-left: 20px;
+
+        .initDate, .finalDate{
+           font-weight: bold;
+        }
+    }
+
+    .paymentsTable {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .headerCell {
+            background-color: #00BCD4;
+            border: none;
+            
+
+            .columnHeaderButton {
+                color: white;
+                font-size: 14px;
+            }
+        }
+
+
+    }
+    .paymentsTableTotal{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .headerCell {
+            background-color: #00BCD4;
+            border: none;
+
+
+            .columnHeaderButton {
+                color: white;
+                font-size: 14px;
+            }
+        }
+
+        .paymentsTotal{
+            font-weight: bold;
+            text-align: end;
+        }
+    }
+    
+}

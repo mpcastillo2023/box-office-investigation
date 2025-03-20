@@ -1,18 +1,15 @@
 .modal {
     padding: 0px !important;
-    min-width: 65rem !important;
-    min-height: 40rem !important;
 
     .modalHeader {
-        font-size: 18px;
+        font-size: 16px;
+        padding: 15px;
         background-color: #00BCD4;
         color: white;
-        justify-content: flex-start;
-        padding: 20px;
     }
 
     .modalContent {
-        padding: 0px !important;
+        padding: 0px 25px !important;
 
         .modalContainer {
             padding: 15px;
@@ -24,7 +21,6 @@
 
 
         }
-
         .inputsContainer {
             display: flex;
             flex-direction: column;
@@ -45,21 +41,22 @@
     }
 }
 
-.tabContainer {
-    background-color: transparent;
-    padding: 15px 20px;
+.confirmModalContainer {
+    font-size: 16px;
+    padding: 20px 5px;
 
-    .tabButton {
+    .select {
 
-        &.isActive {
-            background-color: #f7f7f7;
-            color: #21B3BB;
+        .dropdownElement {
+            border: none;
+            border-bottom: 1px solid var(--gray-border-input-box-color);
+            border-radius: 0px;
+            width: 100%;
 
-            &::after {
-                background-color: #21B3BB;
-                height: 2px;
+            .selectedOption {
+                font-size: 14px;
             }
-
         }
+
     }
 }

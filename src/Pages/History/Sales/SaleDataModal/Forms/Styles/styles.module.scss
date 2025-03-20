@@ -1,0 +1,43 @@
+.formsContainer{
+    width: 98%;
+    display: flex;
+    padding-bottom: 40px;
+    margin-left: 15px;
+    flex-direction: column;
+    gap: 10px;
+
+    .paymentsTitle {
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .type{
+            font-weight: normal;
+        }
+        .edit{
+            button{
+                display: flex;
+                align-items: center;
+                color: #00BCD4;
+                cursor: pointer;
+                gap: 5px;
+                svg{
+                    width: 25px;
+                }
+                
+            }
+        }
+    }
+
+    .formsInfo{
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+    }
+}
