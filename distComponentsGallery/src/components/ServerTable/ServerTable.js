@@ -47,8 +47,8 @@ export default function ServerTable({ totalPages, setQueryParams, isFetching, di
                             : ""
                     } },
                     isDesktop ? (React.createElement("table", { className: ` ${styles.tableContent} ${customStyles?.tableContent || ""}` },
-                        React.createElement(TableHeader, { columns: columns, queryParams: queryParams, setQueryParams: setQueryParams, tHeadRef: tHeadRef }),
-                        !isFetching ? (React.createElement(DesktopTableBody, { tBodyRef: tBodyRef, isFetching: isFetching, columns: columns, displayData: displayData, translations: translations, onClickCellHandler: onClickCellHandler })) : null)) : (React.createElement(MobileTableBody, { tBodyRef: tBodyRef, isFetching: isFetching, columns: columns, displayData: displayData, translations: translations, mobileAccordionColumnKey: mobileAccordionColumnKey, onClickCellHandler: onClickCellHandler })),
+                        React.createElement(TableHeader, { columns: columns, queryParams: queryParams, setQueryParams: setQueryParams, tHeadRef: tHeadRef, customStyles: customStyles }),
+                        !isFetching ? (React.createElement(DesktopTableBody, { tBodyRef: tBodyRef, isFetching: isFetching, columns: columns, displayData: displayData, translations: translations, onClickCellHandler: onClickCellHandler, customStyles: customStyles })) : null)) : (React.createElement(MobileTableBody, { tBodyRef: tBodyRef, isFetching: isFetching, columns: columns, displayData: displayData, translations: translations, mobileAccordionColumnKey: mobileAccordionColumnKey, onClickCellHandler: onClickCellHandler })),
                     isFetching ? React.createElement(Spinner, null) : null),
                 tagText ? (React.createElement(React.Fragment, null,
                     React.createElement("div", { className: `${styles.tableTag} ${customStyles?.tableTag || ""}`, ref: tableTagRef, style: {
@@ -58,5 +58,5 @@ export default function ServerTable({ totalPages, setQueryParams, isFetching, di
                             minHeight: `calc(100% - ${tHeadHeight}px)`
                         } }))) : null)),
         React.createElement("div", { className: `${styles.tableTag} ${customStyles?.footerContainer || ""}` },
-            React.createElement(TableFooter, { setQueryParams: setQueryParams, rowsPerPage: rowsPerPage, totalPages: totalPages, translations: translations, currentPage: page, totalItems: totalItems, initialPageIsZero: initialPageIsZero, downloadCallBack: downloadCallBack }))));
+            React.createElement(TableFooter, { setQueryParams: setQueryParams, rowsPerPage: rowsPerPage, totalPages: totalPages, translations: translations, currentPage: page, totalItems: totalItems, initialPageIsZero: initialPageIsZero, downloadCallBack: downloadCallBack, customStyles: customStyles }))));
 }
