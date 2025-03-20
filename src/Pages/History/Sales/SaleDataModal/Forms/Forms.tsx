@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Styles/styles.module.scss";
 import { FormattedMessage } from "react-intl";
-import PencilIcon from "@cg-icons/Pencil.svg";
+import PencilIcon from "@icons/pencil.svg";
 import ModalForm from "./ModalForm/ModalForm";
 
 const Forms = () => {

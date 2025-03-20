@@ -3,7 +3,7 @@ import React from "react";
 import { FormattedMessage } from "react-intl";
 import styles from "./Styles/styles.module.scss";
 import { Button, Checkbox, DropdownSelect } from "@cg-components/index";
-import PencilIcon from "@cg-icons/Pencil.svg";
+import PencilIcon from "@icons/pencil.svg";
 import UserIcon from "@icons/user.svg";
 import UsersIcon from "@icons/users.svg";
 import PrinterIcon from "@icons/printer.svg";

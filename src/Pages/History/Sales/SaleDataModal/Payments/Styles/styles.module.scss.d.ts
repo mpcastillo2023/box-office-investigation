@@ -1,0 +1,10 @@
+export declare const columnHeaderButton: string;
+export declare const finalDate: string;
+export declare const headerCell: string;
+export declare const initDate: string;
+export declare const paymentsContainer: string;
+export declare const paymentsInfo: string;
+export declare const paymentsTable: string;
+export declare const paymentsTableTotal: string;
+export declare const paymentsTitle: string;
+export declare const paymentsTotal: string;
