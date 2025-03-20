@@ -6,6 +6,9 @@ import Resume from "./Resume/Resume";
 import Details from "./Details/Details";
 import Payments from "./Payments/Payments";
 import Forms from "./Forms/Forms";
+import Refunds from "./Refunds/Refunds";
+import Validation from "./Validation/Validation";
+import Issues from "./Issues/Issues";
 
 type Props = {
   isSaleDataModalOpen: boolean;
@@ -51,7 +54,7 @@ export default function SaleItem({
           defaultMessage="VALIDACIONES"
         />
       ),
-      tabView: <div>AAA</div>
+      tabView: <Validation />
     },
     {
       tabTitle: (
@@ -60,7 +63,7 @@ export default function SaleItem({
           defaultMessage="DEVOLUCIONES"
         />
       ),
-      tabView: <div>AAA</div>
+      tabView: <Refunds />
     },
     {
       tabTitle: (
@@ -69,7 +72,7 @@ export default function SaleItem({
           defaultMessage="INCIDENCIAS"
         />
       ),
-      tabView: <div>AAA</div>
+      tabView: <Issues />
     }
   ];
   return (

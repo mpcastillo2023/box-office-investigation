@@ -1,0 +1,49 @@
+.issuesContainer {
+    width: 98%;
+    display: flex;
+    padding-bottom: 40px;
+    margin-left: 15px;
+    flex-direction: column;
+    gap: 10px;
+
+    .issuesCreateButton {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        svg{
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+
+    .issuesTitle {
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px;
+    }
+
+    .issuesTable {
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .headerCell {
+            background-color: #00BCD4;
+            border: none;
+
+            .columnHeaderButton {
+                color: white;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .noIssues{
+        margin-left: 15px;
+    }
+
+
+}

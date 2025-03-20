@@ -1,0 +1,45 @@
+.validationContainer {
+    width: 98%;
+    display: flex;
+    padding-bottom: 40px;
+    margin-left: 15px;
+    flex-direction: column;
+    gap: 10px;
+
+    .validationTitle {
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px;
+    }
+
+    .validationTable {
+        width: 82%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+       
+
+        .headerCell {
+            background-color: #00BCD4;
+            border: none;
+
+            .columnHeaderButton {
+                color: white;
+                font-size: 14px;
+
+                svg{
+                    width: 20px;
+                    height: 20px;
+                    fill: #00BCD4;
+                }
+            }
+        }
+    }
+
+    .noValidation {
+        margin-left: 15px;
+    }
+
+
+}
