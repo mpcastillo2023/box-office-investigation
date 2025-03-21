@@ -239,7 +239,31 @@
 	"forms.type": "(compra)",
 	"forms.edit": "EDITAR",
 	"forms.nationality": "Nacionalidad:",
-	"forms.postal": "Código Postal:"
+	"forms.postal": "Código Postal:",
+	"validation.title": "Histórico de validaciones de las entradas",
+	"validation.noValidation": "No hay validaciones",
+	"saleDataModal.details.validation.id": "Id.ticket",
+	"saleDataModal.details.validation.scanDate": "Fecha de escaneo",
+	"saleDataModal.details.validation.name": "Nombre",
+	"saleDataModal.details.validation.type": "Tipo",
+	"refunds.title": "Lista de devoluciones",
+	"refunds.noRefunds": "No hay devoluciones",
+	"saleDataModal.details.purchaseDetails.refundDate": "Fecha de devolución",
+	"saleDataModal.details.purchaseDetails.refundType": "Devuelto",
+	"saleDataModal.details.purchaseDetails.pending": "Pendiente",
+	"saleDataModal.details.purchaseDetails.reason": "Motivo / Comentario",
+	"saleDataModal.details.purchaseDetails.actions": "Acciones",
+	"issues.title": "Listado de incidencias",
+	"issues.createIssue": "Crear incidencia",
+	"issues.noIssues": "No hay incidencias",
+	"saleDataModal.details.issues.locator": "Localizador",
+	"saleDataModal.details.issues.priority": "Prioridad",
+	"saleDataModal.details.issues.title": "Título",
+	"saleDataModal.details.issues.creationDate": "Fecha de Creación",
+	"saleDataModal.details.issues.status": "Estado",
+	"saleDataModal.details.issues.partDay": "Parte del día",
+	"saleDataModal.details.issues.pax": "PAX",
+	"saleDataModal.details.issues.actions": "Acciones"
 	
 
 
