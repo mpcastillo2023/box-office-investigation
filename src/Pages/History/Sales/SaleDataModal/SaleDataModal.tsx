@@ -78,7 +78,7 @@ export default function SaleItem({
   return (
     <>
       <Modal
-        withCloseButton={false}
+        withCloseButton={true}
         setIsModalOpen={setSaleDataModalOpen}
         isModalOpen={isSaleDataModalOpen}
         variant="success"
