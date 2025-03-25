@@ -1,6 +1,6 @@
 export type SelectOption = {
     optionValue: string | number | boolean;
-    optionText: string;
+    optionText: string | React.ReactNode;
     optionAvailability?: boolean;
     disabled?: boolean;
 };

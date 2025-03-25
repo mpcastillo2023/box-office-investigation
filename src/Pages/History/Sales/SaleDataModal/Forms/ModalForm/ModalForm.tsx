@@ -1,4 +1,4 @@
-import { DropdownSelect, Modal } from "@cg-components/index";
+import { DropdownSelect, Modal } from "components-gallery";
 import React from "react";
 import { FormattedMessage } from "react-intl";
 import styles from "./Styles/styles.module.scss";

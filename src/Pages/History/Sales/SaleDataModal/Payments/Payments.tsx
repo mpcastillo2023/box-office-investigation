@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Styles/styles.module.scss";
 import { FormattedMessage } from "react-intl";
-import BasicTable from "@cg-components/BasicTable/BasicTable";
+import { BasicTable } from "components-gallery";
 
 const Payments = () => {
   const initDate = "12/03/2025 (100%)";

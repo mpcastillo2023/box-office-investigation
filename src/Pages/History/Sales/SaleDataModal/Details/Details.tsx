@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Styles/styles.module.scss";
 import { FormattedMessage } from "react-intl";
-import { BasicTable } from "@cg-components/index";
+import { BasicTable } from "components-gallery";
 
 const Details = () => {
   return (
