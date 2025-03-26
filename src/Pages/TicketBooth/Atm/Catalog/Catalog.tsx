@@ -5,6 +5,7 @@ import CatalogsCalendar from "./Calendar/CatalogCalendar";
 import VenuesCatalog from "./Venues/VenuesCatalog";
 import SessionsCatalog from "./Sessions/CatalogSessions";
 import ProductsCatalog from "./Products/ProductsCatalog";
+import React from "react";
 
 export default function Products() {
   return (

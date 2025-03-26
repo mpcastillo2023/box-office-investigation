@@ -1,6 +1,8 @@
 .productsContainer {
     width: 33%;
 
+
+
     .calendarContainer {
         display: flex;
         align-items: center;
@@ -86,6 +88,10 @@
         border: 1px solid #DADADA;
         border-radius: 13px;
         background-color: white;
+
+        .bodyContainer{
+            max-height: 47vh !important;
+        }
 
 
         .productsCards {

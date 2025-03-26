@@ -120,7 +120,7 @@ export default function Tickets({
             }
             customStyleClasses={styles}
           >
-            <div className={styles.aforosContainer}>
+            <div>
               <div className={styles.aforosCards}>
                 <QueryWrapper
                   {...query}
