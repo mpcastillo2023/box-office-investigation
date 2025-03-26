@@ -1,5 +1,5 @@
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-use tauri::{ Manager, Runtime, WebviewWindow};
+use tauri::{ Manager, Position, Runtime, WebviewWindow};
 
 
 fn move_window_to_other_monitor<R: Runtime>(
@@ -8,12 +8,25 @@ fn move_window_to_other_monitor<R: Runtime>(
 ) -> tauri::Result<()> {
     let monitors = window.available_monitors()?;
     if monitors.len() > 1 {
-            let monitor = monitors
-            .get(i).ok_or( tauri::Error::WindowNotFound)?;
-        
-
-        let pos = monitor.position();
-        window.set_position(*pos)?;
+            // let monitor = monitors
+            // .get(i).ok_or( tauri::Error::WindowNotFound)?;
+        // let pos = monitor.position();
+        // window.set_position(*pos)?;
+        if i == 0 {
+            window.set_position(Position::Physical(
+                tauri::PhysicalPosition{
+                    x: 0,
+                    y: 0
+                })
+            )?;
+        } else{
+            window.set_position(Position::Physical(
+                tauri::PhysicalPosition{
+                    x: 999999999,
+                    y: 0
+                })
+            )?;
+        }
     }
 
 
