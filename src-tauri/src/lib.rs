@@ -1,5 +1,5 @@
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-use tauri::{ Manager, Position, Runtime, WebviewWindow};
+use tauri::{ Manager, Runtime, WebviewWindow};
 
 
 fn move_window_to_other_monitor<R: Runtime>(
