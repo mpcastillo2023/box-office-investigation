@@ -1,7 +1,7 @@
 import { Accordion, UseIsDesktop } from "components-gallery";
 import React from "react";
 import { FormattedMessage } from "react-intl";
-import { Tickets } from "src/Types/Tickets";
+import { Tickets } from "../../../../../Types/Tickets";
 import UserIcon from "@icons/user.svg";
 import TrashIcon from "@icons/trash.svg";
 import styles from "./Styles/Styles.module.scss";
@@ -10,12 +10,13 @@ type Props = {
   quantityOfTickets: number;
   totalPrice: number;
   selectTickets: Tickets[];
-  setSelectedTickets: React.Dispatch<React.SetStateAction<[] | Tickets[]>>;
+  setSelectedTickets: (newTickets: Tickets[]) => void;
   paid: string;
   outstanding: string;
   setIsFormModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   handleDelete: () => void;
   handleClick: (value: string | number) => void;
+  displayPad: boolean;
 };
 
 const NumericPadMobile = ({
@@ -27,7 +28,8 @@ const NumericPadMobile = ({
   setSelectedTickets,
   setIsFormModalOpen,
   handleDelete,
-  handleClick
+  handleClick,
+  displayPad
 }: Props) => {
   const { isDesktop } = UseIsDesktop();
   return (
@@ -109,46 +111,52 @@ const NumericPadMobile = ({
           </div>
 
           {/* Keyboard */}
-          <div className={styles.keyboard}>
-            {[7, 8, 9, 4, 5, 6, 1, 2, 3, "DEL", 0, "."].map((key) => (
-              <button
-                key={String(key)}
-                className={key === "DEL" ? styles.del : ""}
-                onClick={() =>
-                  key === "DEL" ? handleDelete() : handleClick(key)
-                }
-              >
-                {key}
-              </button>
-            ))}
-          </div>
-
-          <div className={styles.paymentOptions}>
-            <button
-              onClick={() => setIsFormModalOpen(true)}
-              className={styles.paymentButton}
-            >
-              <FormattedMessage
-                id="numeralPad.voucher"
-                defaultMessage="VOUCHER"
-              />
-            </button>
-            <button
-              onClick={() => setIsFormModalOpen(true)}
-              className={styles.paymentButton}
-            >
-              <FormattedMessage id="numeralPad.card" defaultMessage="TARJETA" />
-            </button>
-            <button
-              onClick={() => setIsFormModalOpen(true)}
-              className={styles.paymentButton}
-            >
-              <FormattedMessage
-                id="numeralPad.cash"
-                defaultMessage="EFECTIVO"
-              />
-            </button>
-          </div>
+          {displayPad ? (
+            <>
+              <div className={styles.keyboard}>
+                {[7, 8, 9, 4, 5, 6, 1, 2, 3, "DEL", 0, "."].map((key) => (
+                  <button
+                    key={String(key)}
+                    className={key === "DEL" ? styles.del : ""}
+                    onClick={() =>
+                      key === "DEL" ? handleDelete() : handleClick(key)
+                    }
+                  >
+                    {key}
+                  </button>
+                ))}
+              </div>
+              <div className={styles.paymentOptions}>
+                <button
+                  onClick={() => setIsFormModalOpen(true)}
+                  className={styles.paymentButton}
+                >
+                  <FormattedMessage
+                    id="numeralPad.voucher"
+                    defaultMessage="VOUCHER"
+                  />
+                </button>
+                <button
+                  onClick={() => setIsFormModalOpen(true)}
+                  className={styles.paymentButton}
+                >
+                  <FormattedMessage
+                    id="numeralPad.card"
+                    defaultMessage="TARJETA"
+                  />
+                </button>
+                <button
+                  onClick={() => setIsFormModalOpen(true)}
+                  className={styles.paymentButton}
+                >
+                  <FormattedMessage
+                    id="numeralPad.cash"
+                    defaultMessage="EFECTIVO"
+                  />
+                </button>
+              </div>
+            </>
+          ) : null}
         </div>
       </Accordion>
     </>

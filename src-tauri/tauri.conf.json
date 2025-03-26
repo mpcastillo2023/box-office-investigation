@@ -10,18 +10,7 @@
     "frontendDist": "../dist"
   },
   "app": {
-    "windows": [
-      {
-        "title": "box-office",
-        "width": 800,
-        "height": 600
-      },
-      {
-        "label": "local",
-        "title": "Tauri",
-        "url": "test.html"
-      }
-    ],
+    "windows": [],
     "security": {
       "csp": null
     }

@@ -1,12 +1,3 @@
-import { useEffect, useState } from "react";
-import useNetworkStatus from "../../Hooks/useNetworkStatus";
-import {
-  addData,
-  deleteStore,
-  getStoreData,
-  initDB,
-  Stores
-} from "../../Utils/OfflineDb/db";
 import Atm from "./Atm/Atm";
 import React from "react";
 import UseTicketBooth from "./hooks/UseTicketBooth";

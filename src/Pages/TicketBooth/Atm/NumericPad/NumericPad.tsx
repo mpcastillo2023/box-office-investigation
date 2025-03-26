@@ -7,11 +7,16 @@ import { UseIsDesktop } from "components-gallery";
 import useNumericPad from "./hooks/UseNumericPad";
 
 type Props = {
-  setSelectedTickets: React.Dispatch<React.SetStateAction<[] | Tickets[]>>;
+  setSelectedTickets: (newTickets: Tickets[]) => void;
   selectTickets: Tickets[];
+  displayPad?: boolean;
 };
 
-const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
+const NumeralPad: React.FC<Props> = ({
+  setSelectedTickets,
+  selectTickets,
+  displayPad = true
+}) => {
   const { isDesktop } = UseIsDesktop();
   const {
     quantityOfTickets,
@@ -40,6 +45,7 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
           setIsFormModalOpen={setIsFormModalOpen}
           handleDelete={handleDelete}
           handleClick={handleClick}
+          displayPad={displayPad}
         />
       ) : (
         <NumericPadMobile
@@ -52,6 +58,7 @@ const NumeralPad: React.FC<Props> = ({ setSelectedTickets, selectTickets }) => {
           setIsFormModalOpen={setIsFormModalOpen}
           handleDelete={handleDelete}
           handleClick={handleClick}
+          displayPad={displayPad}
         />
       )}
 

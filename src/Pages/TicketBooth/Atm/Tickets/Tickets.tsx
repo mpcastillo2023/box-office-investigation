@@ -8,7 +8,7 @@ import PercentICon from "@icons/percent.svg";
 import ChatBubbleIcon from "@icons/chat-bubble.svg";
 import ShoppingCarIcon from "@icons/shopping-cart.svg";
 import XCircleIcon from "@icons/x-circle.svg";
-import { Accordion, UseIsDesktop } from "components-gallery";
+import { Accordion } from "components-gallery";
 import { FormattedMessage } from "react-intl";
 import { getQuery } from "../../../../Api/getQuery";
 import { useQuery } from "@tanstack/react-query";

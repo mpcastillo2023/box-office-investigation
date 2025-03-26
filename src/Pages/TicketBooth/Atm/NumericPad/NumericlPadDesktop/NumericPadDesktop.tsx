@@ -3,18 +3,19 @@ import UserIcon from "@icons/user.svg";
 import TrashIcon from "@icons/trash.svg";
 import { FormattedMessage } from "react-intl";
 import styles from "./Styles/styles.module.scss";
-import { Tickets } from "src/Types/Tickets";
+import { Tickets } from "../../../../../Types/Tickets";
 
 type Props = {
   quantityOfTickets: number;
   totalPrice: number;
   selectTickets: Tickets[];
-  setSelectedTickets: React.Dispatch<React.SetStateAction<[] | Tickets[]>>;
+  setSelectedTickets: (newTickets: Tickets[]) => void;
   paid: string;
   outstanding: string;
   setIsFormModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   handleDelete: () => void;
   handleClick: (value: string | number) => void;
+  displayPad: boolean;
 };
 
 const NumericPadDesktop = ({
@@ -26,7 +27,8 @@ const NumericPadDesktop = ({
   outstanding,
   setIsFormModalOpen,
   handleDelete,
-  handleClick
+  handleClick,
+  displayPad
 }: Props) => {
   return (
     <>
@@ -67,7 +69,13 @@ const NumericPadDesktop = ({
         </div>
 
         <div className={styles.payment}>
-          <div className={styles.totals}>
+          <div
+            className={styles.totals}
+            style={{
+              marginBottom: displayPad ? "" : "0px",
+              borderRadius: displayPad ? "" : "13px"
+            }}
+          >
             <div className={styles.totalsInfo}>
               <span>
                 <FormattedMessage
@@ -102,46 +110,52 @@ const NumericPadDesktop = ({
           </div>
 
           {/* Keyboard */}
-          <div className={styles.keyboard}>
-            {[7, 8, 9, 4, 5, 6, 1, 2, 3, "DEL", 0, "."].map((key) => (
-              <button
-                key={String(key)}
-                className={key === "DEL" ? styles.del : ""}
-                onClick={() =>
-                  key === "DEL" ? handleDelete() : handleClick(key)
-                }
-              >
-                {key}
-              </button>
-            ))}
-          </div>
-
-          <div className={styles.paymentOptions}>
-            <button
-              onClick={() => setIsFormModalOpen(true)}
-              className={styles.paymentButton}
-            >
-              <FormattedMessage
-                id="numeralPad.voucher"
-                defaultMessage="VOUCHER"
-              />
-            </button>
-            <button
-              onClick={() => setIsFormModalOpen(true)}
-              className={styles.paymentButton}
-            >
-              <FormattedMessage id="numeralPad.card" defaultMessage="TARJETA" />
-            </button>
-            <button
-              onClick={() => setIsFormModalOpen(true)}
-              className={styles.paymentButton}
-            >
-              <FormattedMessage
-                id="numeralPad.cash"
-                defaultMessage="EFECTIVO"
-              />
-            </button>
-          </div>
+          {displayPad ? (
+            <>
+              <div className={styles.keyboard}>
+                {[7, 8, 9, 4, 5, 6, 1, 2, 3, "DEL", 0, "."].map((key) => (
+                  <button
+                    key={String(key)}
+                    className={key === "DEL" ? styles.del : ""}
+                    onClick={() =>
+                      key === "DEL" ? handleDelete() : handleClick(key)
+                    }
+                  >
+                    {key}
+                  </button>
+                ))}
+              </div>
+              <div className={styles.paymentOptions}>
+                <button
+                  onClick={() => setIsFormModalOpen(true)}
+                  className={styles.paymentButton}
+                >
+                  <FormattedMessage
+                    id="numeralPad.voucher"
+                    defaultMessage="VOUCHER"
+                  />
+                </button>
+                <button
+                  onClick={() => setIsFormModalOpen(true)}
+                  className={styles.paymentButton}
+                >
+                  <FormattedMessage
+                    id="numeralPad.card"
+                    defaultMessage="TARJETA"
+                  />
+                </button>
+                <button
+                  onClick={() => setIsFormModalOpen(true)}
+                  className={styles.paymentButton}
+                >
+                  <FormattedMessage
+                    id="numeralPad.cash"
+                    defaultMessage="EFECTIVO"
+                  />
+                </button>
+              </div>
+            </>
+          ) : null}
         </div>
       </div>
     </>
