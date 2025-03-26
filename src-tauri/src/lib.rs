@@ -1,5 +1,5 @@
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-use tauri::{ Position, Runtime, WebviewWindow, WebviewWindowBuilder};
+use tauri::{ Manager, Position, Runtime, WebviewWindow};
 
 
 fn move_window_to_other_monitor<R: Runtime>(
@@ -9,20 +9,14 @@ fn move_window_to_other_monitor<R: Runtime>(
     let monitors = window.available_monitors()?;
     if monitors.len() > 1 {
             let monitor = monitors
-            .get(i).ok_or_else(|| tauri::Error::FailedToReceiveMessage)?;
+            .get(i).ok_or( tauri::Error::WindowNotFound)?;
         
 
         let pos = monitor.position();
-        window.set_position(Position::Physical(
-            tauri::PhysicalPosition{
-                x: pos.x,
-                y: 0
-            })
-        )?;
+        window.set_position(*pos)?;
     }
 
 
-    window.maximize()?;
     
     Ok(())
 }
@@ -36,14 +30,10 @@ pub fn run() {
             #[cfg(desktop)]{
                 app.handle()
                 .plugin(tauri_plugin_updater::Builder::new().build())?;
-            let window_main =
-            WebviewWindowBuilder::new(app, "main", tauri::WebviewUrl::App("index.html".into()))
-                .build()?;
-                let window =
-                WebviewWindowBuilder::new(app, "local", tauri::WebviewUrl::App("screen2.html".into()))
-                    .build()?;
-               move_window_to_other_monitor(&window, 1)?;
-              move_window_to_other_monitor(&window_main, 0)?;
+                let window_main = app.get_webview_window("main").unwrap();
+                let window = app.get_webview_window("side").unwrap();
+                move_window_to_other_monitor(&window, 1)?;
+                move_window_to_other_monitor(&window_main, 0)?;
             }
             Ok(())
         })

@@ -10,7 +10,23 @@
     "frontendDist": "../dist"
   },
   "app": {
-    "windows": [],
+    "windows": [
+      {
+        "title": "box-office",
+        "width": 800,
+        "height": 600,
+        "label": "main",
+        "fullscreen": false,
+        "closable": true
+      },
+      {
+        "label": "side",
+        "title": "box-office",
+        "url": "screen2.html",
+        "fullscreen": false,
+        "closable": true
+      }
+    ],
     "security": {
       "csp": null
     }
