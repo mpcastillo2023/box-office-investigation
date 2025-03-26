@@ -7,6 +7,8 @@
 
     .settingsLogin {
         width: 30rem;
+        display: flex;
+        gap: 40px;
 
         @media (max-width: 768px) {
             width: 20rem;
@@ -15,11 +17,10 @@
             padding: 30px;
         }
 
-        display: flex;
-        gap: 40px;
+
     }
 
-    .settingsLoginBody{
+    .settingsLoginBody {
         padding: 30px;
         display: flex;
         flex-direction: column;
@@ -31,7 +32,7 @@
         width: 103%;
     }
 
-    .settingsLoginTitle{
+    .settingsLoginTitle {
         background-color: #00BCD4;
         color: white;
         padding: 20px;
@@ -69,7 +70,7 @@
         padding: 15px 70px;
         justify-content: center;
 
-        .modalInputContent{
+        .modalInputContent {
             display: flex;
             flex-direction: column;
             gap: 20px;

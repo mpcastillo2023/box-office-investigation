@@ -54,12 +54,6 @@
     }
 
     .aforostitle {
-
-        @media (max-width: 768px) {
-            width: 100%;
-
-        }
-
         display: flex;
         justify-content: center;
         background-color: var(--box-office-highlight);
@@ -70,6 +64,11 @@
         font-weight: 600;
         gap: 5px;
         margin-top: 5px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+
+        }
 
         svg {
             position: relative;
@@ -83,7 +82,7 @@
         background-color: white;
         margin-top: 5px;
 
-        .bodyContainer{
+        .bodyContainer {
             max-height: 47vh !important;
         }
 
