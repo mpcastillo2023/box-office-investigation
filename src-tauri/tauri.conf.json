@@ -17,14 +17,16 @@
         "height": 600,
         "label": "main",
         "fullscreen": false,
-        "closable": true
+        "closable": true,
+        "maximized": true
       },
       {
         "label": "side",
         "title": "box-office",
         "url": "screen2.html",
         "fullscreen": false,
-        "closable": true
+        "closable": true,
+        "maximized": true
       }
     ],
     "security": {
