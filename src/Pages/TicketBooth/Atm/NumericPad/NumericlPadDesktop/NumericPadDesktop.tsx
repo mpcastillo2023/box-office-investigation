@@ -16,6 +16,7 @@ type Props = {
   handleDelete: () => void;
   handleClick: (value: string | number) => void;
   displayPad: boolean;
+  fullWidth: boolean;
 };
 
 const NumericPadDesktop = ({
@@ -28,11 +29,15 @@ const NumericPadDesktop = ({
   setIsFormModalOpen,
   handleDelete,
   handleClick,
-  displayPad
+  displayPad,
+  fullWidth
 }: Props) => {
   return (
     <>
-      <div className={styles.numeralPadContainer}>
+      <div
+        className={styles.numeralPadContainer}
+        style={{ width: fullWidth ? "100%" : "" }}
+      >
         <div className={styles.resume}>
           <div className={styles.totalHeader}>
             <div>

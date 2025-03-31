@@ -17,6 +17,7 @@ import { TranslateProvider } from "./Providers/TranslateProvider";
 import React from "react";
 import PrintTemplates from "./Pages/PrintTemplates/PrintTemplates";
 import { AvailableContextProvider } from "./Providers/AvailableLocaleProvider";
+import Screen2 from "./Screen2";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -56,6 +57,7 @@ function App() {
                       path="/print-templates"
                       element={<PrintTemplates />}
                     />
+                    <Route path="/screen2" element={<Screen2 />} />
                   </Route>
                 </Routes>
               </BrowserRouter>

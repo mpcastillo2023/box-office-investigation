@@ -10,12 +10,14 @@ type Props = {
   setSelectedTickets: (newTickets: Tickets[]) => void;
   selectTickets: Tickets[];
   displayPad?: boolean;
+  fullWidth?: boolean;
 };
 
 const NumeralPad: React.FC<Props> = ({
   setSelectedTickets,
   selectTickets,
-  displayPad = true
+  displayPad = true,
+  fullWidth = false
 }) => {
   const { isDesktop } = UseIsDesktop();
   const {
@@ -46,6 +48,7 @@ const NumeralPad: React.FC<Props> = ({
           handleDelete={handleDelete}
           handleClick={handleClick}
           displayPad={displayPad}
+          fullWidth={fullWidth}
         />
       ) : (
         <NumericPadMobile

@@ -37,6 +37,7 @@ export default function Screen2() {
             selectTickets={selectedTickets}
             setSelectedTickets={newTicketsHandler}
             displayPad={false}
+            fullWidth={true}
           ></NumeralPad>
         </div>
       </TranslateProvider>

@@ -23,7 +23,7 @@
       {
         "label": "side",
         "title": "box-office",
-        "url": "screen2.html",
+        "url": "./screen2",
         "fullscreen": false,
         "closable": true,
         "maximized": true
