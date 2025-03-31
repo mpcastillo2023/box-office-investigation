@@ -1,9 +1,8 @@
 .loginContainer {
     display: flex;
-    top: 10rem;
     flex-direction: column;
     gap: 15px;
-    height: 93.7vh;
+    height: 100vh;
 
     .login {
         width: 30rem;
@@ -40,12 +39,11 @@
         display: flex;
         flex-direction: column;
         background: white;
-
         align-items: center;
-        width: 18rem;
+        width: 20rem;
         align-self: center;
         gap: 20px;
-        margin-top: 10rem;
+        margin-top: 5rem;
 
         .loginButton {
             width: 87%;

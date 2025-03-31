@@ -2,6 +2,7 @@ import { Modal, Spinner, TextInput, DropdownSelect } from "components-gallery";
 import React from "react";
 import { FormattedMessage } from "react-intl";
 import styles from "./Styles/styles.module.scss";
+import { Tickets } from "../../../../../Types/Tickets";
 
 type Props = {
   isConfirmModalOpen: boolean;
@@ -9,6 +10,7 @@ type Props = {
   isFormModalOpen: boolean;
   setIsFormModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   openConfirmModal: () => void;
+  setSelectedTickets: (newTickets: Tickets[]) => void;
 };
 
 const ConfirmModal = ({
@@ -16,7 +18,8 @@ const ConfirmModal = ({
   setIsConfirmModalOpen,
   isFormModalOpen,
   setIsFormModalOpen,
-  openConfirmModal
+  openConfirmModal,
+  setSelectedTickets
 }: Props) => {
   return (
     <>
@@ -66,7 +69,10 @@ const ConfirmModal = ({
             defaultMessage="Confirmar"
           />
         }
-        onConfirmHandler={openConfirmModal}
+        onConfirmHandler={() => {
+          openConfirmModal();
+          setSelectedTickets([]);
+        }}
         customStyle={styles}
       >
         <div className={styles.modalContainer}>

@@ -1,45 +1,37 @@
 /* eslint-disable react/jsx-no-literals */
-import { emit, listen } from "@tauri-apps/api/event";
+import { listen } from "@tauri-apps/api/event";
 import React, { useEffect, useState } from "react";
 import { Tickets } from "./Types/Tickets";
-import NumeralPad from "./Pages/TicketBooth/Atm/NumericPad/NumericPad";
 import { LocaleProvider } from "./Providers/LocaleProvider";
 import { TranslateProvider } from "./Providers/TranslateProvider";
+import FooterScreen2 from "./Components/FooterScreen2/FooterScreen2";
+import ShoppingCart from "./Components/ShoopingCart/ShoppingCart";
 
 export default function Screen2() {
   const [selectedTickets, setSelectedTickets] = useState<Tickets[]>([]);
+  const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
 
   useEffect(() => {
     const listenSetup = async () => {
       await listen<Tickets[]>("selectedTickets", (event) => {
         setSelectedTickets(event.payload);
       });
+      await listen<boolean>("isConfirmModalOpen", (event) => {
+        setIsConfirmModalOpen(event.payload);
+      });
     };
     listenSetup();
   }, []);
 
-  const newTicketsHandler = (newTickets: Tickets[]) => {
-    emit("newSelectedTickets", newTickets);
-  };
   return (
     <LocaleProvider>
       <TranslateProvider>
-        <div
-          style={{
-            margin: "0 auto",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100vh"
-          }}
-        >
-          <NumeralPad
-            selectTickets={selectedTickets}
-            setSelectedTickets={newTicketsHandler}
-            displayPad={false}
-            fullWidth={true}
-          ></NumeralPad>
-        </div>
+        <ShoppingCart
+          setIsConfirmModalOpen={setIsConfirmModalOpen}
+          isConfirmModalOpen={isConfirmModalOpen}
+          selectTickets={selectedTickets}
+        />
+        <FooterScreen2 />
       </TranslateProvider>
     </LocaleProvider>
   );

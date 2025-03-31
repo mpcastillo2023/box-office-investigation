@@ -14,9 +14,7 @@ const LoginFooter = () => {
   return (
     <div className={styles.loginFooterContainer}>
       <div className={styles.versionContainer}>
-        <div>v1.0</div>
-        <div>© Clorian 2023</div>
-        <div>2025668</div>
+        <div>BoxOffice v4.0.0</div>
       </div>
       <div className={styles.clorianInfo}>
         <div>

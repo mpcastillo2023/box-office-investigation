@@ -1,10 +1,11 @@
 import { Tickets } from "../../../../Types/Tickets";
-import React from "react";
+import React, { useEffect } from "react";
 import NumericPadDesktop from "./NumericlPadDesktop/NumericPadDesktop";
 import ConfirmModal from "./ConfirmModal/ConfirmModal";
 import NumericPadMobile from "./NumericPadMobile/NumericPadMobile";
 import { UseIsDesktop } from "components-gallery";
 import useNumericPad from "./hooks/UseNumericPad";
+import { emit } from "@tauri-apps/api/event";
 
 type Props = {
   setSelectedTickets: (newTickets: Tickets[]) => void;
@@ -33,6 +34,10 @@ const NumeralPad: React.FC<Props> = ({
     handleDelete,
     handleClick
   } = useNumericPad({ selectTickets });
+
+  useEffect(() => {
+    emit("isConfirmModalOpen", isConfirmModalOpen);
+  }, [isConfirmModalOpen]);
 
   return (
     <>
@@ -71,6 +76,7 @@ const NumeralPad: React.FC<Props> = ({
         isFormModalOpen={isFormModalOpen}
         setIsFormModalOpen={setIsFormModalOpen}
         openConfirmModal={openConfirmModal}
+        setSelectedTickets={setSelectedTickets}
       />
     </>
   );

@@ -3,10 +3,10 @@
     align-items: center;
     justify-content: space-between;
     background: #DADADA;
-    padding: 10px 15px;
+    padding: 10px;
     position: fixed;
-    width: 99%;
     bottom: 0;
+    width: 99%;
 }
 
 .versionContainer {
@@ -17,26 +17,6 @@
     display: flex;
     align-items: center;
     gap: 20px;
-
-    .settingsButton {
-        background-color: var(--box-office-primary-blue);
-        cursor: pointer;
-        border: 1px solid #DADADA;
-        border-radius: 13px;
-        padding: 10px 15px;
-        font-size: 14px;
-        color: white;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        text-decoration: none;
-
-        svg {
-            position: relative;
-            width: 20px;
-            height: 20px;
-        }
-    }
 
     .clockContainer {
         display: flex;

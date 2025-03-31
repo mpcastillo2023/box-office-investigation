@@ -155,9 +155,7 @@ const Login = () => {
             }
           />
         </div>
-        <div style={{ marginTop: "auto" }}>
-          <LoginFooter />
-        </div>
+        <LoginFooter />
       </div>
     </>
   );

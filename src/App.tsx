@@ -49,6 +49,7 @@ function App() {
                   <Route element={<ProductHeader />}>
                     <Route path="/" element={<Login />} />
                     <Route path="/settings/Login" element={<SettingsLogin />} />
+                    <Route path="/screen2" element={<Screen2 />} />
                   </Route>
                   <Route element={<Layout />}>
                     <Route path="/ticket-booth" element={<TicketBooth />} />
@@ -57,7 +58,6 @@ function App() {
                       path="/print-templates"
                       element={<PrintTemplates />}
                     />
-                    <Route path="/screen2" element={<Screen2 />} />
                   </Route>
                 </Routes>
               </BrowserRouter>
