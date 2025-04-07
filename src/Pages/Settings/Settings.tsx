@@ -36,14 +36,7 @@ const Settings = () => {
           </div>
         </div>
         <div className={styles.settingsContainer}>
-          <div
-            style={{
-              width: "33%",
-              display: "flex",
-              gap: "7px",
-              flexDirection: "column"
-            }}
-          >
+          <div className={styles.basicSettingValidationContainer}>
             <BasicSettings />
             <Validation />
           </div>

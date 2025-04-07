@@ -1,6 +1,11 @@
 .templatesEditContainer {
     width: 50%;
 
+    @media (max-width: 768px) {
+        width: 100%;
+        
+    }
+
 
     .templatesEditHeader {
         background-color: #00BCD4;

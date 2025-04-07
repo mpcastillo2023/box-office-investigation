@@ -1,3 +1,4 @@
+export declare const basicSettingValidationContainer: string;
 export declare const managementContainer: string;
 export declare const paymentContainer: string;
 export declare const printingContainer: string;
