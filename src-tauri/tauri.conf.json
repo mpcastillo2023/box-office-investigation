@@ -19,14 +19,6 @@
         "fullscreen": false,
         "closable": true,
         "maximized": true
-      },
-      {
-        "label": "side",
-        "title": "box-office",
-        "url": "./screen2",
-        "fullscreen": false,
-        "closable": true,
-        "maximized": true
       }
     ],
     "security": {
