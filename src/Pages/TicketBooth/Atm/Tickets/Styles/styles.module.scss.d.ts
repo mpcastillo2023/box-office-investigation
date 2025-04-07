@@ -3,6 +3,7 @@ export declare const aforosCards: string;
 export declare const aforosSelectContainer: string;
 export declare const aforosSubTitle: string;
 export declare const aforostitle: string;
+export declare const bodyContainer: string;
 export declare const card: string;
 export declare const promotionCode: string;
 export declare const promotionCodeContainer: string;

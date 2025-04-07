@@ -21,6 +21,10 @@
         font-size: 14px;
         height: 60rem;
 
+        @media (max-width: 768px) {
+            height: auto;
+        }
+
         .row{
             display: flex;
             gap: 20px;
