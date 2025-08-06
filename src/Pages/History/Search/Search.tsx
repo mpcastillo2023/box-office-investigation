@@ -1,7 +1,7 @@
 import { Button, DropdownSelect, TextInput } from "components-gallery";
 import { FormattedMessage, useIntl } from "react-intl";
 import styles from "./Styles/styles.module.scss";
-import utilStyles from "../../../Utils/utils.module.scss";
+import utilStyles from "../../../globalCSS/utils.module.scss";
 import React from "react";
 
 const Search = () => {

@@ -4,7 +4,7 @@ import styles from "./Styles/styles.module.scss";
 import UserIcon from "@icons/user.svg";
 import React from "react";
 import OptionDateList from "./Options/OptionDateList";
-import utilsStyles from "../../../Utils/utils.module.scss";
+import utilsStyles from "../../../globalCSS/utils.module.scss";
 
 const List = () => {
   const { formatMessage } = useIntl();

@@ -7,7 +7,7 @@ import { Accordion, UseIsDesktop } from "components-gallery";
 import { FormattedMessage } from "react-intl";
 import { useQuery } from "@tanstack/react-query";
 import QueryWrapper from "../../../../../Components/Hoc/QueryWrapper/QueryWrapper";
-import { getQuery } from "../../../../../Api";
+import { getQueryProducts } from "../../../../../Api";
 import { Product } from "../../../../../Types/Product";
 import React from "react";
 
@@ -21,7 +21,7 @@ export default function ProductsCatalog() {
   const { isDesktop } = UseIsDesktop();
 
   const query = useQuery({
-    queryFn: getQuery<Product[]>,
+    queryFn: getQueryProducts<Product[]>,
     queryKey: ["products"]
   });
 

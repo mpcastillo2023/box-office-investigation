@@ -1,6 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
-import { getQuery, UseIsDesktop } from "components-gallery";
-import { Pricing } from "src/Types/Pricing";
+import { UseIsDesktop } from "components-gallery";
 import styles from "./../Styles/styles.module.scss";
 
 export default function UseTickets() {
